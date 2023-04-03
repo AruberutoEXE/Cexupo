@@ -5,6 +5,32 @@
 <struts>
     <!-- Configuration for the default package. -->
     <package name="default" extends="struts-default">
-        
+        <action name="">
+            <result type="chain">
+                <param name="actionName">login</param>
+            </result>
+        </action>
+    </package>
+
+    <package extends="struts-default"  name="login">
+
+        <!-- accion por defecto. al no tener asociado ninguna class, no necesita que se le cree una clasenos la ahorramos -->
+
+        <action name="login" >
+            <result>/Vistas/login/login.jsp</result> 
+        </action>
+
+
+        <action name="loginCheck" class="Actions.LoginCheck">
+
+            <!-- OJO!!! Falla si no se le pone la carpeta donde se encuentra la vista-->
+
+            
+            <result name="success">/Vistas/login/welcome.jsp</result>
+
+            <result name="error">/Vistas/login/error.jsp</result>
+
+        </action>
+
     </package>
 </struts>
