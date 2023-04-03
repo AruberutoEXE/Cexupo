@@ -9,21 +9,17 @@
         <title>Cexupo</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
         <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+        <%@ taglib prefix="s" uri="/struts-tags" %>
         <!-- Optional Bootstrap Theme -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-        <!-- Bootstrap core CSS -->
-        <link href="Bionicle-aux.css" rel="stylesheet">
-        <link href="Bionicle.css" rel="stylesheet">
-        <!-- Custom styles for this template -->
         <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
-        <!-- Custom styles for this template -->
-        <link href="Bionicle.css" rel="stylesheet">
+        
     </head>
     <body>
         <div class="container">
             <header class="blog-header py-3">
                 <div class="bg-dark rounded row flex-nowrap justify-content-between align-items-center">
-                   
+
                     <div class="col-4 text-center">
                         <h1 class="text-white">Cexupo</h1>
 
@@ -32,8 +28,12 @@
                         <a class="link-secondary col-2" href="#" aria-label="Search">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20"fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" role="img" viewBox="0 0 24 24"><title>Search</title><circle cx="10.5" cy="10.5" r="7.5"/><path d="M21 21l-5.2-5.2"/></svg>
                         </a>
-                        <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
+                        <s:form method="POST" action="login">
+                            <s:submit class="btn btn-sm btn-outline-secondary" value="Sign up">Sign up</s:submit>
+                        </s:form>
+                        
                     </div>
+
                 </div>
             </header>
 
@@ -54,7 +54,7 @@
                 <div class="container bg-dark p-3">
                     <h1 class="jumbotron-heading text-white">Encuentra lo que buscas</h1>
                     <p class="lead text-secondary">Si lo venden lo tenemos</p>
-                  
+
                 </div>
             </section>
 
@@ -77,20 +77,20 @@
 
         </main>
 
-      
+
         <footer class="blog-footer jumbotron text-center bg-dark">
             <p>
             <h2><a class=" bg-sand" href="#">Back to top</a></h2>
-            </p>
-        </footer>
+        </p>
+    </footer>
 
-        <!-- Bootstrap core JavaScript
-        ================================================== -->
-        <!-- Placed at the end of the document so the pages load faster -->
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-        <script src="../../assets/js/vendor/popper.min.js"></script>
-        <script src="../../dist/js/bootstrap.min.js"></script>
-        <script src="../../assets/js/vendor/holder.min.js"></script>
-    </body>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/vendor/holder.min.js"></script>
+</body>
 </html>
