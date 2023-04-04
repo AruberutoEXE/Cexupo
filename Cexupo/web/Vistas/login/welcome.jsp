@@ -7,6 +7,6 @@
         <title>Welcome</title>
     </head>
     <body>
-        <h1>Welcome back <s:property value="username" /></h1>
+        <jsp:forward page="product"></jsp:forward>
     </body>
 </html>
