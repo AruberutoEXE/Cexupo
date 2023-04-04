@@ -4,7 +4,7 @@
 
 <struts>
     <package name="default" extends="struts-default">
-        <action name="">
+        <action name="" class="Actions.ProductosAction">
             <result>/index.jsp</result>
         </action>
         
@@ -28,6 +28,14 @@
 
             <result name="error">/Vistas/login/error.jsp</result>
 
+        </action>
+
+    </package>
+     <package extends="struts-default"  name="producto">
+        <action name="productos" class="Actions.ProductosAction">
+            <result>/index.jsp</result> 
+            <result name="success">/index.jsp</result>
+            <result name="error">/index.jsp</result>
         </action>
 
     </package>

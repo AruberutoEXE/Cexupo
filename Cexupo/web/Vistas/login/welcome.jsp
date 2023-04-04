@@ -7,6 +7,6 @@
         <title>Welcome</title>
     </head>
     <body>
-        <jsp:forward page="product"></jsp:forward>
+       <s:action name="YourAction" namespace="/PackageNamespace" executeResult="true" /> 
     </body>
 </html>

@@ -40,7 +40,7 @@ public class LoginCheck extends ActionSupport {
         }
     }
 
-    private static boolean isRegistered(java.lang.String name, java.lang.String pass) {
+    private static boolean isRegistered(String name, String pass) {
         UsuarioDao udao = new UsuarioDao();
         
         return udao.isRegistered(name, pass);

@@ -13,7 +13,7 @@
         <!-- Optional Bootstrap Theme -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
-        
+
     </head>
     <body>
         <div class="container">
@@ -31,7 +31,7 @@
                         <s:form method="POST" action="login">
                             <s:submit class="btn btn-sm btn-outline-secondary" value="Sign up">Sign up</s:submit>
                         </s:form>
-                        
+
                     </div>
 
                 </div>
@@ -60,21 +60,17 @@
 
             <div class="album py-5 ">
                 <div class="container">
-
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="card mb-4 box-shadow  bg-sand">
-                                <img class="card-img-top" src="img/Galeria/tahu.png" alt="Card image cap">
-                                <div class="card-body">
-                                    <p class="card-text">Aquí iría una foto.</p>
-                                    <p class="card-text">00.00</p>
-                                </div>
+                    <s:iterator value="productos">
+                        <div class="card mb-4 box-shadow">
+                            <img class="card-img-top" src="img/Galeria/tahu.png" alt="Card image cap">
+                            <div class="card-body">
+                                <p class="card-text"><s:property value = "nombre"/></p>
+                                <p class="card-text"><s:property value = "precio"/></p>
                             </div>
                         </div>
-                    </div>
+                    </s:iterator>
                 </div>
             </div>
-
         </main>
 
 
