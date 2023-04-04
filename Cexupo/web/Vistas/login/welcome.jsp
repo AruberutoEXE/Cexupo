@@ -7,6 +7,6 @@
         <title>Welcome</title>
     </head>
     <body>
-       <s:action name="YourAction" namespace="/PackageNamespace" executeResult="true" /> 
+       <s:action name="productos" namespace="/producto" executeResult="true" /> 
     </body>
 </html>
