@@ -33,9 +33,9 @@
     </package>
      <package extends="struts-default"  name="producto">
         <action name="productos" class="Actions.ProductosAction">
-            <result>/index.jsp</result> 
-            <result name="success">/index.jsp</result>
-            <result name="error">/index.jsp</result>
+            <result>/Vistas/Producto/Productos.jsp</result> 
+            <result name="success">/Vistas/Producto/Productos.jsp</result>
+            <result name="error">/Vistas/Producto/Productos.jsp</result>
         </action>
 
     </package>
