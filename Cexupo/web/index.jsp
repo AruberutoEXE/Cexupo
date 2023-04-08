@@ -4,7 +4,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Index</title>
+        <title>Cexupo</title>
+         <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
     </head>
     <body>
        <s:action name="productos" namespace="/producto" executeResult="true" /> 

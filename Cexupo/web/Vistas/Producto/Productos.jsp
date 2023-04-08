@@ -14,6 +14,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
         <s:head/>
+        <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
     </head>
     <body>
         <div class="container">
@@ -29,7 +30,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" width="20"fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" role="img" viewBox="0 0 24 24"><title>Search</title><circle cx="10.5" cy="10.5" r="7.5"/><path d="M21 21l-5.2-5.2"/></svg>
                         </a>
                         <s:form method="POST" action="login">
-                            <s:submit class="btn btn-sm btn-outline-secondary" value="Sign up">Sign up</s:submit>
+                            <s:submit cssClass="btn btn-sm btn-outline-secondary" value="Sign up">Sign up</s:submit>
                         </s:form>
 
                     </div>
