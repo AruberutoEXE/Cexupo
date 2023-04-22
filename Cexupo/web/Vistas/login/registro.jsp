@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Pagina de login</title>
+        <title>Pagina de registro</title>
         <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
         <s:head/>
     </head>
