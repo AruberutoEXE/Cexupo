@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-03-2023 a las 13:29:24
+-- Tiempo de generación: 25-04-2023 a las 20:45:00
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.2.0
 
@@ -104,9 +104,17 @@ CREATE TABLE `producto` (
   `nombre` varchar(255) NOT NULL,
   `descripcion` varchar(255) NOT NULL,
   `estado` varchar(255) NOT NULL,
-  `precio` varchar(255) NOT NULL,
-  `hastag` varchar(255) NOT NULL
+  `precio` float NOT NULL,
+  `hastag` varchar(255) NOT NULL,
+  `id_usuario` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `producto`
+--
+
+INSERT INTO `producto` (`id`, `nombre`, `descripcion`, `estado`, `precio`, `hastag`, `id_usuario`) VALUES
+(2, 'Vakama', 'Juguete mega rechulón de la compañía lego', 'Seminuevo', 20, '#LEGO #Bionicle #Toa #ToaMetru', 'usuario');
 
 -- --------------------------------------------------------
 
@@ -145,6 +153,13 @@ CREATE TABLE `usuario` (
   `password` varchar(255) NOT NULL,
   `email` varchar(225) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `usuario`
+--
+
+INSERT INTO `usuario` (`username`, `password`, `email`) VALUES
+('usuario', 'usuario', 'albertoblsr@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -208,7 +223,8 @@ ALTER TABLE `metodopago`
 -- Indices de la tabla `producto`
 --
 ALTER TABLE `producto`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_usuario_producto` (`id_usuario`);
 
 --
 -- Indices de la tabla `puntuacion`
@@ -266,7 +282,7 @@ ALTER TABLE `metodopago`
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `puntuacion`
@@ -285,6 +301,16 @@ ALTER TABLE `tarifaenvio`
 --
 ALTER TABLE `venta`
   MODIFY `id` bigint(6) NOT NULL AUTO_INCREMENT;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `producto`
+--
+ALTER TABLE `producto`
+  ADD CONSTRAINT `id_usuario_producto` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`username`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

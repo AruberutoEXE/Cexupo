@@ -51,31 +51,8 @@
 
         <main role="main">
 
-            <section class="jumbotron text-center">
-                <div class="container bg-dark p-3">
-                    <h1 class="jumbotron-heading text-white">Encuentra lo que buscas</h1>
-                    <p class="lead text-secondary">Si lo venden lo tenemos</p>
+            <h1>Compra Realizada con exito</h1>
 
-                </div>
-            </section>
-
-            <div class="album py-5 ">
-                <div class="container">
-                    <s:iterator value="productos">
-                        <div class="card mb-4 box-shadow">
-                            <img class="card-img-top" src="img/Galeria/tahu.png" alt="Card image cap">
-                            <div class="card-body">
-                                <p class="card-text"><s:property value = "nombre"/></p>
-                                <p class="card-text"><s:property value = "precio"/></p>
-                            </div>
-                            <s:form method="POST" action="producto">
-                                <s:hidden name="id" value="%{id}" />
-                                <s:submit cssClass="btn btn-sm btn-outline-secondary" value="Sign up">Detalles</s:submit>
-                            </s:form>
-                        </div>
-                    </s:iterator>
-                </div>
-            </div>
         </main>
 
 

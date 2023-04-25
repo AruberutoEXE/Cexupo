@@ -5,7 +5,10 @@
  */
 package Actions;
 
+import DAO.ProductoDao;
+import Hibernate.Tarifaenvio;
 import com.opensymphony.xwork2.ActionSupport;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -17,22 +20,20 @@ public class Comprar extends ActionSupport {
     public Comprar() {
     }
 
-    private String nombre;
-    private String precio;
-    private String descripcion;
-    private String estado;
-    private String hastag;
-    private String id_usuario;
-
     private String producto;
-    
+
     List<String> direcciones;
     List<String> transportes;
     List<String> pagos;
-    
 
     public String execute() throws Exception {
-
+        ProductoDao pdao= new ProductoDao();
+        List<String> tarifas=new LinkedList<String>();
+        List<Tarifaenvio> t=pdao.getAllTarifas();
+        for(int i=0;i<t.size();i++ ){
+            tarifas.add(t.get(i).getNombreTarifa());
+        }
+        transportes = tarifas;
         return SUCCESS;
     }
 
@@ -42,54 +43,6 @@ public class Comprar extends ActionSupport {
 
     public void setProducto(String producto) {
         this.producto = producto;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getPrecio() {
-        return precio;
-    }
-
-    public void setPrecio(String precio) {
-        this.precio = precio;
-    }
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
-    public String getEstado() {
-        return estado;
-    }
-
-    public void setEstado(String estado) {
-        this.estado = estado;
-    }
-
-    public String getHastag() {
-        return hastag;
-    }
-
-    public void setHastag(String hastag) {
-        this.hastag = hastag;
-    }
-
-    public String getId_usuario() {
-        return id_usuario;
-    }
-
-    public void setId_usuario(String id_usuario) {
-        this.id_usuario = id_usuario;
     }
 
 }

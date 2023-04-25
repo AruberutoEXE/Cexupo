@@ -7,6 +7,7 @@ package DAO;
 
 import Hibernate.HibernateUtil;
 import Hibernate.Producto;
+import Hibernate.Tarifaenvio;
 import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -31,6 +32,14 @@ public class ProductoDao {
         List<Producto> u =  (List<Producto>) q.list();
         tx.commit();
         System.out.println("nºProductos: "+u.size());
+        return u;
+    }
+    public List<Tarifaenvio> getAllTarifas() {
+        Session sesion  = HibernateUtil.getSessionFactory().openSession();
+        org.hibernate.Transaction tx = sesion.beginTransaction();
+        Query q = sesion.createQuery("from Tarifa");
+        List<Tarifaenvio> u =  (List<Tarifaenvio>) q.list();
+        tx.commit();
         return u;
     }
 }
