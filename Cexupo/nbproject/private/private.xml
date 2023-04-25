@@ -3,10 +3,19 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/web/Vistas/Producto/Productos.jsp</file>
-            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Actions/LoginCheck-validation.xml</file>
-            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/web/Vistas/login/welcome.jsp</file>
-            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/struts.xml</file>
+            <file>file:/C:/Users/alber/Documents/GitHub/Cexupo/Cexupo/src/java/Actions/LoginCheck.java</file>
+            <file>file:/C:/Users/alber/Documents/GitHub/Cexupo/Cexupo/src/java/struts.xml</file>
+            <file>file:/C:/Users/alber/Documents/GitHub/Cexupo/Cexupo/src/java/DAO/ProductoDao.java</file>
+            <file>file:/C:/Users/alber/Documents/GitHub/Cexupo/Cexupo/src/java/hibernate.cfg.xml</file>
+            <file>file:/C:/Users/alber/Documents/GitHub/Cexupo/Cexupo/src/java/Actions/ProductosAction.java</file>
+            <file>file:/C:/Users/alber/Documents/GitHub/Cexupo/Cexupo/src/java/DAO/UsuarioDao.java</file>
+            <file>file:/C:/Users/alber/Documents/GitHub/Cexupo/Cexupo/src/java/Actions/LoginCheck-validation.xml</file>
+            <file>file:/C:/Users/alber/Documents/GitHub/Cexupo/Cexupo/web/index.jsp</file>
+            <file>file:/C:/Users/alber/Documents/GitHub/Cexupo/Cexupo/web/Vistas/login/login.jsp</file>
+            <file>file:/C:/Users/alber/Documents/GitHub/Cexupo/Cexupo/src/java/Actions/LoginCheck.properties</file>
+            <file>file:/C:/Users/alber/Documents/GitHub/Cexupo/Cexupo/web/Vistas/Producto/Productos.jsp</file>
+            <file>file:/C:/Users/alber/Documents/GitHub/Cexupo/Cexupo/web/Vistas/login/welcome.jsp</file>
+            <file>file:/C:/Users/alber/Documents/GitHub/Cexupo/Cexupo/src/java/Actions/loginAction.java</file>
         </group>
     </open-files>
 </project-private>

@@ -36,6 +36,13 @@
             <result name="success">/Vistas/Producto/Productos.jsp</result>
             <result name="error">/Vistas/Producto/Productos.jsp</result>
         </action>
-
+        <action name="comprar" class="Actions.Comprar">
+            <result name="success">/Vistas/Producto/Productos.jsp</result>
+            <result name="error">/Vistas/Producto/Productos.jsp</result>
+        </action>
+        <action name="finalizarCompra" class="Actions.FinalizarCompra">
+            <result name="success">/Vistas/Producto/Productos.jsp</result>
+            <result name="error">/Vistas/Producto/Productos.jsp</result>
+        </action>
     </package>
 </struts>
