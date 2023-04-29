@@ -38,4 +38,20 @@ public class UsuarioDao {
         tx.commit();
         return u;
     }
+    public static boolean createUser(Usuario user){
+        Session sesion = HibernateUtil.getSessionFactory().openSession();
+        boolean salida = true;
+        org.hibernate.Transaction tx = null;
+        try{
+            tx = sesion.beginTransaction();
+            sesion.save(user);
+            tx.commit();
+        }catch(Exception ex){
+            if(tx != null){
+                tx.rollback();
+            }
+            salida = false;
+        }
+        return salida;
+    }
 }

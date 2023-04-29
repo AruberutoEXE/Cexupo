@@ -20,17 +20,21 @@
              left: 50%;
              -ms-transform: translate(-50%, -50%);
              transform: translate(-50%, -50%);'>
-            <s:i18n name="Actions.LoginCheck">
-                <h1><s:text name="loginTitle" /></h1>
-                <s:form action="LoginCheck">
+            <s:i18n name="Actions.RegisterUserAction">
+                
+                <s:form action="signUp">
                     <s:textfield name="username" key="username"/>
-                    <s:password name="password" label="Password"/>
-                    <s:submit value="login"></s:submit>
+                    <s:textfield name="email" label="email"/>
+                    <s:password name="password" label="password"/>
+                   
                     <s:submit value="sign up"></s:submit>
                 </s:form>
                 <h2><s:property value="message"/></h2>
             </s:i18n>
+                <p class="text-center">¿Ya tienes una cuenta?
+                            <s:a href="login.jsp">¡Inicia Sesión!</s:a>
+                        </p>
         </div>
-
+        
     </body>
 </html>

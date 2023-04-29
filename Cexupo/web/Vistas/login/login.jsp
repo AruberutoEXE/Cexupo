@@ -26,10 +26,13 @@
                     <s:textfield name="username" key="username"/>
                     <s:password name="password" label="Password"/>
                     <s:submit value="login"></s:submit>
-                    <s:submit value="sign up"></s:submit>
+
                 </s:form>
                 <h2><s:property value="message"/></h2>
             </s:i18n>
+            <s:form method="POST" action="signUp">
+                <s:submit cssClass="btn btn-sm btn-outline-secondary" value="signUp">pepe up</s:submit>
+            </s:form>
         </div>
 
     </body>

@@ -17,18 +17,17 @@
         <action name="login" >
             <result>/Vistas/login/login.jsp</result>
         </action>
-        
-
         <action name="LoginCheck" class="Actions.LoginCheck">
-
-            <!-- OJO!!! Falla si no se le pone la carpeta donde se encuentra la vista-->
-
             <result>/Vistas/login/login.jsp</result> 
             <result name="success">/Vistas/login/welcome.jsp</result>
             <result name="error">/Vistas/login/error.jsp</result>
             <result name="input">/Vistas/login/login.jsp</result>
         </action>
-
+        <action name="signUp" class="Actions.RegisterUserAction">
+            <result name="success">/Vistas/Producto/Productos.jsp</result>
+            <result name="error">/Vistas/login/error.jsp</result>
+               <result name="input">/Vistas/login/registro.jsp</result>
+        </action>
     </package>
     <package extends="struts-default"  name="producto">
         <action name="productos" class="Actions.ProductosAction">
