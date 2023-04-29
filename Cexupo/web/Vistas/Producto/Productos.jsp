@@ -70,7 +70,7 @@
                             </div>
                             <s:form method="POST" action="producto">
                                 <s:hidden name="id" value="%{id}" />
-                                <s:submit cssClass="btn btn-sm btn-outline-secondary" value="Sign up">Detalles</s:submit>
+                                <s:submit cssClass="btn btn-sm btn-outline-secondary" value="Detalles"/>
                             </s:form>
                         </div>
                     </s:iterator>

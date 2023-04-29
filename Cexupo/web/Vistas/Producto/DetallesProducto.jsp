@@ -70,7 +70,7 @@
                 <div class="card mb-4 box-shadow">
                     <s:form action="comprar">
                         <s:hidden  value="%{idProducto}" name="producto" />
-                        <s:submit label="Comprar"/>
+                        <s:submit value="Comprar"/>
                     </s:form>	
                 </div>
             </div>
@@ -78,7 +78,7 @@
                 <div class="card mb-4 box-shadow">
                     <s:form action="contactar">
                         <s:hidden  value="%{idProducto}" name="producto" />
-                        <s:submit label="Contactar con el venderdor"/>
+                        <s:submit value="Contactar con el venderdor"/>
                     </s:form>	
                 </div>
             </div>

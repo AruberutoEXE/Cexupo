@@ -32,8 +32,9 @@
     </package>
     <package extends="struts-default"  name="producto">
         <action name="productos" class="Actions.ProductosAction">
+            <result>/Vistas/Producto/Productos.jsp</result> 
             <result name="success">/Vistas/Producto/Productos.jsp</result>
-            <result name="error">/Vistas/Producto/Error.jsp</result>
+            <result name="error">/Vistas/Producto/Productos.jsp</result>
         </action>
         <action name="producto" class="Actions.DetalleProducto">
             <result name="success">/Vistas/Producto/DetallesProducto.jsp</result>
@@ -43,8 +44,11 @@
             <result name="success">/Vistas/Producto/Productos.jsp</result>
             <result name="error">/Vistas/Producto/Error.jsp</result>
         </action>
-        <action name="finalizarCompra" class="Actions.FinalizarCompra">
-            <result name="success">/index.jsp</result>
+        
+    </package>
+    <package extends="struts-default"  name="compra">
+        <action name="finalizarCompra" class="Actions.FianlizarCompra">
+            <result name="success" type="redirect">producto.productos</result>
             <result name="error">/Vistas/Producto/Error.jsp</result>
         </action>
     </package>
