@@ -28,7 +28,25 @@ public class ProductoDao {
     public List<Producto> getAllProductos() {
         Session sesion  = HibernateUtil.getSessionFactory().openSession();
         org.hibernate.Transaction tx = sesion.beginTransaction();
-        Query q = sesion.createQuery("from Producto");
+        Query q = sesion.createQuery("from Producto where estado='publicado'");
+        List<Producto> u =  (List<Producto>) q.list();
+        tx.commit();
+        System.out.println("nºProductos: "+u.size());
+        return u;
+    }
+    public List<Producto> getAllProductosPublicados(String idUser) {
+        Session sesion  = HibernateUtil.getSessionFactory().openSession();
+        org.hibernate.Transaction tx = sesion.beginTransaction();
+        Query q = sesion.createQuery("from Producto where id_usuario='"+idUser+"' AND estado='publicado'");
+        List<Producto> u =  (List<Producto>) q.list();
+        tx.commit();
+        System.out.println("nºProductos: "+u.size());
+        return u;
+    }
+    public List<Producto> getAllProductosVendidos(String idUser) {
+        Session sesion  = HibernateUtil.getSessionFactory().openSession();
+        org.hibernate.Transaction tx = sesion.beginTransaction();
+        Query q = sesion.createQuery("from Producto where id_usuario='"+idUser+"' AND estado='vendido'");
         List<Producto> u =  (List<Producto>) q.list();
         tx.commit();
         System.out.println("nºProductos: "+u.size());
