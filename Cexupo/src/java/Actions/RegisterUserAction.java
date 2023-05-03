@@ -63,27 +63,6 @@ public class RegisterUserAction extends ActionSupport {
         }
          return salida;
     }
-    public void validate(){
-        String patronEmail = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$";
-        Pattern patron = Pattern.compile(patronEmail);
-        Matcher matcher = patron.matcher(this.getEmail());
-        
-        if(this.getUsername().equals("")){
-            addFieldError("username","El nombre de usuario es obligatorio");
-        }else if(this.getUsername().length() < 2){
-            addFieldError("username","El nombre de usuario debe tener 2 o más caracteres");
-        }
-        if(this.getPassword().equals("")){
-            addFieldError("password","La contraseña es obligatoria");
-        }else if(this.getPassword().length() < 8){
-            addFieldError("password","La contraseña debe tener un minimo de 8 caracteres");
-        }
-        if(this.getEmail().equals("")){
-            addFieldError("email","El email es obligatorio");
-        }else if(!matcher.matches()){
-            addFieldError("email","El formato de email es incorrecto");
-        }
-        
-    }
+    
    
 }

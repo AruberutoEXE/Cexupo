@@ -23,7 +23,7 @@
             <s:i18n name="Actions.RegisterUserAction">
                 
                 <s:form action="signUp">
-                    <s:textfield name="username" key="username"/>
+                    <s:textfield name="username" label="username"/>
                     <s:textfield name="email" label="email"/>
                     <s:password name="password" label="password"/>
                    
