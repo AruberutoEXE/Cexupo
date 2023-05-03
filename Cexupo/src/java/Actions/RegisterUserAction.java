@@ -10,19 +10,15 @@ import Hibernate.Usuario;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import java.util.Map;
-import java.util.regex.Matcher;//Class - Used to search for the pattern
-import java.util.regex.Pattern;//Class - Defines a pattern (to be used in a search)
 
 /**
  *
  * @author agarc
  */
 public class RegisterUserAction extends ActionSupport {
-
     private String username;
     private String password;
     private String email;
-
     public RegisterUserAction() {
     }
 
@@ -49,20 +45,13 @@ public class RegisterUserAction extends ActionSupport {
     public void setEmail(String email) {
         this.email = email;
     }
-
+    
     public String execute() throws Exception {
-        String salida = SUCCESS;
-        Usuario newUser = new Usuario(this.getUsername(), this.getPassword(), this.getEmail());
-        if (UsuarioDao.userExiste(this.getEmail())) {
-            addFieldError("email", "Ya existe un usuario asociado al email introducido");
-            salida = ERROR;
-        } else {
-            UsuarioDao.createUser(newUser);
-            Map session = (Map) ActionContext.getContext().get("session");
-            session.put("usuario", newUser);
-        }
-         return salida;
+        Usuario newUser = new Usuario(this.getUsername(), this.getPassword(),this.getEmail());
+        UsuarioDao.createUser(newUser);
+        Map session = (Map) ActionContext.getContext().get("session");
+        session.put("username", newUser);
+        return SUCCESS;
     }
     
-   
 }
