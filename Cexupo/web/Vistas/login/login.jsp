@@ -30,9 +30,10 @@
                 </s:form>
                 <h2><s:property value="message"/></h2>
             </s:i18n>
-            <s:form method="POST" action="signUp">
-                <s:submit cssClass="btn btn-sm btn-outline-secondary" value="signUp">pepe up</s:submit>
-            </s:form>
+                <p>¿Aún no tienes cuenta?
+                    <s:a href="registro.jsp">¡Registrate!</s:a>
+                </p>
+         
         </div>
 
     </body>

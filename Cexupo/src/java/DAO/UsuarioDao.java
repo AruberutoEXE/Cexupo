@@ -5,6 +5,7 @@
  */
 package DAO;
 import Hibernate.*;
+import org.hibernate.HibernateException;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -50,6 +51,30 @@ public class UsuarioDao {
             if(tx != null){
                 tx.rollback();
             }
+            salida = false;
+        }
+        return salida;
+    }
+    public static boolean userExiste(String email){
+        boolean salida;
+        Transaction tx= null;
+        Usuario u = null;
+        Session sesion = HibernateUtil.getSessionFactory().getCurrentSession();
+        try{
+            tx = sesion.beginTransaction();
+            Query sql = sesion.createQuery("FROM Usuario WHERE email=:email").setParameter("email", email);
+            u = (Usuario) sql.uniqueResult();
+            tx.commit();
+            
+        }catch(HibernateException e){
+            if(tx != null){
+                tx.rollback();
+            }
+        }
+        if(u != null){
+            salida = true;
+        }
+        else{
             salida = false;
         }
         return salida;
