@@ -15,16 +15,18 @@ public class Producto  implements java.io.Serializable {
      private String estado;
      private String precio;
      private String hastag;
+     private String id_usuario;
 
     public Producto() {
     }
 
-    public Producto(String nombre, String descripcion, String estado, String precio, String hastag) {
+    public Producto(String nombre, String descripcion, String estado, String precio, String hastag, String id_user) {
        this.nombre = nombre;
        this.descripcion = descripcion;
        this.estado = estado;
        this.precio = precio;
        this.hastag = hastag;
+       this.id_usuario = id_user; 
     }
    
     public Long getId() {
@@ -70,8 +72,13 @@ public class Producto  implements java.io.Serializable {
         this.hastag = hastag;
     }
 
+    public String getId_usuario() {
+        return id_usuario;
+    }
 
-
+    public void setId_usuario(String id_usuario) {
+        this.id_usuario = id_usuario;
+    }
 
 }
 

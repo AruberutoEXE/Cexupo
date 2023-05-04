@@ -23,5 +23,8 @@
         <property name="hastag" type="string">
             <column name="hastag" not-null="true" />
         </property>
+        <property name="id_usuario" type="string">
+            <column name="id_usuario" not-null="true" />
+        </property>
     </class>
 </hibernate-mapping>

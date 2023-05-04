@@ -26,7 +26,7 @@
         <action name="signUp" class="Actions.RegisterUserAction">
             <result name="success">/Vistas/Producto/Productos.jsp</result>
             <result name="error">/Vistas/login/error.jsp</result>
-               <result name="input">/Vistas/login/registro.jsp</result>
+            <result name="input">/Vistas/login/registro.jsp</result>
         </action>
     </package>
     <package extends="struts-default"  name="producto">
@@ -43,7 +43,10 @@
             <result name="success">/Vistas/Producto/Productos.jsp</result>
             <result name="error">/Vistas/Producto/Error.jsp</result>
         </action>
-        
+        <action name="publicar" class="Actions.PublicarAction">
+            <result name="success">/index.jsp</result>
+            <result name="error">/Vistas/Producto/Error.jsp</result>
+        </action>
     </package>
     <package extends="struts-default"  name="compra">
         <action name="finalizarCompra" class="Actions.FianlizarCompra">
