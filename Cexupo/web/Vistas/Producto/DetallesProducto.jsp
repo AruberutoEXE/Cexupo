@@ -68,6 +68,22 @@
             </div>
             <div class="container">
                 <div class="card mb-4 box-shadow">
+                    <s:form action="eliminarP">
+                        <s:hidden  value="%{id}" name="id" />
+                        <s:submit value="Eliminar"/>
+                    </s:form>	
+                </div>
+            </div>
+            <div class="container">
+                <div class="card mb-4 box-shadow">
+                    <s:form action="updateP">
+                        <s:hidden  value="%{id}" name="id" />
+                        <s:submit value="Actualizar"/>
+                    </s:form>	
+                </div>
+            </div>
+            <div class="container">
+                <div class="card mb-4 box-shadow">
                     <s:form action="comprar">
                         <s:hidden  value="%{idProducto}" name="producto" />
                         <s:submit value="Comprar"/>

@@ -47,6 +47,22 @@
             <result name="success">/index.jsp</result>
             <result name="error">/Vistas/Producto/Error.jsp</result>
         </action>
+        <action name="eliminarP" class="Actions.EliminarProductoAction">
+            <result name="success">/index.jsp</result>
+            <result name="error">/Vistas/Producto/Error.jsp</result>
+        </action>
+        <action name="updateP" class="Actions.UpdateProductoAction">
+            <result name="success">/index.jsp</result>
+            <result name="error">/Vistas/Producto/Error.jsp</result>
+        </action>
+        <action name="listPubliUser" class="Actions.ProductosPublicadosAction">
+            <result name="success">/Vistas/Producto/UsuarioProductosVenta.jsp</result>
+            <result name="error">/Vistas/Producto/Error.jsp</result>
+        </action>
+        <action name="listVendidosUser" class="Actions.ProductosVendidosAction">
+            <result name="success">/Vistas/Producto/UsuarioProductosVendidos.jsp</result>
+            <result name="error">/Vistas/Producto/Error.jsp</result>
+        </action>
     </package>
     <package extends="struts-default"  name="compra">
         <action name="finalizarCompra" class="Actions.FianlizarCompra">
