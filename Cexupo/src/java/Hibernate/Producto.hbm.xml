@@ -26,5 +26,8 @@
         <property name="id_usuario" type="string">
             <column name="id_usuario" not-null="true" />
         </property>
+        <property name="vendido" type="boolean">
+            <column name="vendido" not-null="true" />
+        </property>
     </class>
 </hibernate-mapping>

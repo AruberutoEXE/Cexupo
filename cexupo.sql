@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-04-2023 a las 20:45:00
--- Versión del servidor: 10.4.27-MariaDB
--- Versión de PHP: 8.2.0
+-- Tiempo de generación: 17-05-2023 a las 13:13:34
+-- Versión del servidor: 10.4.28-MariaDB
+-- Versión de PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -106,15 +106,17 @@ CREATE TABLE `producto` (
   `estado` varchar(255) NOT NULL,
   `precio` float NOT NULL,
   `hastag` varchar(255) NOT NULL,
-  `id_usuario` varchar(255) NOT NULL
+  `id_usuario` varchar(255) NOT NULL,
+  `vendido` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `producto`
 --
 
-INSERT INTO `producto` (`id`, `nombre`, `descripcion`, `estado`, `precio`, `hastag`, `id_usuario`) VALUES
-(2, 'Vakama', 'Juguete mega rechulón de la compañía lego', 'Seminuevo', 20, '#LEGO #Bionicle #Toa #ToaMetru', 'usuario');
+INSERT INTO `producto` (`id`, `nombre`, `descripcion`, `estado`, `precio`, `hastag`, `id_usuario`, `vendido`) VALUES
+(2, 'Vakama', 'Juguete mega rechulón de la compañía lego', 'publicado', 20, '#LEGO #Bionicle #Toa #ToaMetru', 'usuario', 0),
+(4, 'soldado', 'tiene pistola', 'publicado', 2, 'makeAmericaGreatAgain', 'usuario', 0);
 
 -- --------------------------------------------------------
 
@@ -282,7 +284,7 @@ ALTER TABLE `metodopago`
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `puntuacion`

@@ -16,6 +16,7 @@ public class Producto  implements java.io.Serializable {
      private String precio;
      private String hastag;
      private String id_usuario;
+     private boolean vendido;
 
     public Producto() {
     }
@@ -80,6 +81,15 @@ public class Producto  implements java.io.Serializable {
         this.id_usuario = id_usuario;
     }
 
+    public boolean isVendido() {
+        return vendido;
+    }
+
+    public void setVendido(boolean vendido) {
+        this.vendido = vendido;
+    }
+
+    
 }
 
 
