@@ -40,8 +40,8 @@
 
             <div class="nav-scroller py-1 mb-2 bg-secondary  rounded-pill p-3">
                 <nav class="nav d-flex justify-content-between">
-                    <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="index.jsp">Busqueda</a>
-                    <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="#">Tus productos</a>
+                    <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="../index.jsp">Busqueda</a>
+                    <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="PublicadosUsuario.jsp">Tus productos</a>
                     <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="#">Pedidos</a>
                     <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="#">Cuenta</a>
                 </nav>
@@ -76,8 +76,13 @@
             </div>
             <div class="container">
                 <div class="card mb-4 box-shadow">
-                    <s:form action="updateP">
+                    <s:form action="actualizarP">
                         <s:hidden  value="%{id}" name="id" />
+                        <s:hidden  value="%{nombre}" name="nombre" />
+                        <s:hidden  value="%{descripcion}" name="descripcion" />
+                        <s:hidden  value="%{estado}" name="estado" />
+                        <s:hidden  value="%{hastag}" name="hastag" />
+                        <s:hidden  value="%{precio}" name="precio" />
                         <s:submit value="Actualizar"/>
                     </s:form>	
                 </div>

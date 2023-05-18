@@ -43,16 +43,24 @@
             <result name="success">/Vistas/Producto/Productos.jsp</result>
             <result name="error">/Vistas/Producto/Error.jsp</result>
         </action>
+        <action name="registrarP" class="Actions.RedirectProductAction" method="goToPublicar">
+            <result name="success">/Vistas/Producto/Publicar.jsp</result>
+            <result name="error">/Vistas/Producto/Error.jsp</result>
+        </action>
         <action name="publicar" class="Actions.PublicarAction">
-            <result name="success">/index.jsp</result>
+            <result name="success">/Vistas/Producto/PublicadosUsuario.jsp</result>
             <result name="error">/Vistas/Producto/Error.jsp</result>
         </action>
         <action name="eliminarP" class="Actions.EliminarProductoAction">
-            <result name="success">/index.jsp</result>
+            <result name="success">/Vistas/Producto/PublicadosUsuario.jsp</result>
+            <result name="error">/Vistas/Producto/Error.jsp</result>
+        </action>
+        <action name="actualizarP" class="Actions.RedirectProductAction" method="goToUpdate">
+            <result name="success">/Vistas/Producto/UpdateProducto.jsp</result>
             <result name="error">/Vistas/Producto/Error.jsp</result>
         </action>
         <action name="updateP" class="Actions.UpdateProductoAction">
-            <result name="success">/index.jsp</result>
+            <result name="success">/Vistas/Producto/PublicadosUsuario.jsp</result>
             <result name="error">/Vistas/Producto/Error.jsp</result>
         </action>
         <action name="listPubliUser" class="Actions.ProductosPublicadosAction">

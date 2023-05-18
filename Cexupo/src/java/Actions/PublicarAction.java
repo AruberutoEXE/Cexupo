@@ -17,7 +17,7 @@ public class PublicarAction extends ActionSupport {
     
     private String nombre;
     private String desc;
-    private String estado = "publicado";
+    private String estado;
     private String precio;
     private String hashtag;
     

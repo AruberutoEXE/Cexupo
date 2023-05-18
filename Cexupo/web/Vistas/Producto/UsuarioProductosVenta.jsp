@@ -13,7 +13,8 @@
         <title>Tus productos en venta</title>
     </head>
     <body>
-        <h2>En venta</h2>
+        <h2>Productos en venta</h2>
+        <s:if test="%{productosPublicados!=null}">
         <s:iterator value="productosPublicados">
             <s:property value = "nombre"/>
             <s:property value = "precio"/>
@@ -22,5 +23,9 @@
                 <s:submit cssClass="btn btn-sm btn-outline-secondary" value="Detalles"/>
             </s:form>
         </s:iterator>
+        </s:if>
+        <s:else>
+            <p>Aún no ha publicado ningún producto</p>
+        </s:else>
     </body>
 </html>

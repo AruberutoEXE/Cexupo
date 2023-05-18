@@ -21,6 +21,7 @@ public class UpdateProductoAction extends ActionSupport {
     private String precio;
     private String descripcion;
     private String hastag;
+    private String estado;
 
     public UpdateProductoAction() {
     }
@@ -38,6 +39,9 @@ public class UpdateProductoAction extends ActionSupport {
             p.setPrecio(this.precio);
         }
         if(this.hastag != p.getHastag()){
+            p.setHastag(this.hastag);
+        }
+        if(this.estado != p.getEstado()){
             p.setHastag(this.hastag);
         }
         pDao.updateProducto(p);
@@ -83,5 +87,14 @@ public class UpdateProductoAction extends ActionSupport {
     public void setHastag(String hastag) {
         this.hastag = hastag;
     }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+    
 
 }

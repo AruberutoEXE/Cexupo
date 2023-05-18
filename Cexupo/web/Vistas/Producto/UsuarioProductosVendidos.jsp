@@ -13,14 +13,19 @@
         <title>Tus productos vendidos</title>
     </head>
     <body>
-        <h2>Estos son los productos que has vendido</h2>
-         <s:iterator value="productosVendidos">
-            <s:property value = "nombre"/>
-            <s:property value = "precio"/>
-            <s:form action="producto">
-                <s:hidden name="id" value="%{id}" />
-                <s:submit cssClass="btn btn-sm btn-outline-secondary" value="Detalles"/>
-            </s:form>
-        </s:iterator>
+        <h2>Productos vendidos</h2>
+        <s:if test="%{productosVendidos!=null}">
+            <s:iterator value="productosVendidos">
+                <s:property value = "nombre"/>
+                <s:property value = "precio"/>
+                <s:form action="producto">
+                    <s:hidden name="id" value="%{id}" />
+                    <s:submit cssClass="btn btn-sm btn-outline-secondary" value="Detalles"/>
+                </s:form>     
+            </s:iterator>
+        </s:if>
+        <s:else>
+            <p>Aún no ha vendido ningún producto</p>
+        </s:else>
     </body>
 </html>
