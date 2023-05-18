@@ -42,7 +42,7 @@ public class UpdateProductoAction extends ActionSupport {
             p.setHastag(this.hastag);
         }
         if(this.estado != p.getEstado()){
-            p.setHastag(this.hastag);
+            p.setEstado(this.estado);
         }
         pDao.updateProducto(p);
         return SUCCESS;
