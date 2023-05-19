@@ -8,7 +8,6 @@ import Hibernate.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.ListIterator;
 import org.hibernate.HibernateException;
 
 import org.hibernate.Query;
@@ -100,5 +99,14 @@ public class UsuarioDao {
         List<Chat> chats = (List<Chat>) q.list();
         tx.commit();
         return chats;
+    }
+    
+    public List<Mensaje> getMensajesChat(ChatId id) {
+        Session sesion = HibernateUtil.getSessionFactory().openSession();
+        org.hibernate.Transaction tx = sesion.beginTransaction();
+        Query q = sesion.createQuery("from Mensaje where idChat=:id").setParameter("id", id);
+        List<Mensaje> mensajes = (List<Mensaje>) q.list();
+        tx.commit();
+        return mensajes;
     }
 }
