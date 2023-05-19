@@ -5,6 +5,10 @@
  */
 package DAO;
 import Hibernate.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
 import org.hibernate.HibernateException;
 
 import org.hibernate.Query;
@@ -78,5 +82,23 @@ public class UsuarioDao {
             salida = false;
         }
         return salida;
+    }
+    
+    public List<Chat> getAllChatsUsuario() {
+        ProductoDao pDao = new ProductoDao();
+        List<Producto> productos = pDao.getAllProductosPublicados("usuario");
+        List idProductos = new ArrayList();
+        Iterator it = productos.iterator();
+        Producto p;
+        while(it.hasNext()){
+            p = (Producto) it.next();
+            idProductos.add(p.getId());
+        }
+        Session sesion = HibernateUtil.getSessionFactory().openSession();
+        org.hibernate.Transaction tx = sesion.beginTransaction();
+        Query q = sesion.createQuery("from Chat where idUsuario='usuario' OR idProducto IN idProductos").setParameterList("idProductos", idProductos);
+        List<Chat> chats = (List<Chat>) q.list();
+        tx.commit();
+        return chats;
     }
 }
