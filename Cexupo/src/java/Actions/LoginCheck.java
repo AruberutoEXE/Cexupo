@@ -2,9 +2,13 @@ package Actions;
 
 import DAO.UsuarioDao;
 import com.opensymphony.xwork2.ActionSupport;
+import java.util.Map;
+  
+import org.apache.struts2.dispatcher.SessionMap;  
+import org.apache.struts2.interceptor.SessionAware;
 
-public class LoginCheck extends ActionSupport {
-     
+public class LoginCheck extends ActionSupport implements SessionAware {
+    private SessionMap<String,Object> sessionMap;  
     private String username;
     private String password;
     String sunombre;
@@ -67,6 +71,11 @@ public class LoginCheck extends ActionSupport {
        public String logout(){
         NuSER=null;
         return SUCCESS;
+    }
+
+    @Override
+    public void setSession(Map<String, Object> map) {
+       sessionMap=(SessionMap)map;  
     }
 
 }
