@@ -61,11 +61,12 @@ public class ProductoDao {
     public List<Tarifaenvio> getAllTarifas() {
         Session sesion = HibernateUtil.getSessionFactory().openSession();
         org.hibernate.Transaction tx = sesion.beginTransaction();
-        Query q = sesion.createQuery("from Tarifa");
+        Query q = sesion.createQuery("from Tarifaenvio");
         List<Tarifaenvio> u = (List<Tarifaenvio>) q.list();
         tx.commit();
         return u;
     }
+   
 
     public void addProducto(Producto p) {
         Session session = HibernateUtil.getSessionFactory().openSession();

@@ -109,4 +109,12 @@ public class UsuarioDao {
         tx.commit();
         return mensajes;
     }
+     public List<Direccion> getAllUserDirections(Usuario user) {
+        Session sesion = HibernateUtil.getSessionFactory().openSession();
+        org.hibernate.Transaction tx = sesion.beginTransaction();
+        Query q = sesion.createQuery("from Direccion where idUsuario='"+user.getUsername()+"'");
+        List<Direccion> u = (List<Direccion>) q.list();
+        tx.commit();
+        return u;
+    }
 }

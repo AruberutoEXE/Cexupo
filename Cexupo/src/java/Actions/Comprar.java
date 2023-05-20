@@ -6,6 +6,8 @@
 package Actions;
 
 import DAO.ProductoDao;
+import DAO.UsuarioDao;
+import Hibernate.Direccion;
 import Hibernate.Tarifaenvio;
 import com.opensymphony.xwork2.ActionSupport;
 import java.util.LinkedList;
@@ -34,6 +36,15 @@ public class Comprar extends ActionSupport {
             tarifas.add(t.get(i).getNombreTarifa());
         }
         transportes = tarifas;
+        
+        UsuarioDao udao=new UsuarioDao();
+        List<String> dir=new LinkedList<String>();
+        List<Direccion> dirlist=udao.getAllUserDirections();
+        for(int i=0;i<dirlist.size();i++ ){
+            dir.add(dirlist.get(i).getNombre());
+        }
+        direcciones=dir;
+        
         return SUCCESS;
     }
 
