@@ -31,7 +31,8 @@
                 <h2><s:property value="message"/></h2>
             </s:i18n>
                 <p>¿Aún no tienes cuenta?
-                    <s:a href="registro.jsp">¡Registrate!</s:a>
+                    <s:a href="/Cexupo/Vistas/login/registro.jsp">¡Registrate!</s:a>
+                    
                 </p>
          
         </div>

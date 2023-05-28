@@ -30,9 +30,8 @@
                         <a class="link-secondary col-2" href="#" aria-label="Search">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20"fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" role="img" viewBox="0 0 24 24"><title>Search</title><circle cx="10.5" cy="10.5" r="7.5"/><path d="M21 21l-5.2-5.2"/></svg>
                         </a>
-                        <s:form method="POST" action="signUp">
-                            <s:submit cssClass="btn btn-sm btn-outline-secondary" value="signUp">Sign up</s:submit>
-                        </s:form>
+                        <s:a cssClass="btn btn-sm btn-outline-secondary" href="/Cexupo/Vistas/login/registro.jsp">Sign up</s:a>
+                      
 
                     </div>
 
@@ -44,8 +43,10 @@
                     <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="index.jsp">Busqueda</a>
                     <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="Vistas/Producto/PublicadosUsuario.jsp">Tus productos</a>
                     <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="#">Pedidos</a>
-                    <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="#">Cuenta</a>
+                    <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="../login/cuenta.jsp">Cuenta</a>
                 </nav>
+                
+                
             </div>
         </div>
 

@@ -32,7 +32,7 @@
                 <h2><s:property value="message"/></h2>
             </s:i18n>
                 <p class="text-center">¿Ya tienes una cuenta?
-                            <s:a href="login.jsp">¡Inicia Sesión!</s:a>
+                            <s:a href="/Cexupo/Vistas/login/login.jsp">¡Inicia Sesión!</s:a>
                         </p>
         </div>
         
