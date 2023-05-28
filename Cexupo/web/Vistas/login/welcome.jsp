@@ -4,7 +4,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Welcome <s:property value="%{#session.username}"></s:property></title>
+        <title>Welcomee <s:property value="%{#session.username}"></s:property></title>
     </head>
     <body>
        <s:action name="productos" namespace="/producto" executeResult="true" /> 
