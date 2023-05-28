@@ -117,4 +117,12 @@ public class UsuarioDao {
         tx.commit();
         return u;
     }
+     public List<Metodopago> getAllUserPayMethods(Usuario user) {
+        Session sesion = HibernateUtil.getSessionFactory().openSession();
+        org.hibernate.Transaction tx = sesion.beginTransaction();
+        Query q = sesion.createQuery("from Metodopago where idUsuario='"+user.getUsername()+"'");
+        List<Metodopago> u = (List<Metodopago>) q.list();
+        tx.commit();
+        return u;
+    }
 }

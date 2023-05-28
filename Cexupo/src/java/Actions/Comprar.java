@@ -8,6 +8,7 @@ package Actions;
 import DAO.ProductoDao;
 import DAO.UsuarioDao;
 import Hibernate.Direccion;
+import Hibernate.Metodopago;
 import Hibernate.Tarifaenvio;
 import Hibernate.Usuario;
 import com.opensymphony.xwork2.ActionSupport;
@@ -53,7 +54,12 @@ public class Comprar extends ActionSupport implements SessionAware {
             dir.add(dirlist.get(i).getNombre());
         }
         direcciones = dir;
-
+        List<String> pay = new LinkedList<String>();
+        List<Metodopago> paylist = udao.getAllUserPayMethods(usu);
+        for (int i = 0; i < paylist.size(); i++) {
+            //dir.add(paylist.get(i).getNombre());
+        }
+        direcciones = dir;
         return SUCCESS;
     }
 
