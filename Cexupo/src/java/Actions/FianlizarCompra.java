@@ -5,22 +5,46 @@
  */
 package Actions;
 
+import DAO.UsuarioDao;
+import DAO.VentaDao;
+import Hibernate.Usuario;
+import Hibernate.Venta;
 import com.opensymphony.xwork2.ActionSupport;
+import java.util.Date;
+import java.util.Map;
+import org.apache.struts2.dispatcher.SessionMap;
 
+import org.apache.struts2.interceptor.SessionAware;
 /**
  *
  * @author alber
  */
-public class FianlizarCompra extends ActionSupport {
+public class FianlizarCompra extends ActionSupport implements SessionAware{
 
     public FianlizarCompra() {
     }
     private String direccion;
     private String transporte;
     private String pago;
+    private String idProducto;
 
+    private SessionMap<String, Object> sessionMap;
     public String execute() throws Exception {
 
+        VentaDao vdao= new VentaDao();
+        Venta v= new Venta();
+        
+        v.setIdDireccion(Long.parseLong(direccion));
+        v.setIdMetodoPago(Long.parseLong(pago));
+        v.setIdTarifa(Long.parseLong(transporte));
+        UsuarioDao udao = new UsuarioDao();
+        Usuario usu=udao.getUser((String)sessionMap.get("username"));
+        v.setIdUsuario(usu.getUsername());
+        v.setFechaVenta(new Date());
+        v.setIdProducto(Long.parseLong(idProducto));
+        
+        
+        vdao.addVenta(v);
         return SUCCESS;
 
     }
@@ -47,6 +71,19 @@ public class FianlizarCompra extends ActionSupport {
 
     public void setPago(String pago) {
         this.pago = pago;
+    }
+
+    public String getIdProducto() {
+        return idProducto;
+    }
+
+    public void setIdProducto(String idProducto) {
+        this.idProducto = idProducto;
+    }
+
+    @Override
+    public void setSession(Map<String, Object> map) {
+        sessionMap = (SessionMap) map;
     }
 
 }

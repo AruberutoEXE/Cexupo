@@ -39,10 +39,6 @@
             <result name="success">/Vistas/Producto/DetallesProducto.jsp</result>
             <result name="error">/Vistas/Error.jsp</result>
         </action>
-        <action name="comprar" class="Actions.Comprar">
-            <result name="success">/Vistas/Producto/Productos.jsp</result>
-            <result name="error">/Vistas/Error.jsp</result>
-        </action>
         <action name="registrarP" class="Actions.RedirectProductAction" method="goToPublicar">
             <result name="success">/Vistas/Producto/Publicar.jsp</result>
             <result name="error">/Vistas/Producto/Error.jsp</result>

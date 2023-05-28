@@ -33,10 +33,11 @@ public class Comprar extends ActionSupport implements SessionAware {
 
     private String producto;
 
-    List<String> direcciones;
-    List<String> transportes;
-    List<String> pagos;
-
+    private List<String> direcciones;
+    private List<String> transportes;
+    private List<String> pagos;
+    
+    private String idProducto;
     public String execute() throws Exception {
         ProductoDao pdao = new ProductoDao();
         List<String> tarifas = new LinkedList<String>();
@@ -54,12 +55,13 @@ public class Comprar extends ActionSupport implements SessionAware {
             dir.add(dirlist.get(i).getNombre());
         }
         direcciones = dir;
+        
         List<String> pay = new LinkedList<String>();
         List<Metodopago> paylist = udao.getAllUserPayMethods(usu);
         for (int i = 0; i < paylist.size(); i++) {
-            //dir.add(paylist.get(i).getNombre());
+            pay.add(paylist.get(i).getNtarjeta());
         }
-        direcciones = dir;
+        direcciones = pay;
         return SUCCESS;
     }
 
@@ -75,5 +77,39 @@ public class Comprar extends ActionSupport implements SessionAware {
     public void setSession(Map<String, Object> map) {
         sessionMap = (SessionMap) map;
     }
+
+    public List<String> getDirecciones() {
+        return direcciones;
+    }
+
+    public void setDirecciones(List<String> direcciones) {
+        this.direcciones = direcciones;
+    }
+
+    public List<String> getTransportes() {
+        return transportes;
+    }
+
+    public void setTransportes(List<String> transportes) {
+        this.transportes = transportes;
+    }
+
+    public List<String> getPagos() {
+        return pagos;
+    }
+
+    public void setPagos(List<String> pagos) {
+        this.pagos = pagos;
+    }
+
+
+    public String getIdProducto() {
+        return idProducto;
+    }
+
+    public void setIdProducto(String idProducto) {
+        this.idProducto = idProducto;
+    }
+
 
 }
