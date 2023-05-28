@@ -1,5 +1,5 @@
 package Hibernate;
-// Generated 30-mar-2023 13:28:31 by Hibernate Tools 4.3.1
+// Generated 28-may-2023 20:01:54 by Hibernate Tools 4.3.1
 
 
 
@@ -11,14 +11,14 @@ public class Metodopago  implements java.io.Serializable {
 
      private Long id;
      private long idUsuario;
-     private long idVenta;
+     private String ntarjeta;
 
     public Metodopago() {
     }
 
-    public Metodopago(long idUsuario, long idVenta) {
+    public Metodopago(long idUsuario, String ntarjeta) {
        this.idUsuario = idUsuario;
-       this.idVenta = idVenta;
+       this.ntarjeta = ntarjeta;
     }
    
     public Long getId() {
@@ -35,12 +35,12 @@ public class Metodopago  implements java.io.Serializable {
     public void setIdUsuario(long idUsuario) {
         this.idUsuario = idUsuario;
     }
-    public long getIdVenta() {
-        return this.idVenta;
+    public String getNtarjeta() {
+        return this.ntarjeta;
     }
     
-    public void setIdVenta(long idVenta) {
-        this.idVenta = idVenta;
+    public void setNtarjeta(String ntarjeta) {
+        this.ntarjeta = ntarjeta;
     }
 
 

@@ -7,6 +7,7 @@ package Actions;
 
 import DAO.ProductoDao;
 import Hibernate.Producto;
+import Hibernate.Usuario;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
@@ -26,7 +27,14 @@ public class PublicarAction extends ActionSupport {
     }
     
     public String execute() throws Exception {
-        Producto p = new Producto(nombre, desc, estado, precio, hashtag, "usuario");
+        Producto p = new Producto();
+        //nombre, desc, estado, precio, hashtag, "usuario"
+        p.setNombre(nombre);
+        p.setDescripcion(desc);
+        p.setEstado(estado);
+        p.setPrecio(Float.parseFloat(precio));
+        p.setHastag(hashtag);
+        p.setUsuario(new Usuario());//USAR SESSION USERNAME!!!!!!-----------------------------------------------------------!!!!!!!!!!!!
         ProductoDao pDAO = new ProductoDao();
         pDAO.addProducto(p);
         return SUCCESS;

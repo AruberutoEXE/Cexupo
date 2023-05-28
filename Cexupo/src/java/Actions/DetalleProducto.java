@@ -32,7 +32,7 @@ public class DetalleProducto extends ActionSupport {
 
         Producto p = dao.getProducto(Integer.parseInt(id));
         nombre = p.getNombre();
-        precio = p.getPrecio();
+        precio = p.getPrecio()+"";
         descripcion = p.getDescripcion();
         estado = p.getEstado();
         hastag = p.getHastag();

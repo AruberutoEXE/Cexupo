@@ -1,5 +1,5 @@
 package Hibernate;
-// Generated 30-mar-2023 13:28:31 by Hibernate Tools 4.3.1
+// Generated 28-may-2023 20:01:54 by Hibernate Tools 4.3.1
 
 
 
@@ -10,24 +10,25 @@ public class Producto  implements java.io.Serializable {
 
 
      private Long id;
+     private Usuario usuario;
      private String nombre;
      private String descripcion;
      private String estado;
-     private String precio;
+     private float precio;
      private String hastag;
-     private String id_usuario;
      private boolean vendido;
 
     public Producto() {
     }
 
-    public Producto(String nombre, String descripcion, String estado, String precio, String hastag, String id_user) {
+    public Producto(Usuario usuario, String nombre, String descripcion, String estado, float precio, String hastag, boolean vendido) {
+       this.usuario = usuario;
        this.nombre = nombre;
        this.descripcion = descripcion;
        this.estado = estado;
        this.precio = precio;
        this.hastag = hastag;
-       this.id_usuario = id_user; 
+       this.vendido = vendido;
     }
    
     public Long getId() {
@@ -36,6 +37,13 @@ public class Producto  implements java.io.Serializable {
     
     public void setId(Long id) {
         this.id = id;
+    }
+    public Usuario getUsuario() {
+        return this.usuario;
+    }
+    
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
     public String getNombre() {
         return this.nombre;
@@ -58,11 +66,11 @@ public class Producto  implements java.io.Serializable {
     public void setEstado(String estado) {
         this.estado = estado;
     }
-    public String getPrecio() {
+    public float getPrecio() {
         return this.precio;
     }
     
-    public void setPrecio(String precio) {
+    public void setPrecio(float precio) {
         this.precio = precio;
     }
     public String getHastag() {
@@ -72,24 +80,17 @@ public class Producto  implements java.io.Serializable {
     public void setHastag(String hastag) {
         this.hastag = hastag;
     }
-
-    public String getId_usuario() {
-        return id_usuario;
-    }
-
-    public void setId_usuario(String id_usuario) {
-        this.id_usuario = id_usuario;
-    }
-
     public boolean isVendido() {
-        return vendido;
+        return this.vendido;
     }
-
+    
     public void setVendido(boolean vendido) {
         this.vendido = vendido;
     }
 
-    
+
+
+
 }
 
 

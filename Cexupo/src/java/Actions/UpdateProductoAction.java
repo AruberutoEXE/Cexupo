@@ -35,8 +35,8 @@ public class UpdateProductoAction extends ActionSupport {
         if(this.descripcion != p.getDescripcion()){
             p.setDescripcion(this.descripcion);
         }
-        if(this.precio != p.getPrecio()){
-            p.setPrecio(this.precio);
+        if(Float.parseFloat(this.precio) != p.getPrecio()){
+            p.setPrecio(Float.parseFloat(this.precio));
         }
         if(this.hastag != p.getHastag()){
             p.setHastag(this.hastag);

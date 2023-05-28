@@ -1,13 +1,16 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 30-mar-2023 13:28:32 by Hibernate Tools 4.3.1 -->
+<!-- Generated 28-may-2023 20:01:55 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="Hibernate.Producto" table="producto" catalog="cexupo" optimistic-lock="version">
         <id name="id" type="java.lang.Long">
             <column name="id" />
             <generator class="identity" />
         </id>
+        <many-to-one name="usuario" class="Hibernate.Usuario" fetch="select">
+            <column name="id_usuario" not-null="true" />
+        </many-to-one>
         <property name="nombre" type="string">
             <column name="nombre" not-null="true" />
         </property>
@@ -17,14 +20,11 @@
         <property name="estado" type="string">
             <column name="estado" not-null="true" />
         </property>
-        <property name="precio" type="string">
-            <column name="precio" not-null="true" />
+        <property name="precio" type="float">
+            <column name="precio" precision="12" scale="0" not-null="true" />
         </property>
         <property name="hastag" type="string">
             <column name="hastag" not-null="true" />
-        </property>
-        <property name="id_usuario" type="string">
-            <column name="id_usuario" not-null="true" />
         </property>
         <property name="vendido" type="boolean">
             <column name="vendido" not-null="true" />
