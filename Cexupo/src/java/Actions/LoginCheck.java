@@ -38,6 +38,7 @@ public class LoginCheck extends ActionSupport implements SessionAware {
         setSunombre(NuSER);
         
         if (isRegistered(this.getUsername(),this.getPassword())) {
+            sessionMap.put("username", username);
             return SUCCESS;
         } else {
             return ERROR;

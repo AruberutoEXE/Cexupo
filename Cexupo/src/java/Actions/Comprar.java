@@ -9,15 +9,23 @@ import DAO.ProductoDao;
 import DAO.UsuarioDao;
 import Hibernate.Direccion;
 import Hibernate.Tarifaenvio;
+import Hibernate.Usuario;
 import com.opensymphony.xwork2.ActionSupport;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
+import org.apache.struts2.interceptor.SessionAware;
+
+import org.apache.struts2.dispatcher.SessionMap;
+import org.apache.struts2.interceptor.SessionAware;
 
 /**
  *
  * @author alber
  */
-public class Comprar extends ActionSupport {
+public class Comprar extends ActionSupport implements SessionAware {
+
+    private SessionMap<String, Object> sessionMap;
 
     public Comprar() {
     }
@@ -29,22 +37,23 @@ public class Comprar extends ActionSupport {
     List<String> pagos;
 
     public String execute() throws Exception {
-        ProductoDao pdao= new ProductoDao();
-        List<String> tarifas=new LinkedList<String>();
-        List<Tarifaenvio> t=pdao.getAllTarifas();
-        for(int i=0;i<t.size();i++ ){
+        ProductoDao pdao = new ProductoDao();
+        List<String> tarifas = new LinkedList<String>();
+        List<Tarifaenvio> t = pdao.getAllTarifas();
+        for (int i = 0; i < t.size(); i++) {
             tarifas.add(t.get(i).getNombreTarifa());
         }
         transportes = tarifas;
-        
-        UsuarioDao udao=new UsuarioDao();
-        List<String> dir=new LinkedList<String>();
-        List<Direccion> dirlist=udao.getAllUserDirections();
-        for(int i=0;i<dirlist.size();i++ ){
+
+        UsuarioDao udao = new UsuarioDao();
+        List<String> dir = new LinkedList<String>();
+        Usuario usu=udao.getUser((String)sessionMap.get("username"));
+        List<Direccion> dirlist = udao.getAllUserDirections(usu);
+        for (int i = 0; i < dirlist.size(); i++) {
             dir.add(dirlist.get(i).getNombre());
         }
-        direcciones=dir;
-        
+        direcciones = dir;
+
         return SUCCESS;
     }
 
@@ -54,6 +63,11 @@ public class Comprar extends ActionSupport {
 
     public void setProducto(String producto) {
         this.producto = producto;
+    }
+
+    @Override
+    public void setSession(Map<String, Object> map) {
+        sessionMap = (SessionMap) map;
     }
 
 }
