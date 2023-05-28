@@ -14,6 +14,6 @@
         <title>Cuenta datos usuario</title>
     </head>
     <body>
-        <h1>Usuario: <s:property value="%{#session.username}"></s:property></h1>
+        <h1>Usuario: <s:property value="session['username']"></s:property></h1>
     </body>
 </html>
