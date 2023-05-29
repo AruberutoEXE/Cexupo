@@ -40,6 +40,7 @@ public class UsuarioDao {
         Query q = sesion.createQuery("from Usuario WHERE username='" + user + "'");
         Usuario u = (Usuario) q.uniqueResult();
         tx.commit();
+        sesion.close();
         return u;
     }
     public static boolean createUser(Usuario user){
@@ -56,6 +57,7 @@ public class UsuarioDao {
             }
             salida = false;
         }
+        sesion.close();
         return salida;
     }
     public static boolean userExiste(String email){
@@ -80,6 +82,7 @@ public class UsuarioDao {
         else{
             salida = false;
         }
+        sesion.close();
         return salida;
     }
     
@@ -98,6 +101,7 @@ public class UsuarioDao {
         Query q = sesion.createQuery("from Chat where idUsuario='usuario' OR idProducto IN idProductos").setParameterList("idProductos", idProductos);
         List<Chat> chats = (List<Chat>) q.list();
         tx.commit();
+        sesion.close();
         return chats;
     }
     
@@ -107,6 +111,7 @@ public class UsuarioDao {
         Query q = sesion.createQuery("from Mensaje where idChat=:id").setParameter("id", id);
         List<Mensaje> mensajes = (List<Mensaje>) q.list();
         tx.commit();
+        sesion.close();
         return mensajes;
     }
      public List<Direccion> getAllUserDirections(Usuario user) {
@@ -115,6 +120,7 @@ public class UsuarioDao {
         Query q = sesion.createQuery("from Direccion where idUsuario='"+user.getUsername()+"'");
         List<Direccion> u = (List<Direccion>) q.list();
         tx.commit();
+        sesion.close();
         return u;
     }
      public List<Metodopago> getAllUserPayMethods(Usuario user) {
@@ -123,6 +129,7 @@ public class UsuarioDao {
         Query q = sesion.createQuery("from Metodopago where idUsuario='"+user.getUsername()+"'");
         List<Metodopago> u = (List<Metodopago>) q.list();
         tx.commit();
+        sesion.close();
         return u;
     }
 }

@@ -20,5 +20,6 @@ public class VentaDao {
         org.hibernate.Transaction tx = session.beginTransaction();
         session.save(v);
         tx.commit();
+        session.close();
     }
 }

@@ -24,6 +24,7 @@ public class ProductoDao {
         Query q = sesion.createQuery("from Producto where id='" + id + "'");
         Producto u = (Producto) q.uniqueResult();
         tx.commit();
+        sesion.close();
         return u;
     }
 
@@ -33,6 +34,7 @@ public class ProductoDao {
         Query q = sesion.createQuery("from Producto where estado='publicado'");
         List<Producto> u = (List<Producto>) q.list();
         tx.commit();
+        sesion.close();
         System.out.println("nºProductos: " + u.size());
         return u;
     }
@@ -44,6 +46,7 @@ public class ProductoDao {
         //Query q = sesion.createQuery("from Producto where id_usuario='" + idUser + "' AND estado='publicado'");
         List<Producto> u = (List<Producto>) q.list();
         tx.commit();
+        sesion.close();
         System.out.println("nºProductos: " + u.size());
         return u;
     }
@@ -54,6 +57,7 @@ public class ProductoDao {
         Query q = sesion.createQuery("from Producto where id_usuario='" + idUser + "' AND vendido=TRUE");
         List<Producto> u = (List<Producto>) q.list();
         tx.commit();
+        sesion.close();
         System.out.println("nºProductos: " + u.size());
         return u;
     }
@@ -64,6 +68,7 @@ public class ProductoDao {
         Query q = sesion.createQuery("from Tarifaenvio");
         List<Tarifaenvio> u = (List<Tarifaenvio>) q.list();
         tx.commit();
+        sesion.close();
         return u;
     }
    
@@ -73,6 +78,7 @@ public class ProductoDao {
         org.hibernate.Transaction tx = session.beginTransaction();
         session.save(p);
         tx.commit();
+        session.close();
     }
     
     public void removeProducto(Producto p) {
@@ -80,6 +86,7 @@ public class ProductoDao {
         org.hibernate.Transaction tx = session.beginTransaction();
         session.delete(p);
         tx.commit();
+        session.close();
     }
     
     public void updateProducto(Producto p) {
@@ -87,5 +94,6 @@ public class ProductoDao {
         org.hibernate.Transaction tx = session.beginTransaction();
         session.update(p);
         tx.commit();
+        session.close();
     }
 }
