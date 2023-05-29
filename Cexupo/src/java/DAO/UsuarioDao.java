@@ -114,6 +114,41 @@ public class UsuarioDao {
         sesion.close();
         return mensajes;
     }
+    
+    public Mensaje getMensaje(Long id) {
+        Session sesion = HibernateUtil.getSessionFactory().openSession();
+        org.hibernate.Transaction tx = sesion.beginTransaction();
+        Query q = sesion.createQuery("from Mensaje where id=:id").setParameter("id", id);
+        Mensaje mensaje = (Mensaje) q.uniqueResult();
+        tx.commit();
+        sesion.close();
+        return mensaje;
+    }
+    
+    public void addMensaje(Mensaje m) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        org.hibernate.Transaction tx = session.beginTransaction();
+        session.save(m);
+        tx.commit();
+        session.close();
+    }
+    
+    public void removeMensaje(Mensaje m) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        org.hibernate.Transaction tx = session.beginTransaction();
+        session.delete(m);
+        tx.commit();
+        session.close();
+    }
+    
+    public void updateMensaje(Mensaje m) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        org.hibernate.Transaction tx = session.beginTransaction();
+        session.update(m);
+        tx.commit();
+        session.close();
+    }
+    
      public List<Direccion> getAllUserDirections(Usuario user) {
         Session sesion = HibernateUtil.getSessionFactory().openSession();
         org.hibernate.Transaction tx = sesion.beginTransaction();
