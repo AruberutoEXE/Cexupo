@@ -1,5 +1,5 @@
 package Hibernate;
-// Generated 28-may-2023 20:01:54 by Hibernate Tools 4.3.1
+// Generated 30-may-2023 13:15:19 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -11,7 +11,7 @@ public class Mensaje  implements java.io.Serializable {
 
 
      private Long id;
-     private long idUsuario;
+     private String idUsuario;
      private long idChat;
      private Date fecha;
      private String contenido;
@@ -19,7 +19,7 @@ public class Mensaje  implements java.io.Serializable {
     public Mensaje() {
     }
 
-    public Mensaje(long idUsuario, long idChat, Date fecha, String contenido) {
+    public Mensaje(String idUsuario, long idChat, Date fecha, String contenido) {
        this.idUsuario = idUsuario;
        this.idChat = idChat;
        this.fecha = fecha;
@@ -33,11 +33,11 @@ public class Mensaje  implements java.io.Serializable {
     public void setId(Long id) {
         this.id = id;
     }
-    public long getIdUsuario() {
+    public String getIdUsuario() {
         return this.idUsuario;
     }
     
-    public void setIdUsuario(long idUsuario) {
+    public void setIdUsuario(String idUsuario) {
         this.idUsuario = idUsuario;
     }
     public long getIdChat() {

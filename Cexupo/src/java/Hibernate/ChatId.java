@@ -1,5 +1,5 @@
 package Hibernate;
-// Generated 28-may-2023 20:01:54 by Hibernate Tools 4.3.1
+// Generated 30-may-2023 13:15:19 by Hibernate Tools 4.3.1
 
 
 
@@ -10,12 +10,12 @@ public class ChatId  implements java.io.Serializable {
 
 
      private long idProducto;
-     private long idUsuario;
+     private String idUsuario;
 
     public ChatId() {
     }
 
-    public ChatId(long idProducto, long idUsuario) {
+    public ChatId(long idProducto, String idUsuario) {
        this.idProducto = idProducto;
        this.idUsuario = idUsuario;
     }
@@ -27,11 +27,11 @@ public class ChatId  implements java.io.Serializable {
     public void setIdProducto(long idProducto) {
         this.idProducto = idProducto;
     }
-    public long getIdUsuario() {
+    public String getIdUsuario() {
         return this.idUsuario;
     }
     
-    public void setIdUsuario(long idUsuario) {
+    public void setIdUsuario(String idUsuario) {
         this.idUsuario = idUsuario;
     }
 
@@ -43,14 +43,14 @@ public class ChatId  implements java.io.Serializable {
 		 ChatId castOther = ( ChatId ) other; 
          
 		 return (this.getIdProducto()==castOther.getIdProducto())
- && (this.getIdUsuario()==castOther.getIdUsuario());
+ && ( (this.getIdUsuario()==castOther.getIdUsuario()) || ( this.getIdUsuario()!=null && castOther.getIdUsuario()!=null && this.getIdUsuario().equals(castOther.getIdUsuario()) ) );
    }
    
    public int hashCode() {
          int result = 17;
          
          result = 37 * result + (int) this.getIdProducto();
-         result = 37 * result + (int) this.getIdUsuario();
+         result = 37 * result + ( getIdUsuario() == null ? 0 : this.getIdUsuario().hashCode() );
          return result;
    }   
 
