@@ -52,6 +52,7 @@
         <main role="main">
 
             <h1>Compra Realizada con exito</h1>
+            <a href="/cexupo/index.jsp">Página principal</a>
 
         </main>
 
