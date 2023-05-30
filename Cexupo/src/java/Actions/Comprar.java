@@ -59,7 +59,7 @@ public class Comprar extends ActionSupport implements SessionAware {
         List<String> pay = new LinkedList<String>();
         List<Metodopago> paylist = udao.getAllUserPayMethods(usu);
         for (int i = 0; i < paylist.size(); i++) {
-            pay.add(paylist.get(i).getNtarjeta());
+            pay.add(paylist.get(i).getNombre());
         }
         direcciones = pay;
         return SUCCESS;

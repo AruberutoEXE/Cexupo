@@ -43,19 +43,18 @@ Contributor(s):
   <session-factory>
     <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
     <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-    <property name="hibernate.connection.url">jdbc:mysql://localhost/cexupo</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/cexupo?zeroDateTimeBehavior=convertToNull</property>
     <property name="hibernate.connection.username">root</property>
-    <property name="hibernate.connection.password"/>
-    <mapping resource="Hibernate/Puntuacion.hbm.xml"/>
-    <mapping resource="Hibernate/Metodopago.hbm.xml"/>
-    <mapping resource="Hibernate/Categoria.hbm.xml"/>
-    <mapping resource="Hibernate/Tarifaenvio.hbm.xml"/>
-    <mapping resource="Hibernate/Direccion.hbm.xml"/>
-    <mapping resource="Hibernate/Usuario.hbm.xml"/>
-    <mapping resource="Hibernate/Empresatransporte.hbm.xml"/>
     <mapping resource="Hibernate/Mensaje.hbm.xml"/>
-    <mapping resource="Hibernate/Chat.hbm.xml"/>
-    <mapping resource="Hibernate/Venta.hbm.xml"/>
+    <mapping resource="Hibernate/Categoria.hbm.xml"/>
+    <mapping resource="Hibernate/Direccion.hbm.xml"/>
     <mapping resource="Hibernate/Producto.hbm.xml"/>
+    <mapping resource="Hibernate/Tarifaenvio.hbm.xml"/>
+    <mapping resource="Hibernate/Metodopago.hbm.xml"/>
+    <mapping resource="Hibernate/Empresatransporte.hbm.xml"/>
+    <mapping resource="Hibernate/Usuario.hbm.xml"/>
+    <mapping resource="Hibernate/Venta.hbm.xml"/>
+    <mapping resource="Hibernate/Chat.hbm.xml"/>
+    <mapping resource="Hibernate/Puntuacion.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>
