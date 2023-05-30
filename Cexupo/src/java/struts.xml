@@ -68,13 +68,17 @@
             <result name="error">/Vistas/Error.jsp</result>
         </action>
     </package>
+    
+    
+    
     <package extends="struts-default"  name="compra">
         <action name="comprar" class="Actions.Comprar">
             <result name="success" >/Vistas/Compra/Compra.jsp</result>
             <result name="error">/Vistas/Error.jsp</result>
         </action>
         <action name="finalizarCompra" class="Actions.FianlizarCompra">
-            <result name="success" type="redirect">producto.productos</result>
+            <!--<result name="success" type="redirect">producto.productos</result>-->
+             <result name="success">/Vistas/Compra/FinalizarCompra.jsp</result>
             <result name="error">/Vistas/Error.jsp</result>
         </action>
     </package>
