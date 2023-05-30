@@ -1,4 +1,3 @@
-
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -63,15 +62,18 @@
 
             <div class="album py-5 ">
                 <div class="container">
-                    <s:iterator value="mensajes">
+                    <s:iterator value="chats">
                         <div class="card mb-4 box-shadow">
                             <div class="card-body">
-                                <p class="card-text"><s:property value = "idChat.getIdUsuario()"/></p>
-                                <p class="card-text"><s:property value = "contenido"/></p>
+                                <p class="card-text"><s:property value = "id.getIdUsuario()"/></p>
                             </div>
-                            <s:form method="POST" action="producto">
-                                <s:hidden name="id" value="%{id}" />
-                                <s:submit cssClass="btn btn-sm btn-outline-secondary" value="Detalles"/>
+                            <s:form method="POST" action="abrirChat">
+                                <s:hidden name="chatId" value="%{id}" />
+                                <s:submit cssClass="btn btn-sm btn-outline-secondary" value="Abrir"/>
+                            </s:form>
+                            <s:form method="POST" action="eliminarChat">
+                                <s:hidden name="chatId" value="%{id}" />
+                                <s:submit cssClass="btn btn-sm btn-outline-secondary" value="Eliminar"/>
                             </s:form>
                         </div>
                     </s:iterator>
@@ -81,10 +83,9 @@
 
 
         <footer class="blog-footer jumbotron text-center bg-dark">
-            <s:form method="POST" action="enviarM">
-                <s:text name="contenido"/>
-                <s:submit cssClass="btn btn-sm btn-outline-secondary" value="Enviar"/>
-            </s:form>
+            <p>
+            <h2><a class=" bg-sand" href="#">Back to top</a></h2>
+        </p>
     </footer>
 
     <!-- Bootstrap core JavaScript

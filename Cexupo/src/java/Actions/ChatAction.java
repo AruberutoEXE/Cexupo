@@ -6,6 +6,7 @@
 package Actions;
 
 import DAO.UsuarioDao;
+import Hibernate.Chat;
 import Hibernate.ChatId;
 import Hibernate.Mensaje;
 import com.opensymphony.xwork2.ActionSupport;
@@ -15,17 +16,28 @@ import java.util.List;
  *
  * @author Usuario
  */
-public class AbrirChatAction extends ActionSupport {
+public class ChatAction extends ActionSupport {
     
     private ChatId chatId;
     private List<Mensaje> mensajes;
     
-    public AbrirChatAction() {
+    public ChatAction() {
     }
     
     public String execute() throws Exception {
+        return SUCCESS;
+    }
+    
+    public String abrir() throws Exception {
         UsuarioDao uDao = new UsuarioDao();
         mensajes = uDao.getMensajesChat(chatId);
+        return SUCCESS;
+    }
+    
+    public String eliminar() throws Exception {
+        UsuarioDao uDao = new UsuarioDao();
+        Chat c = new Chat(chatId);
+        uDao.deleteChat(c);
         return SUCCESS;
     }
 
@@ -36,6 +48,15 @@ public class AbrirChatAction extends ActionSupport {
     public void setChatId(ChatId chatId) {
         this.chatId = chatId;
     }
+
+    public List<Mensaje> getMensajes() {
+        return mensajes;
+    }
+
+    public void setMensajes(List<Mensaje> mensajes) {
+        this.mensajes = mensajes;
+    }
+    
     
     
 }

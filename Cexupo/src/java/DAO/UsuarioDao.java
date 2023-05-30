@@ -105,10 +105,18 @@ public class UsuarioDao {
         return chats;
     }
     
+    public void deleteChat(Chat c) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        org.hibernate.Transaction tx = session.beginTransaction();
+        session.delete(c);
+        tx.commit();
+        session.close();
+    }
+    
     public List<Mensaje> getMensajesChat(ChatId id) {
         Session sesion = HibernateUtil.getSessionFactory().openSession();
         org.hibernate.Transaction tx = sesion.beginTransaction();
-        Query q = sesion.createQuery("from Mensaje where idChat=:id").setParameter("id", id);
+        Query q = sesion.createQuery("from Mensaje where idChat=:id ORDER BY fecha ASC").setParameter("id", id);
         List<Mensaje> mensajes = (List<Mensaje>) q.list();
         tx.commit();
         sesion.close();

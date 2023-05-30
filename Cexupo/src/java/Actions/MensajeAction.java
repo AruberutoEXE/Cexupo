@@ -42,6 +42,7 @@ public class MensajeAction extends ActionSupport {
         Mensaje m = new Mensaje();
         m.setContenido(contenido);
         Usuario usu=uDao.getUser((String)sessionMap.get("username"));
+        m.setIdUsuario(usu.getUsername());
         uDao.addMensaje(m);
         return SUCCESS;
     }
@@ -68,7 +69,5 @@ public class MensajeAction extends ActionSupport {
     public void setContenido(String contenido) {
         this.contenido = contenido;
     }
-    
-    
-    
+       
 }
