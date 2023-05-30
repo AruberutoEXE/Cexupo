@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-05-2023 a las 15:56:49
--- Versión del servidor: 10.4.27-MariaDB
--- Versión de PHP: 8.2.0
+-- Tiempo de generación: 30-05-2023 a las 17:47:58
+-- Versión del servidor: 10.4.16-MariaDB
+-- Versión de PHP: 7.4.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `categoria` (
   `nombre` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -40,7 +40,7 @@ CREATE TABLE `categoria` (
 CREATE TABLE `chat` (
   `idProducto` bigint(20) NOT NULL,
   `idUsuario` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -53,8 +53,15 @@ CREATE TABLE `direccion` (
   `direccion` varchar(255) NOT NULL,
   `cp` int(11) NOT NULL,
   `nombre` varchar(255) NOT NULL,
-  `idUsuario` bigint(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `idUsuario` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `direccion`
+--
+
+INSERT INTO `direccion` (`id`, `direccion`, `cp`, `nombre`, `idUsuario`) VALUES
+(1, 'mallorca 20', 41100, 'casa', 'usuario');
 
 -- --------------------------------------------------------
 
@@ -65,7 +72,7 @@ CREATE TABLE `direccion` (
 CREATE TABLE `empresatransporte` (
   `id` bigint(20) NOT NULL,
   `nombre` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -79,7 +86,7 @@ CREATE TABLE `mensaje` (
   `idChat` bigint(20) NOT NULL,
   `fecha` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `contenido` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -89,10 +96,10 @@ CREATE TABLE `mensaje` (
 
 CREATE TABLE `metodopago` (
   `id` bigint(20) NOT NULL,
-  `idUsuario` bigint(20) NOT NULL,
+  `idUsuario` varchar(255) NOT NULL,
   `nombre` varchar(255) NOT NULL,
   `detalles` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -109,7 +116,7 @@ CREATE TABLE `producto` (
   `hastag` varchar(255) NOT NULL,
   `id_usuario` varchar(255) NOT NULL,
   `vendido` tinyint(1) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `producto`
@@ -131,7 +138,7 @@ CREATE TABLE `puntuacion` (
   `id` int(11) NOT NULL,
   `numero` int(11) NOT NULL,
   `resenya` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -145,7 +152,7 @@ CREATE TABLE `tarifaenvio` (
   `precioVolumen` float NOT NULL,
   `precioSeguro` float NOT NULL,
   `nombreTarifa` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -157,7 +164,7 @@ CREATE TABLE `usuario` (
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `email` varchar(225) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `usuario`
@@ -183,7 +190,7 @@ CREATE TABLE `venta` (
   `idTarifa` bigint(6) NOT NULL,
   `idDireccion` bigint(20) NOT NULL,
   `idMetodoPago` bigint(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Índices para tablas volcadas
@@ -264,7 +271,7 @@ ALTER TABLE `venta`
 -- AUTO_INCREMENT de la tabla `direccion`
 --
 ALTER TABLE `direccion`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `empresatransporte`
