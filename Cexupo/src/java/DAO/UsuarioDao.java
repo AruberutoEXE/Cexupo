@@ -158,6 +158,37 @@ public class UsuarioDao {
         sesion.close();
         return u;
     }
+     public static boolean createDireccion(Direccion dir){
+        Session sesion = HibernateUtil.getSessionFactory().openSession();
+        boolean salida = true;
+        org.hibernate.Transaction tx = null;
+        try{
+            tx = sesion.beginTransaction();
+            sesion.save(dir);
+            tx.commit();
+        }catch(Exception ex){
+            if(tx != null){
+                tx.rollback();
+            }
+            salida = false;
+        }
+        sesion.close();
+        return salida;
+    }
+     public void updateDireccion(Direccion d) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        org.hibernate.Transaction tx = session.beginTransaction();
+        session.update(d);
+        tx.commit();
+        session.close();
+    }
+      public void removeDireccion(Direccion d) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        org.hibernate.Transaction tx = session.beginTransaction();
+        session.delete(d);
+        tx.commit();
+        session.close();
+    }
      public List<Metodopago> getAllUserPayMethods(Usuario user) {
         Session sesion = HibernateUtil.getSessionFactory().openSession();
         org.hibernate.Transaction tx = sesion.beginTransaction();
@@ -166,5 +197,36 @@ public class UsuarioDao {
         tx.commit();
         sesion.close();
         return u;
+    }
+     public static boolean createMetodoPago(Metodopago mp){
+        Session sesion = HibernateUtil.getSessionFactory().openSession();
+        boolean salida = true;
+        org.hibernate.Transaction tx = null;
+        try{
+            tx = sesion.beginTransaction();
+            sesion.save(mp);
+            tx.commit();
+        }catch(Exception ex){
+            if(tx != null){
+                tx.rollback();
+            }
+            salida = false;
+        }
+        sesion.close();
+        return salida;
+    }
+     public void updateMetodoPago(Metodopago mp) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        org.hibernate.Transaction tx = session.beginTransaction();
+        session.update(mp);
+        tx.commit();
+        session.close();
+    }
+      public void removeMetodoPago(Metodopago mp) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        org.hibernate.Transaction tx = session.beginTransaction();
+        session.delete(mp);
+        tx.commit();
+        session.close();
     }
 }

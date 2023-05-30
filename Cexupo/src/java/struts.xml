@@ -28,6 +28,11 @@
             <result name="error">/Vistas/login/error.jsp</result>
             <result name="input">/Vistas/login/registro.jsp</result>
         </action>
+        <action name="DireccionesUser" class="Actions.GetDireccionesUser">
+            <result name="success">/Vistas/login/cuenta.jsp</result>
+            <result name="error">/Vistas/login/cuenta.jsp</result>
+            <result name="input">/Vistas/login/cuenta.jsp</result>
+        </action>
     </package>
     <package extends="struts-default"  name="producto">
         <action name="productos" class="Actions.ProductosAction">

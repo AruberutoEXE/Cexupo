@@ -10,9 +10,9 @@
         </field-validator>
         <field-validator type="stringlength">
             <param name="minLength">4</param>
-            <param name="maxLength">8</param>
+            <param name="maxLength">20</param>
             <param name="trim">true</param>
-            <message>El nombre de usuario debe contener entre 4 y 8 caracteres</message>
+            <message>El nombre de usuario debe contener entre 4 y 20 caracteres</message>
         </field-validator>
     </field>
     <field name="password">

@@ -19,9 +19,38 @@
     <body>
 
         
-          <h1>Usuario: <s:property value="%{#session.username}"></s:property></h1>
+          <h1>User: <s:property value="%{#session.username}"></s:property></h1>
           <h2>Métodos de pago:</h2>
-          <h2>Direcciones de envío:</h2>
+        <h2>Shipping Address:</h2>
+          
+          
+          <table border="1">
+              <tbody>
+                  <tr>
+                      <td>
+                      <s:iterator>
+                          <s:action name="GetDireccionesUser" namespace="/login" executeResult="true" />
+                      </s:iterator>
+                          
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>
+                          <s:i18n name="Actions.RegisterDirAction">
+                
+                <s:form action="signUp">
+                    <s:textfield name="Address" label="direccion"/>
+                    <s:textfield name="postal code" label="cp"/>
+                    <s:password name="name address" label="nombre"/>
+                   
+                    <s:submit value="create shipping address"></s:submit>
+                </s:form>
+                <h2><s:property value="message"/></h2>
+            </s:i18n>
+                      </td>  
+                  </tr>
+              </tbody>
+          </table>
           <h4>Eliminar cuenta</h4>
     </body>
 </html>
