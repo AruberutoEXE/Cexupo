@@ -10,6 +10,7 @@ import Hibernate.Mensaje;
 import Hibernate.Usuario;
 import com.opensymphony.xwork2.ActionSupport;
 import java.util.Date;
+import java.util.Map;
 import org.apache.struts2.dispatcher.SessionMap;
 
 /**
@@ -41,8 +42,7 @@ public class MensajeAction extends ActionSupport {
         UsuarioDao uDao = new UsuarioDao();
         Mensaje m = new Mensaje();
         m.setContenido(contenido);
-        Usuario usu=uDao.getUser((String)sessionMap.get("username"));
-        m.setIdUsuario(usu.getUsername());
+        m.setIdUsuario((String)sessionMap.get("username"));
         uDao.addMensaje(m);
         return SUCCESS;
     }
@@ -69,5 +69,8 @@ public class MensajeAction extends ActionSupport {
     public void setContenido(String contenido) {
         this.contenido = contenido;
     }
-       
+    
+    public void setSession(Map<String, Object> map) {
+        sessionMap = (SessionMap) map;
+    }
 }

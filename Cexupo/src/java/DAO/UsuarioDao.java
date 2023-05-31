@@ -86,9 +86,9 @@ public class UsuarioDao {
         return salida;
     }
     
-    public List<Chat> getAllChatsUsuario() {
+    public List<Chat> getAllChatsUsuario(String username) {
         ProductoDao pDao = new ProductoDao();
-        List<Producto> productos = pDao.getAllProductosPublicados("usuario");
+        List<Producto> productos = pDao.getAllProductosPublicados(username);
         List idProductos = new ArrayList();
         Iterator it = productos.iterator();
         Producto p;
@@ -98,7 +98,7 @@ public class UsuarioDao {
         }
         Session sesion = HibernateUtil.getSessionFactory().openSession();
         org.hibernate.Transaction tx = sesion.beginTransaction();
-        Query q = sesion.createQuery("from Chat where idUsuario='usuario' OR idProducto IN idProductos").setParameterList("idProductos", idProductos);
+        Query q = sesion.createQuery("from Chat where idUsuario='"+username+"' OR idProducto IN idProductos").setParameterList("idProductos", idProductos);
         List<Chat> chats = (List<Chat>) q.list();
         tx.commit();
         sesion.close();

@@ -9,6 +9,8 @@ import DAO.UsuarioDao;
 import Hibernate.Chat;
 import com.opensymphony.xwork2.ActionSupport;
 import java.util.List;
+import java.util.Map;
+import org.apache.struts2.dispatcher.SessionMap;
 
 /**
  *
@@ -17,13 +19,14 @@ import java.util.List;
 public class ChatsUsuarioAction extends ActionSupport {
     
     private List<Chat> chats;
+    private SessionMap<String, Object> sessionMap;
     
     public ChatsUsuarioAction() {
     }
     
     public String execute() throws Exception {
         UsuarioDao uDao = new UsuarioDao();
-        chats = uDao.getAllChatsUsuario();
+        chats = uDao.getAllChatsUsuario((String)sessionMap.get("username"));
         return SUCCESS;
     }
 
@@ -35,6 +38,9 @@ public class ChatsUsuarioAction extends ActionSupport {
         this.chats = chats;
     }
     
+    public void setSession(Map<String, Object> map) {
+        sessionMap = (SessionMap) map;
+    }
     
     
 }

@@ -9,6 +9,8 @@ import com.opensymphony.xwork2.ActionSupport;
 import DAO.ProductoDao;
 import Hibernate.Producto;
 import java.util.List;
+import java.util.Map;
+import org.apache.struts2.dispatcher.SessionMap;
 
 /**
  *
@@ -17,6 +19,7 @@ import java.util.List;
 public class ProductosVendidosAction extends ActionSupport {
     
     private List<Producto> productosVendidos;
+    private SessionMap<String, Object> sessionMap;
     
     public ProductosVendidosAction() {
     }
@@ -24,7 +27,7 @@ public class ProductosVendidosAction extends ActionSupport {
     public String execute() throws Exception {
         
         ProductoDao pdao=new ProductoDao();
-        productosVendidos=pdao.getAllProductosVendidos("");
+        productosVendidos=pdao.getAllProductosVendidos((String)sessionMap.get("username"));
         return SUCCESS;
     }
 
@@ -34,6 +37,10 @@ public class ProductosVendidosAction extends ActionSupport {
 
     public void setProductosPublicados(List<Producto> productos) {
         this.productosVendidos = productos;
+    }
+    
+    public void setSession(Map<String, Object> map) {
+        sessionMap = (SessionMap) map;
     }
     
 }
