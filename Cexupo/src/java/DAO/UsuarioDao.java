@@ -166,7 +166,7 @@ public class UsuarioDao {
         sesion.close();
         return u;
     }
-     public static boolean createDireccion(Direccion dir){
+     public  boolean createDireccion(Direccion dir){
         Session sesion = HibernateUtil.getSessionFactory().openSession();
         boolean salida = true;
         org.hibernate.Transaction tx = null;
@@ -206,7 +206,7 @@ public class UsuarioDao {
         sesion.close();
         return u;
     }
-     public static boolean createMetodoPago(Metodopago mp){
+     public  boolean createMetodoPago(Metodopago mp){
         Session sesion = HibernateUtil.getSessionFactory().openSession();
         boolean salida = true;
         org.hibernate.Transaction tx = null;

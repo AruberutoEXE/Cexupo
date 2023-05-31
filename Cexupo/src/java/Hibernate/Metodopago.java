@@ -10,14 +10,14 @@ public class Metodopago  implements java.io.Serializable {
 
 
      private Long id;
-     private long idUsuario;
+     private String idUsuario;
      private String nombre;
      private String detalles;
 
     public Metodopago() {
     }
 
-    public Metodopago(long idUsuario, String nombre, String detalles) {
+    public Metodopago(String idUsuario, String nombre, String detalles) {
        this.idUsuario = idUsuario;
        this.nombre = nombre;
        this.detalles = detalles;
@@ -30,11 +30,11 @@ public class Metodopago  implements java.io.Serializable {
     public void setId(Long id) {
         this.id = id;
     }
-    public long getIdUsuario() {
+    public String getIdUsuario() {
         return this.idUsuario;
     }
     
-    public void setIdUsuario(long idUsuario) {
+    public void setIdUsuario(String idUsuario) {
         this.idUsuario = idUsuario;
     }
     public String getNombre() {

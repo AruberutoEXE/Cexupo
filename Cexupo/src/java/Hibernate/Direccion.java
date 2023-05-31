@@ -13,12 +13,12 @@ public class Direccion  implements java.io.Serializable {
      private String direccion;
      private int cp;
      private String nombre;
-     private long idUsuario;
+     private String idUsuario;
 
     public Direccion() {
     }
 
-    public Direccion(String direccion, int cp, String nombre, long idUsuario) {
+    public Direccion(String direccion, int cp, String nombre, String idUsuario) {
        this.direccion = direccion;
        this.cp = cp;
        this.nombre = nombre;
@@ -53,13 +53,15 @@ public class Direccion  implements java.io.Serializable {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    public long getIdUsuario() {
-        return this.idUsuario;
+
+    public String getIdUsuario() {
+        return idUsuario;
     }
-    
-    public void setIdUsuario(long idUsuario) {
+
+    public void setIdUsuario(String idUsuario) {
         this.idUsuario = idUsuario;
     }
+   
 
 
 
