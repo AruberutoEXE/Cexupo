@@ -39,16 +39,16 @@
 
             <div class="nav-scroller py-1 mb-2 bg-secondary  rounded-pill p-3">
                 <nav class="nav d-flex justify-content-between">
-                    <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="/Cexupo/index.jsp">Busqueda</a>
+                    <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="/Cexupo/index.jsp">Search</a>
                     <s:if test="%{#session.username!=null}">
-                    <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="/Cexupo/Vistas/Producto/PublicadosUsuario.jsp">Tus productos</a>
-                    <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="#">Pedidos</a>
-                    <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="/Cexupo/Vistas/login/cuenta.jsp">Cuenta</a>
+                    <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="/Cexupo/Vistas/Producto/PublicadosUsuario.jsp">Your Products</a>
+                    <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="#">Shipments</a>
+                    <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="/Cexupo/Vistas/login/cuenta.jsp">Account</a>
                     </s:if>
                     <s:else>
-                    <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="/Cexupo/Vistas/login/login.jsp">Tus productos</a>
-                    <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="/Cexupo/Vistas/login/login.jsp">Pedidos</a>
-                    <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="/Cexupo/Vistas/login/login.jsp">Cuenta</a>
+                    <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="/Cexupo/Vistas/login/login.jsp">Your Products</a>
+                    <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="/Cexupo/Vistas/login/login.jsp">Shipments</a>
+                    <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="/Cexupo/Vistas/login/login.jsp">Account</a>
                     </s:else>
                 </nav>
                 
@@ -61,9 +61,7 @@
 
             <section class="jumbotron text-center">
                 <div class="container bg-dark p-3">
-                    <h1 class="jumbotron-heading text-white">Encuentra lo que buscas</h1>
-                    <p class="lead text-secondary">Si lo venden lo tenemos</p>
-
+                    <h1 class="jumbotron-heading text-white">Your open chats </h1>
                 </div>
             </section>
 
@@ -76,11 +74,11 @@
                             </div>
                             <s:form method="POST" action="irAChat">
                                 <s:hidden name="chatId" value="%{id}" />
-                                <s:submit cssClass="btn btn-sm btn-outline-secondary" value="Abrir"/>
+                                <s:submit cssClass="btn btn-sm btn-outline-secondary" value="Open"/>
                             </s:form>
                             <s:form method="POST" action="eliminarChat">
                                 <s:hidden name="chatId" value="%{id}" />
-                                <s:submit cssClass="btn btn-sm btn-outline-secondary" value="Eliminar"/>
+                                <s:submit cssClass="btn btn-sm btn-outline-secondary" value="Delete"/>
                             </s:form>
                         </div>
                     </s:iterator>

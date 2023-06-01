@@ -25,7 +25,7 @@
         </s:iterator>
         </s:if>
         <s:else>
-            <p>Aún no ha publicado ningún producto</p>
+            <p>You are yet to publish a product</p>
         </s:else>
     </body>
 </html>

@@ -25,7 +25,7 @@
             </s:iterator>
         </s:if>
         <s:else>
-            <p>Aún no ha vendido ningún producto</p>
+            <p>You are yet to sell a product</p>
         </s:else>
     </body>
 </html>
