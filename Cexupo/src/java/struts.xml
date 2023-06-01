@@ -31,7 +31,12 @@
         <action name="DireccionesUser" class="Actions.GetDireccionesUser">
             <result name="success">/Vistas/login/DireccionesUsuarios.jsp</result>
             <result name="error">/Error.jsp</result>
-            <result name="input">/Vistas/login/cuenta.jsp</result>
+            
+        </action>
+        <action name="MetodoPagosUser" class="Actions.GetPaymentMethods">
+            <result name="success">/Vistas/login/MetodosPagosUsuarios.jsp</result>
+            <result name="error">/Error.jsp</result>
+            
         </action>
         <action name="createDir" class="Actions.CreateDireccion">
             <result name="success">/Vistas/login/cuenta.jsp</result>

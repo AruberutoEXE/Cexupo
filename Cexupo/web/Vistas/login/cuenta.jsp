@@ -63,7 +63,8 @@
             <div class="album py-5 ">
                 <div class="container">
                     <div class="card mb-4 box-shadow">
-                        <h2>Métodos de pago:</h2>
+                        <h2>Payment method:</h2>
+                        <s:action name="MetodoPagosUser" namespace="/login" executeResult="true" />
                     </div>
                     <div class="card mb-4 box-shadow">
                         <h2>New Shipping Address:</h2>
