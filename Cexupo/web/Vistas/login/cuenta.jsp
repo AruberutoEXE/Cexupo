@@ -66,16 +66,18 @@
                         <h2>Métodos de pago:</h2>
                     </div>
                     <div class="card mb-4 box-shadow">
-                        <h2>Shipping Address:</h2>
+                        <h2>New Shipping Address:</h2>
                         <s:form action="createDir">
                             <s:textfield label="Address" name="direccion"/>
                             <s:textfield type="number" name="cp" label="Postal code"/>
                             <s:textfield label="name address" name="nombre"/>
-                            <s:submit name="crear" value="Crear"></s:submit>
+                            <s:submit name="crear" value="Create"></s:submit>
                         </s:form>
+                       <s:action name="DireccionesUser" namespace="/login" executeResult="true" />
                     </div>
+                    
                     <div class="card mb-4 box-shadow">
-                        <h4>Eliminar cuenta</h4>
+                       
                     </div>
                 </div>
             </div>

@@ -28,7 +28,7 @@ public class CreateChatAction extends ActionSupport implements SessionAware{
     public String execute() throws Exception {
         String username=(String)sessionMap.get("username");
          UsuarioDao uDao = new UsuarioDao();
-            mensajes = uDao.getMensajesChat(chatId);
+            //mensajes = uDao.getMensajesChat(chatId);
         return SUCCESS;
         
     }

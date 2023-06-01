@@ -29,8 +29,8 @@
             <result name="input">/Vistas/login/registro.jsp</result>
         </action>
         <action name="DireccionesUser" class="Actions.GetDireccionesUser">
-            <result name="success">/Vistas/login/cuenta.jsp</result>
-            <result name="error">/Vistas/login/cuenta.jsp</result>
+            <result name="success">/Vistas/login/DireccionesUsuarios.jsp</result>
+            <result name="error">/Error.jsp</result>
             <result name="input">/Vistas/login/cuenta.jsp</result>
         </action>
         <action name="createDir" class="Actions.CreateDireccion">
