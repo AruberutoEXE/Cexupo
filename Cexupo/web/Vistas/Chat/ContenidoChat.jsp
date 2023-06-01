@@ -42,11 +42,11 @@
                             </div>
                             <s:form method="POST" action="editarM">
                                 <s:hidden name="id" value="%{id}" />
-                                <s:submit cssClass="btn btn-sm btn-outline-secondary" value="Detalles"/>
+                                <s:submit cssClass="btn btn-sm btn-outline-secondary" value="Edit"/>
                             </s:form>
                             <s:form method="POST" action="eliminarM">
                                 <s:hidden name="id" value="%{id}" />
-                                <s:submit cssClass="btn btn-sm btn-outline-secondary" value="Detalles"/>
+                                <s:submit cssClass="btn btn-sm btn-outline-secondary" value="Delete"/>
                             </s:form>
                         </div>
                     </s:iterator>
@@ -58,7 +58,7 @@
         <footer class="blog-footer jumbotron text-center bg-dark">
             <s:form method="POST" action="enviarM">
                 <s:text name="contenido"/>
-                <s:submit cssClass="btn btn-sm btn-outline-secondary" value="Enviar"/>
+                <s:submit cssClass="btn btn-sm btn-outline-secondary" value="Send"/>
             </s:form>
     </footer>
                 <!-- Bootstrap core JavaScript
