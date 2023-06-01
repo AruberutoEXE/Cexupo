@@ -20,7 +20,7 @@ import org.apache.struts2.interceptor.SessionAware;
 public class CreateDireccion extends ActionSupport implements SessionAware{
   
     private String nombre;
-    private String cp;
+    private int cp;
     private String direccion;
    
     private SessionMap<String, Object> sessionMap;
@@ -33,11 +33,11 @@ public class CreateDireccion extends ActionSupport implements SessionAware{
         this.nombre = nombre;
     }
 
-    public String getCp() {
+    public int getCp() {
         return cp;
     }
 
-    public void setCp(String cp) {
+    public void setCp(int cp) {
         this.cp = cp;
     }
 
@@ -57,15 +57,19 @@ public class CreateDireccion extends ActionSupport implements SessionAware{
     }
     
     public String execute() throws Exception {
-       try{
+       //try{
            String idUsuario = (String)sessionMap.get("username");
         System.out.println("entra: " + idUsuario + ".."+ direccion +  ".." + cp + ".." + nombre );
-        Direccion newDir = new Direccion(this.direccion, Integer.parseInt(cp), this.nombre,idUsuario);
+        Direccion newDir = new Direccion();
+        newDir.setCp(cp);
+        newDir.setDireccion(direccion);
+        newDir.setIdUsuario(idUsuario);
+        newDir.setNombre(nombre);
        UsuarioDao udao= new UsuarioDao();
        udao.createDireccion(newDir);
-       }catch(NumberFormatException e){
-           return ERROR;
-       }
+       //}catch(NumberFormatException e){
+         //  return ERROR;
+       //}
         
         return SUCCESS;
     }
