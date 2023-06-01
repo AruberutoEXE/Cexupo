@@ -81,7 +81,7 @@
                 <div class="container">
                     <div class="card mb-4 box-shadow">
                         <s:form action="registrarP">
-                            <h5>Ponga un producto a la venta</h5>
+                            <h5>Sell your products</h5>
                             <s:submit cssClass="btn btn-sm btn-outline-secondary" value="Publish"/>
                         </s:form>
                     </div>

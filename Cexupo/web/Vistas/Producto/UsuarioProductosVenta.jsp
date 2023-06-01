@@ -10,22 +10,22 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Tus productos en venta</title>
+        <title>Cexupo</title>
     </head>
     <body>
-        <h2>Productos en venta</h2>
+        <h2>Products for sale</h2>
         <s:if test="%{productosPublicados!=null}">
         <s:iterator value="productosPublicados">
             <s:property value = "nombre"/>
             <s:property value = "precio"/>
             <s:form action="producto">
                 <s:hidden name="id" value="%{id}" />
-                <s:submit cssClass="btn btn-sm btn-outline-secondary" value="Detalles"/>
+                <s:submit cssClass="btn btn-sm btn-outline-secondary" value="Details"/>
             </s:form>
         </s:iterator>
         </s:if>
         <s:else>
-            <p>You are yet to publish a product</p>
+            <p>You are yet to publish a product for sale</p>
         </s:else>
     </body>
 </html>
