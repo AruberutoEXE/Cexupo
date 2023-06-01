@@ -22,13 +22,13 @@ import org.hibernate.Session;
  */
 public class ChatDao {
 
-    public static boolean createChat(Long idProducto, String idUsuario) {
+    public Chat createChat(Long idProducto, String idUsuario) {
         Session sesion = HibernateUtil.getSessionFactory().openSession();
-        boolean salida = true;
         org.hibernate.Transaction tx = null;
-        ChatId chat = new ChatId();
-        chat.setIdProducto(idProducto);
-        chat.setIdUsuario(idUsuario);
+        ChatId chatid = new ChatId();
+        chatid.setIdProducto(idProducto);
+        chatid.setIdUsuario(idUsuario);
+        Chat chat =new Chat(chatid);
         try {
             tx = sesion.beginTransaction();
             sesion.save(chat);
@@ -37,31 +37,20 @@ public class ChatDao {
             if (tx != null) {
                 tx.rollback();
             }
-            salida = false;
+            chat=null;
         }
         sesion.close();
-        return salida;
+        return chat;
     }
 
-    public static boolean getChat(Long idProducto, String idUsuario) {
+    public Chat getChat(Long idProducto, String idUsuario) {
         Session sesion = HibernateUtil.getSessionFactory().openSession();
-        boolean salida = true;
-        org.hibernate.Transaction tx = null;
-        ChatId chat = new ChatId();
-        chat.setIdProducto(idProducto);
-        chat.setIdUsuario(idUsuario);
-        try {
-            tx = sesion.beginTransaction();
-            sesion.save(chat);
-            tx.commit();
-        } catch (Exception ex) {
-            if (tx != null) {
-                tx.rollback();
-            }
-            salida = false;
-        }
+        org.hibernate.Transaction tx = sesion.beginTransaction();
+        Query q = sesion.createQuery("from Chat where idUsuario='" + idUsuario + "' AND idProducto='"+idProducto+"'");
+        Chat chat = (Chat) q.uniqueResult();
+        tx.commit();
         sesion.close();
-        return salida;
+        return chat;
     }
 
     public List<Chat> getAllChatsUsuario(String username) {
