@@ -27,6 +27,7 @@ public class ProductosPublicadosAction extends ActionSupport {
     public String execute() throws Exception {
         
         ProductoDao pdao=new ProductoDao();
+        System.out.println("Usuario logueado: "+sessionMap.get("username"));
         productosPublicados=pdao.getAllProductosPublicados((String)sessionMap.get("username"));
         return SUCCESS;
     }
@@ -38,8 +39,12 @@ public class ProductosPublicadosAction extends ActionSupport {
     public void setProductosPublicados(List<Producto> productos) {
         this.productosPublicados = productos;
     }
+
+    public SessionMap<String, Object> getSessionMap() {
+        return sessionMap;
+    }
     
-    public void setSession(Map<String, Object> map) {
+    public void setSessionMap(Map<String, Object> map) {
         sessionMap = (SessionMap) map;
     }
 }

@@ -43,7 +43,7 @@ public class ProductoDao {
         Session sesion = HibernateUtil.getSessionFactory().openSession();
         org.hibernate.Transaction tx = sesion.beginTransaction();
         Query q = sesion.createQuery("from Producto where id_usuario='"+idUser+"' AND vendido=FALSE");
-        //Query q = sesion.createQuery("from Producto where id_usuario='" + idUser + "' AND estado='publicado'");
+        System.out.println("[DAO]usuario logueado: " + idUser);
         List<Producto> u = (List<Producto>) q.list();
         tx.commit();
         sesion.close();
