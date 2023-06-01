@@ -22,7 +22,7 @@ public class PublicarAction extends ActionSupport implements SessionAware {
     private String nombre;
     private String desc;
     private String estado;
-    private String precio;
+    private float precio;
     private String hashtag;
     private SessionMap<String, Object> sessionMap;
     
@@ -36,7 +36,7 @@ public class PublicarAction extends ActionSupport implements SessionAware {
         p.setNombre(nombre);
         p.setDescripcion(desc);
         p.setEstado(estado);
-        p.setPrecio(Float.parseFloat(precio));
+        p.setPrecio(precio);
         p.setHastag(hashtag);
         Usuario u = new Usuario();
         u.setUsername((String)sessionMap.get("username"));
@@ -70,11 +70,11 @@ public class PublicarAction extends ActionSupport implements SessionAware {
         this.estado = estado;
     }
 
-    public String getPrecio() {
+    public float getPrecio() {
         return precio;
     }
 
-    public void setPrecio(String precio) {
+    public void setPrecio(float precio) {
         this.precio = precio;
     }
 

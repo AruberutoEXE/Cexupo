@@ -72,7 +72,7 @@
                         <s:form action="publicar">
                             <s:textfield name="nombre" label="Nombre"></s:textfield>
                             <s:textfield name="desc" label="Desc"></s:textfield>
-                            <s:textfield name="precio" label="Precio"></s:textfield>
+                            <s:textfield type="number" name="precio" label="Precio"></s:textfield>
                             <s:textfield name="estado" label="Estado del producto"></s:textfield>
                             <s:textfield name="hashtag" label="Hashtag"></s:textfield>
                             <s:submit name="publicar" value="Publicar"></s:submit>
