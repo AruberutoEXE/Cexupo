@@ -17,7 +17,7 @@
         <property name="nombre" type="string">
             <column name="nombre" not-null="true" />
         </property>
-        <property name="idUsuario" type="long">
+        <property name="idUsuario" type="string">
             <column name="idUsuario" not-null="true" />
         </property>
     </class>
