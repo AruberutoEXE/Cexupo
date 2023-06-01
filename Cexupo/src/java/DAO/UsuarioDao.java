@@ -169,17 +169,19 @@ public class UsuarioDao {
      public  boolean createDireccion(Direccion dir){
         Session sesion = HibernateUtil.getSessionFactory().openSession();
         boolean salida = true;
-        org.hibernate.Transaction tx = null;
-        try{
-            tx = sesion.beginTransaction();
-            sesion.save(dir);
-            tx.commit();
-        }catch(Exception ex){
-            if(tx != null){
-                tx.rollback();
-            }
-            salida = false;
-        }
+        org.hibernate.Transaction tx = sesion.beginTransaction();
+        sesion.save(dir);
+        tx.commit();
+        //try{
+        //    tx = sesion.beginTransaction();
+        //    sesion.save(dir);
+        //    tx.commit();
+        //}catch(Exception ex){
+        //    if(tx != null){
+        //        tx.rollback();
+        //    }
+        //    salida = false;
+        //}
         sesion.close();
         return salida;
     }

@@ -5,10 +5,12 @@
  */
 package Actions;
 
+import DAO.ProductoDao;
 import DAO.UsuarioDao;
 import Hibernate.Chat;
 import Hibernate.ChatId;
 import Hibernate.Mensaje;
+import Hibernate.Producto;
 import com.opensymphony.xwork2.ActionSupport;
 import java.util.List;
 
@@ -20,6 +22,7 @@ public class ChatAction extends ActionSupport {
     
     private ChatId chatId;
     private List<Mensaje> mensajes;
+    private Producto producto;
     
     public ChatAction() {
     }
@@ -28,9 +31,11 @@ public class ChatAction extends ActionSupport {
         return SUCCESS;
     }
     
-    public String abrir() throws Exception {
+    public String cargar() throws Exception {
         UsuarioDao uDao = new UsuarioDao();
+        ProductoDao pDao = new ProductoDao();
         mensajes = uDao.getMensajesChat(chatId);
+        producto = pDao.getProducto((int) chatId.getIdProducto());
         return SUCCESS;
     }
     
@@ -55,6 +60,14 @@ public class ChatAction extends ActionSupport {
 
     public void setMensajes(List<Mensaje> mensajes) {
         this.mensajes = mensajes;
+    }
+
+    public Producto getProducto() {
+        return producto;
+    }
+
+    public void setProducto(Producto producto) {
+        this.producto = producto;
     }
     
     

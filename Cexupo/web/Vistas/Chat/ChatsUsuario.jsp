@@ -67,7 +67,7 @@
                             <div class="card-body">
                                 <p class="card-text"><s:property value = "id.getIdUsuario()"/></p>
                             </div>
-                            <s:form method="POST" action="abrirChat">
+                            <s:form method="POST" action="irAChat">
                                 <s:hidden name="chatId" value="%{id}" />
                                 <s:submit cssClass="btn btn-sm btn-outline-secondary" value="Abrir"/>
                             </s:form>

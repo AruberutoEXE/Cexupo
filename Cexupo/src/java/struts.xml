@@ -88,7 +88,11 @@
             <result name="success">/Vistas/Chat/ChatsUsuario.jsp</result>
             <result name="error">/Vistas/login/Error.jsp</result>
         </action>
-        <action name="abrirChat" class="Actions.ChatAction" method="abrir">
+        <action name="irAChat" class="Actions.ChatAction">
+            <result name="success">/Vistas/Chat/Chat.jsp</result>
+            <result name="error">/Vistas/login/Error.jsp</result>
+        </action>
+        <action name="cargarChat" class="Actions.ChatAction" method="cargar">
             <result name="success">/Vistas/Chat/Chat.jsp</result>
             <result name="error">/Vistas/login/Error.jsp</result>
         </action>
