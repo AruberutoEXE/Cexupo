@@ -80,6 +80,10 @@
     </package>
     
     <package extends="struts-default"  name="chat">
+        <action name="abrirChat" class="Actions.CreateChatAction">
+            <result name="success">/Vistas/Chat/Chat.jsp</result>
+            <result name="error">/Vistas/login/Error.jsp</result>
+        </action>
         <action name="listarChatsUser" class="Actions.ChatsUsuarioAction">
             <result name="success">/Vistas/Chat/ChatsUsuario.jsp</result>
             <result name="error">/Vistas/login/Error.jsp</result>
