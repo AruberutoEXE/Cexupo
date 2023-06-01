@@ -71,6 +71,7 @@
         <action name="publicar" class="Actions.PublicarAction">
             <result name="success">/Vistas/Producto/PublicadosUsuario.jsp</result>
             <result name="error">/Error.jsp</result>
+            <result name="input">/Vistas/Producto/Publicar.jsp</result>
         </action>
         <action name="eliminarP" class="Actions.EliminarProductoAction">
             <result name="success">/Vistas/Producto/PublicadosUsuario.jsp</result>
@@ -83,6 +84,7 @@
         <action name="updateP" class="Actions.UpdateProductoAction">
             <result name="success">/Vistas/Producto/PublicadosUsuario.jsp</result>
             <result name="error">/Error.jsp</result>
+            <result name="input">/Vistas/Producto/UpdateProducto.jsp</result>
         </action>
         <action name="listPubliUser" class="Actions.ProductosPublicadosAction">
             <result name="success">/Vistas/Producto/UsuarioProductosVenta.jsp</result>
@@ -118,6 +120,7 @@
         <action name="enviarM" class="Actions.MensajeAction" method="enviarM">
             <result name="success">/Vistas/Chat/Chat.jsp</result>
             <result name="error">/Vistas/login/Error.jsp</result>
+            <result name="input">/Vistas/Chat/Chat.jsp</result>
         </action>
         <action name="eliminarM" class="Actions.MensajeAction" method="borrarM">
             <result name="success">/Vistas/Chat/Chat.jsp</result>
@@ -126,6 +129,7 @@
         <action name="editarM" class="Actions.MensajeAction" method="editarM">
             <result name="success">/Vistas/Chat/Chat.jsp</result>
             <result name="error">/Vistas/login/Error.jsp</result>
+            <result name="input">/Vistas/Chat/Chat.jsp</result>
         </action>
     </package>
     
