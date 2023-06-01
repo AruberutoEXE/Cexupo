@@ -43,6 +43,16 @@
             <result name="error">/Error.jsp</result>
             
         </action>
+        <action name="Deletedir" class="Actions.DeleteDir">
+            <result name="success">/Vistas/login/cuenta.jsp</result>
+            <result name="error">/Error.jsp</result>
+        </action>
+        
+         <action name="createMet" class="Actions.CreateMethodPay">
+            <result name="success">/Vistas/login/cuenta.jsp</result>
+            <result name="error">/Error.jsp</result>
+            
+        </action>
     </package>
     <package extends="struts-default"  name="producto">
         <action name="productos" class="Actions.ProductosAction">

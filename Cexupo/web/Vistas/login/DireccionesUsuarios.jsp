@@ -33,7 +33,7 @@
                                 <s:hidden name="id" value="%{id}" />
                                 <s:submit cssClass="btn btn-sm btn-outline-secondary" value="Modify"/>
                             </s:form>
-                            <s:form method="POST" action="eliminarDir">
+                            <s:form method="POST" action="Deletedir">
                                 <s:hidden name="id" value="%{id}" />
                                 <s:submit cssClass="btn btn-sm btn-outline-secondary" value="Delete"/>
                             </s:form>

@@ -97,7 +97,15 @@ public class UsuarioDao {
         sesion.close();
         return u;
     }
-
+    public Direccion getDireccion(int id){
+        Session sesion = HibernateUtil.getSessionFactory().openSession();
+        org.hibernate.Transaction tx = sesion.beginTransaction();
+        Query q = sesion.createQuery("from Direccion where id='" + id + "'");
+         Direccion d =  (Direccion) q.uniqueResult();
+        tx.commit();
+        sesion.close();
+        return d;
+    }
     public boolean createDireccion(Direccion dir) {
         Session sesion = HibernateUtil.getSessionFactory().openSession();
         boolean salida = true;

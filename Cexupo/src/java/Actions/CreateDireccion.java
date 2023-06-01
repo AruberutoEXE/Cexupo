@@ -57,22 +57,14 @@ public class CreateDireccion extends ActionSupport implements SessionAware{
     }
     
     public String execute() throws Exception {
-       //try{
            String idUsuario = (String)sessionMap.get("username");
-        System.out.println("entra: " + idUsuario + ".."+ direccion +  ".." + cp + ".." + nombre );
         Direccion newDir = new Direccion();
         newDir.setCp(cp);
         newDir.setDireccion(direccion);
         newDir.setIdUsuario(idUsuario);
         newDir.setNombre(nombre);
-        System.out.println("entra22222222: " + newDir.getNombre());
        UsuarioDao udao= new UsuarioDao();
        udao.createDireccion(newDir);
-      System.out.println("entra3333333333: " + newDir );
-       //}catch(NumberFormatException e){
-         //  return ERROR;
-       //}
-        
         return SUCCESS;
     }
 
