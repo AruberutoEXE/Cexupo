@@ -11,12 +11,13 @@ import com.opensymphony.xwork2.ActionSupport;
 import java.util.List;
 import java.util.Map;
 import org.apache.struts2.dispatcher.SessionMap;
+import org.apache.struts2.interceptor.SessionAware;
 
 /**
  *
  * @author Usuario
  */
-public class ChatsUsuarioAction extends ActionSupport {
+public class ChatsUsuarioAction extends ActionSupport implements SessionAware{
     
     private List<Chat> chats;
     private SessionMap<String, Object> sessionMap;
@@ -38,6 +39,7 @@ public class ChatsUsuarioAction extends ActionSupport {
         this.chats = chats;
     }
     
+    @Override
     public void setSession(Map<String, Object> map) {
         sessionMap = (SessionMap) map;
     }

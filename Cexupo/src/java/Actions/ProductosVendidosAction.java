@@ -11,12 +11,13 @@ import Hibernate.Producto;
 import java.util.List;
 import java.util.Map;
 import org.apache.struts2.dispatcher.SessionMap;
+import org.apache.struts2.interceptor.SessionAware;
 
 /**
  *
  * @author Usuario
  */
-public class ProductosVendidosAction extends ActionSupport {
+public class ProductosVendidosAction extends ActionSupport implements SessionAware {
     
     private List<Producto> productosVendidos;
     private SessionMap<String, Object> sessionMap;
@@ -24,8 +25,7 @@ public class ProductosVendidosAction extends ActionSupport {
     public ProductosVendidosAction() {
     }
     
-    public String execute() throws Exception {
-        
+    public String execute() throws Exception {        
         ProductoDao pdao=new ProductoDao();
         productosVendidos=pdao.getAllProductosVendidos((String)sessionMap.get("username"));
         return SUCCESS;
@@ -39,6 +39,7 @@ public class ProductosVendidosAction extends ActionSupport {
         this.productosVendidos = productos;
     }
     
+    @Override
     public void setSession(Map<String, Object> map) {
         sessionMap = (SessionMap) map;
     }

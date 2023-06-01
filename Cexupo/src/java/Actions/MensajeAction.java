@@ -12,12 +12,13 @@ import com.opensymphony.xwork2.ActionSupport;
 import java.util.Date;
 import java.util.Map;
 import org.apache.struts2.dispatcher.SessionMap;
+import org.apache.struts2.interceptor.SessionAware;
 
 /**
  *
  * @author Usuario
  */
-public class MensajeAction extends ActionSupport {
+public class MensajeAction extends ActionSupport implements SessionAware{
     
     private Long id;
     private String contenido;
@@ -70,6 +71,7 @@ public class MensajeAction extends ActionSupport {
         this.contenido = contenido;
     }
     
+    @Override
     public void setSession(Map<String, Object> map) {
         sessionMap = (SessionMap) map;
     }

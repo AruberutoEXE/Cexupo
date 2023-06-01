@@ -9,18 +9,22 @@ import DAO.ProductoDao;
 import Hibernate.Producto;
 import Hibernate.Usuario;
 import com.opensymphony.xwork2.ActionSupport;
+import java.util.Map;
+import org.apache.struts2.dispatcher.SessionMap;
+import org.apache.struts2.interceptor.SessionAware;
 
 /**
  *
  * @author Usuario
  */
-public class PublicarAction extends ActionSupport {
+public class PublicarAction extends ActionSupport implements SessionAware {
     
     private String nombre;
     private String desc;
     private String estado;
     private String precio;
     private String hashtag;
+    private SessionMap<String, Object> sessionMap;
     
     public PublicarAction() {
         
@@ -34,7 +38,9 @@ public class PublicarAction extends ActionSupport {
         p.setEstado(estado);
         p.setPrecio(Float.parseFloat(precio));
         p.setHastag(hashtag);
-        p.setUsuario(new Usuario());//USAR SESSION USERNAME!!!!!!-----------------------------------------------------------!!!!!!!!!!!!
+        Usuario u = new Usuario();
+        u.setUsername((String)sessionMap.get("username"));
+        p.setUsuario(u);
         ProductoDao pDAO = new ProductoDao();
         pDAO.addProducto(p);
         return SUCCESS;
@@ -78,5 +84,10 @@ public class PublicarAction extends ActionSupport {
 
     public void setHashtag(String hashtag) {
         this.hashtag = hashtag;
+    }
+    
+    @Override
+    public void setSession(Map<String, Object> map) {
+        sessionMap = (SessionMap) map;
     }
 }
