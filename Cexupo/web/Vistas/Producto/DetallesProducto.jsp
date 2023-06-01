@@ -41,9 +41,16 @@
             <div class="nav-scroller py-1 mb-2 bg-secondary  rounded-pill p-3">
                 <nav class="nav d-flex justify-content-between">
                     <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="/Cexupo/index.jsp">Busqueda</a>
+                    <s:if test="%{#session.username!=null}">
                     <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="/Cexupo/Vistas/Producto/PublicadosUsuario.jsp">Tus productos</a>
                     <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="#">Pedidos</a>
                     <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="/Cexupo/Vistas/login/cuenta.jsp">Cuenta</a>
+                    </s:if>
+                    <s:else>
+                    <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="/Cexupo/Vistas/login/login.jsp">Tus productos</a>
+                    <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="/Cexupo/Vistas/login/login.jsp">Pedidos</a>
+                    <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="/Cexupo/Vistas/login/login.jsp">Cuenta</a>
+                    </s:else>
                 </nav>
             </div>
         </div>
