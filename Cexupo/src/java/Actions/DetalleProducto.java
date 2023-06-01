@@ -36,7 +36,7 @@ public class DetalleProducto extends ActionSupport {
         descripcion = p.getDescripcion();
         estado = p.getEstado();
         hastag = p.getHastag();
-       // id_usuario = p.get;
+        id_usuario = p.getUsuario().getUsername();
 
         return SUCCESS;
     }

@@ -66,43 +66,47 @@
                     </div>
                 </div>
             </div>
-            <div class="container">
-                <div class="card mb-4 box-shadow">
-                    <s:form action="eliminarP">
-                        <s:hidden  value="%{id}" name="id" />
-                        <s:submit value="Eliminar"/>
-                    </s:form>	
+            <s:if test="%{id_usuario==#session.username}">
+                <div class="container">
+                    <div class="card mb-4 box-shadow">
+                        <s:form action="eliminarP">
+                            <s:hidden  value="%{id}" name="id" />
+                            <s:submit value="Eliminar"/>
+                        </s:form>	
+                    </div>
                 </div>
-            </div>
-            <div class="container">
-                <div class="card mb-4 box-shadow">
-                    <s:form action="actualizarP">
-                        <s:hidden  value="%{id}" name="id" />
-                        <s:hidden  value="%{nombre}" name="nombre" />
-                        <s:hidden  value="%{descripcion}" name="descripcion" />
-                        <s:hidden  value="%{estado}" name="estado" />
-                        <s:hidden  value="%{hastag}" name="hastag" />
-                        <s:hidden  value="%{precio}" name="precio" />
-                        <s:submit value="Actualizar"/>
-                    </s:form>	
+                <div class="container">
+                    <div class="card mb-4 box-shadow">
+                        <s:form action="actualizarP">
+                            <s:hidden  value="%{id}" name="id" />
+                            <s:hidden  value="%{nombre}" name="nombre" />
+                            <s:hidden  value="%{descripcion}" name="descripcion" />
+                            <s:hidden  value="%{estado}" name="estado" />
+                            <s:hidden  value="%{hastag}" name="hastag" />
+                            <s:hidden  value="%{precio}" name="precio" />
+                            <s:submit value="Actualizar"/>
+                        </s:form>	
+                    </div>
                 </div>
-            </div>
-            <div class="container">
-                <div class="card mb-4 box-shadow">
-                    <s:form action="comprar">
-                        <s:hidden  value="%{idProducto}" name="producto" />
-                        <s:submit value="Comprar"/>
-                    </s:form>	
+            </s:if>    
+            <s:else>        
+                <div class="container">
+                    <div class="card mb-4 box-shadow">
+                        <s:form action="comprar">
+                            <s:hidden  value="%{idProducto}" name="producto" />
+                            <s:submit value="Comprar"/>
+                        </s:form>	
+                    </div>
                 </div>
-            </div>
-            <div class="container">
-                <div class="card mb-4 box-shadow">
-                    <s:form action="contactar">
-                        <s:hidden  value="%{idProducto}" name="producto" />
-                        <s:submit value="Contactar con el venderdor"/>
-                    </s:form>	
+                <div class="container">
+                    <div class="card mb-4 box-shadow">
+                        <s:form action="contactar">
+                            <s:hidden  value="%{idProducto}" name="producto" />
+                            <s:submit value="Contactar con el venderdor"/>
+                        </s:form>	
+                    </div>
                 </div>
-            </div>
+            </s:else>
 
         </main>
 
