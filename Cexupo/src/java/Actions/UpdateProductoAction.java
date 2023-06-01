@@ -18,7 +18,7 @@ public class UpdateProductoAction extends ActionSupport {
 
     private String id;
     private String nombre;
-    private String precio;
+    private float precio;
     private String descripcion;
     private String hastag;
     private String estado;
@@ -35,8 +35,8 @@ public class UpdateProductoAction extends ActionSupport {
         if(this.descripcion != p.getDescripcion()){
             p.setDescripcion(this.descripcion);
         }
-        if(Float.parseFloat(this.precio) != p.getPrecio()){
-            p.setPrecio(Float.parseFloat(this.precio));
+        if(this.precio != p.getPrecio()){
+            p.setPrecio(this.precio);
         }
         if(this.hastag != p.getHastag()){
             p.setHastag(this.hastag);
@@ -64,11 +64,11 @@ public class UpdateProductoAction extends ActionSupport {
         this.nombre = nombre;
     }
 
-    public String getPrecio() {
+    public float getPrecio() {
         return precio;
     }
 
-    public void setPrecio(String precio) {
+    public void setPrecio(float precio) {
         this.precio = precio;
     }
 

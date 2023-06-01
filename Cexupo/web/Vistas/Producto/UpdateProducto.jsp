@@ -74,7 +74,7 @@
                             <s:hidden  value="%{id}" name="id" />
                             <s:textfield name="nombre" label="Nombre"></s:textfield>
                             <s:textfield name="descripcion" label="Descripción"></s:textfield>
-                            <s:textfield name="precio" label="Precio"></s:textfield>
+                            <s:textfield type="number" name="precio" label="Precio"></s:textfield>
                             <s:textfield name="estado" label="Estado"></s:textfield>
                             <s:textfield name="hastag" label="Hashtag"></s:textfield>
                             <s:submit name="update" value="Actualizar"></s:submit>

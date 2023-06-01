@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<validators>
+    <field name="nombre">
+        <field-validator type="stringlength">
+            <param name="maxLength">40</param>
+            <param name="trim">true</param>
+            <message>40 characters maximum</message>
+        </field-validator>
+    </field>
+    <field name="desc">
+        <field-validator type="stringlength">
+            <param name="maxLength">255</param>
+            <param name="trim">true</param>
+            <message>255 characters maximum</message>
+        </field-validator>
+    </field>
+    <field name="estado">
+        <field-validator type="stringlength">
+            <param name="maxLength">40</param>
+            <param name="trim">true</param>
+            <message>40 characters maximum</message>
+        </field-validator>
+    </field>
+    <field name="hashtag">
+        <field-validator type="stringlength">
+            <param name="maxLength">255</param>
+            <param name="trim">true</param>
+            <message>255 characters maximum</message>
+        </field-validator>
+    </field>
+</validators>
