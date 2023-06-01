@@ -5,7 +5,7 @@
  */
 package Actions;
 
-import DAO.UsuarioDao;
+import DAO.ChatDao;
 import Hibernate.Chat;
 import com.opensymphony.xwork2.ActionSupport;
 import java.util.List;
@@ -26,8 +26,8 @@ public class ChatsUsuarioAction extends ActionSupport implements SessionAware{
     }
     
     public String execute() throws Exception {
-        UsuarioDao uDao = new UsuarioDao();
-        chats = uDao.getAllChatsUsuario((String)sessionMap.get("username"));
+        ChatDao cDao = new ChatDao();
+        chats = cDao.getAllChatsUsuario((String)sessionMap.get("username"));
         return SUCCESS;
     }
 

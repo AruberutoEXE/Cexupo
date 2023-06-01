@@ -5,11 +5,10 @@
  */
 package Actions;
 
+import DAO.ChatDao;
 import DAO.UsuarioDao;
 import Hibernate.Mensaje;
-import Hibernate.Usuario;
 import com.opensymphony.xwork2.ActionSupport;
-import java.util.Date;
 import java.util.Map;
 import org.apache.struts2.dispatcher.SessionMap;
 import org.apache.struts2.interceptor.SessionAware;
@@ -32,26 +31,26 @@ public class MensajeAction extends ActionSupport implements SessionAware{
     }
     
     public String editarM() throws Exception {
-        UsuarioDao uDao = new UsuarioDao();
-        Mensaje m = uDao.getMensaje(id);
+        ChatDao cDao = new ChatDao();
+        Mensaje m = cDao.getMensaje(id);
         m.setContenido(contenido);
-        uDao.updateMensaje(m);
+        cDao.updateMensaje(m);
         return SUCCESS;
     }
     
     public String enviarM() throws Exception {
-        UsuarioDao uDao = new UsuarioDao();
+        ChatDao cDao = new ChatDao();
         Mensaje m = new Mensaje();
         m.setContenido(contenido);
         m.setIdUsuario((String)sessionMap.get("username"));
-        uDao.addMensaje(m);
+        cDao.addMensaje(m);
         return SUCCESS;
     }
     
     public String borrarM() throws Exception {
-        UsuarioDao uDao = new UsuarioDao();
-        Mensaje m = uDao.getMensaje(id);
-        uDao.removeMensaje(m);
+        ChatDao cDao = new ChatDao();
+        Mensaje m = cDao.getMensaje(id);
+        cDao.removeMensaje(m);
         return SUCCESS;
     }
 

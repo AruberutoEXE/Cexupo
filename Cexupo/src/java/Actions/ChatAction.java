@@ -5,8 +5,8 @@
  */
 package Actions;
 
+import DAO.ChatDao;
 import DAO.ProductoDao;
-import DAO.UsuarioDao;
 import Hibernate.Chat;
 import Hibernate.ChatId;
 import Hibernate.Mensaje;
@@ -32,17 +32,17 @@ public class ChatAction extends ActionSupport {
     }
     
     public String cargar() throws Exception {
-        UsuarioDao uDao = new UsuarioDao();
+        ChatDao cDao = new ChatDao();
         ProductoDao pDao = new ProductoDao();
-        mensajes = uDao.getMensajesChat(chatId);
+        mensajes = cDao.getMensajesChat(chatId);
         producto = pDao.getProducto((int) chatId.getIdProducto());
         return SUCCESS;
     }
     
     public String eliminar() throws Exception {
-        UsuarioDao uDao = new UsuarioDao();
+        ChatDao cDao = new ChatDao();
         Chat c = new Chat(chatId);
-        uDao.deleteChat(c);
+        cDao.deleteChat(c);
         return SUCCESS;
     }
 
