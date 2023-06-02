@@ -21,12 +21,21 @@ public class GetDireccionesUser extends ActionSupport implements SessionAware{
     
     public GetDireccionesUser() {
     }
+    private String id;
     private SessionMap<String, Object> sessionMap;
 
     private List<Direccion> direcciones;
 
     public SessionMap<String, Object> getSessionMap() {
         return sessionMap;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public void setSessionMap(SessionMap<String, Object> sessionMap) {
@@ -55,7 +64,11 @@ public class GetDireccionesUser extends ActionSupport implements SessionAware{
        return SUCCESS;
     
     }
-
+    public String detallesDir(){
+        UsuarioDao uDao = new UsuarioDao();
+        Direccion d = uDao.getDireccion(Integer.parseInt(id));
+        return SUCCESS;
+    }
     @Override
     public void setSession(Map<String, Object> map) {
         sessionMap = (SessionMap) map;

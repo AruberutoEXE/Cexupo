@@ -44,18 +44,18 @@
         <main role="main">
             <section class="jumbotron text-center">
                 <div class="container bg-dark p-3">
-                    <h1 class="jumbotron-heading text-white">Update your address's information</h1>
+                    <h1 class="jumbotron-heading text-white">Update your address's information </h1>
                 </div>
             </section>
-
+           
             <div class="album py-5 ">
                 <div class="container">
                     <div class="card mb-4 box-shadow">
-                        <s:form action="UpdateDir">
+                        <s:form action="updateD">
                             <s:hidden  value="%{id}" name="id" />
-                            <s:textfield label="Address" name="direccion"/>
+                            <s:textfield  name="direccion" label="Address"/>
                             <s:textfield type="number" name="cp" label="Postal code"/>
-                            <s:textfield label="name address" name="nombre"/>
+                            <s:textfield  name="nombre" label="name address"/>
                             <s:submit name="update" value="Update"></s:submit>
                         </s:form>
                     </div>

@@ -29,7 +29,7 @@
                                 <p class="card-text">Postal code: <s:property value = "cp"/></p>
                                 <p class="card-text">Name: <s:property value = "nombre"/></p>
                             </div>
-                            <s:form method="POST" action="modificarDir">
+                            <s:form method="POST" action="direccion">
                                 <s:hidden name="id" value="%{id}" />
                                 <s:submit cssClass="btn btn-sm btn-outline-secondary" value="Modify"/>
                             </s:form>

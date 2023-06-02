@@ -57,13 +57,19 @@
             <result name="success">/Vistas/login/cuenta.jsp</result>
             <result name="error">/Error.jsp</result>
         </action>
-        <action name="modificarDir" class="Actions.ModifyDir">
+        
+        <action name="actualizarD" class="Actions.updateDir" method="goToUpdate">
+            <result name="success">/Vistas/login/detallesDireccion.jsp</result>
+            <result name="error">/Error.jsp</result>
+        </action>
+        <action name="direccion" class="Actions.DetalleDireccion">
             <result name="success">/Vistas/login/ModifyDirecciones.jsp</result>
             <result name="error">/Error.jsp</result>
         </action>
-        <action name="UpdateDir" class="Actions.updateDir" method="goToUpdate">
+        <action name="updateD" class="Actions.ModifyDir">
             <result name="success">/Vistas/login/cuenta.jsp</result>
             <result name="error">/Error.jsp</result>
+            
         </action>
     </package>
     <package extends="struts-default"  name="producto">
