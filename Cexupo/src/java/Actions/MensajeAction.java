@@ -7,6 +7,7 @@ package Actions;
 
 import DAO.ChatDao;
 import DAO.UsuarioDao;
+import Hibernate.ChatId;
 import Hibernate.Mensaje;
 import com.opensymphony.xwork2.ActionSupport;
 import java.util.Map;
@@ -21,6 +22,7 @@ public class MensajeAction extends ActionSupport implements SessionAware{
     
     private Long id;
     private String contenido;
+    private ChatId chatId;
     private SessionMap<String, Object> sessionMap;
     
     public MensajeAction() {
@@ -43,6 +45,7 @@ public class MensajeAction extends ActionSupport implements SessionAware{
         Mensaje m = new Mensaje();
         m.setContenido(contenido);
         m.setIdUsuario((String)sessionMap.get("username"));
+        m.setIdChat(chatId.hashCode());
         cDao.addMensaje(m);
         return SUCCESS;
     }
@@ -68,6 +71,14 @@ public class MensajeAction extends ActionSupport implements SessionAware{
 
     public void setContenido(String contenido) {
         this.contenido = contenido;
+    }
+
+    public ChatId getChatId() {
+        return chatId;
+    }
+
+    public void setChatId(ChatId chatId) {
+        this.chatId = chatId;
     }
     
     @Override

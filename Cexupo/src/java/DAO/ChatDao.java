@@ -55,17 +55,21 @@ public class ChatDao {
 
     public List<Chat> getAllChatsUsuario(String username) {
         ProductoDao pDao = new ProductoDao();
+        String str = "(";
         List<Producto> productos = pDao.getAllProductosPublicados(username);
-        List idProductos = new ArrayList();
         Iterator it = productos.iterator();
         Producto p;
         while (it.hasNext()) {
             p = (Producto) it.next();
-            idProductos.add(p.getId());
+            if(it.hasNext()){
+                str += "" + p.getId()+ ",";
+            } else{
+                str += "" + p.getId()+ ")";
+            }
         }
         Session sesion = HibernateUtil.getSessionFactory().openSession();
         org.hibernate.Transaction tx = sesion.beginTransaction();
-        Query q = sesion.createQuery("from Chat where idUsuario='" + username + "' OR idProducto IN idProductos").setParameterList("idProductos", idProductos);
+        Query q = sesion.createQuery("from Chat where idUsuario='" + username + "' OR idProducto IN "+str);
         List<Chat> chats = (List<Chat>) q.list();
         tx.commit();
         sesion.close();
@@ -83,7 +87,8 @@ public class ChatDao {
     public List<Mensaje> getMensajesChat(ChatId id) {
         Session sesion = HibernateUtil.getSessionFactory().openSession();
         org.hibernate.Transaction tx = sesion.beginTransaction();
-        Query q = sesion.createQuery("from Mensaje where idChat=:id ORDER BY fecha ASC").setParameter("id", id);
+        int idChat = id.hashCode();
+        Query q = sesion.createQuery("from Mensaje where idChat='" + idChat + "' ORDER BY fecha ASC");
         List<Mensaje> mensajes = (List<Mensaje>) q.list();
         tx.commit();
         sesion.close();

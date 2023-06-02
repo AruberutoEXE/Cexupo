@@ -13,29 +13,40 @@ import Hibernate.Mensaje;
 import Hibernate.Producto;
 import com.opensymphony.xwork2.ActionSupport;
 import java.util.List;
+import java.util.Map;
+import org.apache.struts2.dispatcher.SessionMap;
+import org.apache.struts2.interceptor.SessionAware;
 
 /**
  *
  * @author Usuario
  */
-public class ChatAction extends ActionSupport {
+public class ChatAction extends ActionSupport implements SessionAware{
     
     private ChatId chatId;
     private List<Mensaje> mensajes;
-    private Producto producto;
+    private Producto product;
+    private String producto;
+    private SessionMap<String, Object> sessionMap; 
+    
     
     public ChatAction() {
     }
     
-    public String execute() throws Exception {
+    public String execute() throws Exception { 
         return SUCCESS;
     }
     
     public String cargar() throws Exception {
         ChatDao cDao = new ChatDao();
         ProductoDao pDao = new ProductoDao();
+        if(chatId == null){
+            this.chatId = new ChatId();
+            chatId.setIdProducto(Long.parseLong(producto));
+            chatId.setIdUsuario((String)sessionMap.get("username"));
+        }
         mensajes = cDao.getMensajesChat(chatId);
-        producto = pDao.getProducto((int) chatId.getIdProducto());
+        product = pDao.getProducto((int) chatId.getIdProducto());
         return SUCCESS;
     }
     
@@ -62,14 +73,25 @@ public class ChatAction extends ActionSupport {
         this.mensajes = mensajes;
     }
 
-    public Producto getProducto() {
+    public Producto getProduct() {
+        return product;
+    }
+
+    public void setProduct(Producto producto) {
+        this.product = producto;
+    }
+
+    public String getProducto() {
         return producto;
     }
 
-    public void setProducto(Producto producto) {
+    public void setProducto(String producto) {
         this.producto = producto;
     }
     
-    
+    @Override
+    public void setSession(Map<String, Object> map) {
+        sessionMap = (SessionMap) map;
+    }
     
 }

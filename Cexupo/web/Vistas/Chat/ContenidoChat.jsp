@@ -57,6 +57,7 @@
 
         <footer class="blog-footer jumbotron text-center bg-dark">
             <s:form method="POST" action="enviarM">
+                <s:hidden name="chatId" value="%{chatId}" />
                 <s:text name="contenido"/>
                 <s:submit cssClass="btn btn-sm btn-outline-secondary" value="Send"/>
             </s:form>

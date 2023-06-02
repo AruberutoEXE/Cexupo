@@ -26,16 +26,15 @@
                         <h1 class="text-white">Cexupo</h1>
 
                     </div>
-                    <div class="nav-scroller py-1 mb-2 bg-secondary  rounded-pill p-3">
-                <nav class="nav d-flex justify-content-between">
-                    <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="/Cexupo/Vistas/Chat/ChatsUsuario.jsp">Back</a>
-                </nav>   
-            </div>
+                    <div class="col-4 d-flex justify-content-end align-items-right">
+                        <s:form action="listarChatsUser">
+                            <s:submit cssClass="btn btn-sm btn-outline-secondary" value="Back to chats"></s:submit>
+                        </s:form>
+                    </div>                
                 </div>
             </header>
-        </div>               
-                        <s:action name="cargarChat" namespace="/chat" executeResult="true" />
-        
+        </div>          
+                            <s:action name="cargarChat" namespace="/chat" executeResult="true"/>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

@@ -67,10 +67,16 @@
 
             <div class="album py-5 ">
                 <div class="container">
-                    <s:iterator value="chats">
+                    <s:iterator value="chats" var="chat">
                         <div class="card mb-4 box-shadow">
                             <div class="card-body">
-                                <p class="card-text"><s:property value = "id.getIdUsuario()"/></p>
+                                <s:if test="%{#session.username!=id.IdUsuario}">
+                                    <p class="card-text"><s:property value = "id.idUsuario"/></p>
+                                </s:if>
+                                <s:else>
+                                    
+                                </s:else>   
+                                <p class="card-text"><s:property value = "id.IdProducto"/></p>
                             </div>
                             <s:form method="POST" action="irAChat">
                                 <s:hidden name="chatId" value="%{id}" />
