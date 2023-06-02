@@ -5,27 +5,17 @@
  */
 package Actions;
 
-import DAO.UsuarioDao;
-import Hibernate.Direccion;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
  *
  * @author agarc
  */
-public class ModifyDir extends ActionSupport {
+public class updateDir extends ActionSupport {
     private String nombre;
     private int cp;
     private String direccion;
     private String id;
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public String getNombre() {
         return nombre;
@@ -50,24 +40,23 @@ public class ModifyDir extends ActionSupport {
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
-    public ModifyDir() {
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+    
+    public updateDir() {
     }
     
     public String execute() throws Exception {
-        UsuarioDao uDao = new UsuarioDao();
-        Direccion d = uDao.getDireccion(Integer.parseInt(id));
-        if(this.nombre.equals(d.getNombre())){
-            d.setNombre(nombre);
-        }
-        if(this.direccion.equals(d.getDireccion())){
-            d.setDireccion(direccion);
-        }
-        if(this.cp != d.getCp()){
-            d.setCp(cp);
-        }
-        System.out.print("MERCADONA" + d);
-        uDao.updateDireccion(d);
+        return SUCCESS;
+        
+    }
+    public String goToUpdate(){
         return SUCCESS;
     }
-    
 }

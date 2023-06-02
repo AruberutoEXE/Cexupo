@@ -61,7 +61,7 @@
             <result name="success">/Vistas/login/ModifyDirecciones.jsp</result>
             <result name="error">/Error.jsp</result>
         </action>
-        <action name="updateDir" class="Actions.updateDir">
+        <action name="UpdateDir" class="Actions.updateDir" method="goToUpdate">
             <result name="success">/Vistas/login/cuenta.jsp</result>
             <result name="error">/Error.jsp</result>
         </action>
