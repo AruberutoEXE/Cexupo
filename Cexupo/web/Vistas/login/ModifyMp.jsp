@@ -46,7 +46,7 @@
                     <h1 class="jumbotron-heading text-white">Update your payment method's information </h1>
                 </div>
             </section>
-           
+            <h1>paso 2</h1>
             <div class="album py-5 ">
                 <div class="container">
                     <div class="card mb-4 box-shadow">

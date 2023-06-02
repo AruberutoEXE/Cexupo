@@ -18,6 +18,7 @@
         <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
     </head>
     <body>
+        <h1>PASO 1</h1>
         <main role="main">
             <div class="album py-5 ">
                 <div class="container">

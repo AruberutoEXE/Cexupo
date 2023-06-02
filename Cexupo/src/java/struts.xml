@@ -41,7 +41,7 @@
             <result name="error">/Error.jsp</result>
         </action>
         
-         <action name="createMet" class="Actions.CreateMethodPay">
+        <action name="createMet" class="Actions.CreateMethodPay">
             <result name="success">/Vistas/login/cuenta.jsp</result>
             <result name="error">/Error.jsp</result>
             
@@ -55,23 +55,24 @@
             <result name="success">/Vistas/login/detallesDireccion.jsp</result>
             <result name="error">/Error.jsp</result>
         </action>
-        <action name="actualizarM" class="Actions.updateM" method="goToUpdate">
-            <result name="success">/Vistas/login/detallesMetodoPago.jsp</result>
-            <result name="error">/Error.jsp</result>
-        </action>
+        
         <action name="direccion" class="Actions.DetalleDireccion">
             <result name="success">/Vistas/login/ModifyDirecciones.jsp</result>
-            <result name="error">/Error.jsp</result>
-        </action>
-        <action name="metodopago" class="Actions.DetalleMp">
-            <result name="success">/Vistas/login/ModifyMp.jsp</result>
             <result name="error">/Error.jsp</result>
         </action>
         <action name="updateD" class="Actions.ModifyDir">
             <result name="success">/Vistas/login/cuenta.jsp</result>
             <result name="error">/Error.jsp</result>
         </action>
-        <action name="updateM" class="Actions.ModifyMp">
+        <action name="actualizarM" class="Actions.updateM" method="goToUpdate">
+            <result name="success">/Vistas/login/detallesMetodoPago.jsp</result>
+            <result name="error">/Error.jsp</result>
+        </action>
+        <action name="metodopago" class="Actions.DetalleMp">
+            <result name="success">/Vistas/login/ModifyMp.jsp</result>
+            <result name="error">/Error.jsp</result>
+        </action>
+       <action name="updateM" class="Actions.ModfiyMp">
             <result name="success">/Vistas/login/cuenta.jsp</result>
             <result name="error">/Error.jsp</result>
         </action>
@@ -162,7 +163,7 @@
         </action>
         <action name="finalizarCompra" class="Actions.FianlizarCompra">
             <!--<result name="success" type="redirect">producto.productos</result>-->
-             <result name="success">/Vistas/Compra/FinalizarCompra.jsp</result>
+            <result name="success">/Vistas/Compra/FinalizarCompra.jsp</result>
             <result name="error">/Error.jsp</result>
         </action>
     </package>

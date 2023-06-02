@@ -3,62 +3,69 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Actions/LoginCheck.java</file>
-            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Hibernate/Metodopago.hbm.xml</file>
-            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/web/Vistas/Producto/UsuarioProductosVendidos.jsp</file>
-            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Actions/UpdateProductoAction-validation.xml</file>
-            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Actions/Comprar.java</file>
-            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Actions/UpdateProductoAction.java</file>
-            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Actions/FianlizarCompra.java</file>
-            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Actions/GetDireccionesUser-validation.xml</file>
-            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/web/Vistas/login/login.jsp</file>
-            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Hibernate/Categoria.java</file>
-            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/web/Vistas/login/welcome.jsp</file>
-            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Actions/GetPaymentMethods.java</file>
-            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/web/Vistas/Producto/UpdateProducto.jsp</file>
-            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/web/WEB-INF/web.xml</file>
-            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Actions/DeleteDir.java</file>
-            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/web/Vistas/login/registro.jsp</file>
+            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Actions/LoginCheck-validation.xml</file>
+            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Actions/RegisterUserAction.java</file>
+            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Actions/CreateChatAction.java</file>
+            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/DAO/UsuarioDao.java</file>
+            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Actions/CreateDireccion.java</file>
+            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Hibernate/Metodopago.java</file>
+            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/web/Vistas/login/error.jsp</file>
+            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/hibernate.cfg.xml</file>
+            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Actions/ModfiyMp.java</file>
             <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/web/Vistas/login/cuenta.jsp</file>
-            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Actions/ProductosAction.java</file>
-            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/web/Vistas/Compra/Compra.jsp</file>
+            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Hibernate/Usuario.java</file>
+            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Actions/RedirectProductAction.java</file>
+            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/web/Vistas/Producto/UpdateProducto.jsp</file>
             <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Actions/CreateMethodPay.java</file>
-            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Actions/ChatAction.java</file>
-            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Actions/GetDireccionesUser.java</file>
-            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/web/Vistas/login/DireccionesUsuarios.jsp</file>
+            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/web/Vistas/Compra/Compra.jsp</file>
+            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Actions/updateDir.java</file>
+            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Actions/Comprar.java</file>
+            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/web/Vistas/login/ModifyMp.jsp</file>
+            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/struts.xml</file>
+            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Actions/ProductosVendidosAction.java</file>
+            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Actions/DetalleDireccion.java</file>
+            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/web/index.jsp</file>
+            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Actions/FianlizarCompra.java</file>
+            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Actions/DetalleMp.java</file>
+            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/web/Vistas/Producto/DetallesProducto.jsp</file>
+            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/web/Vistas/Compra/FinalizarCompra.jsp</file>
+            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/web/Vistas/login/detallesMetodoPago.jsp</file>
+            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Hibernate/Producto.java</file>
+            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/web/Vistas/login/MetodosPagosUsuarios.jsp</file>
+            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Hibernate/Categoria.java</file>
+            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Actions/GetPaymentMethods.java</file>
+            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Actions/UpdateProductoAction.java</file>
+            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Actions/ProductosPublicadosAction.java</file>
+            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Actions/DetalleProducto.java</file>
             <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/DAO/VentaDao.java</file>
+            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Actions/PublicarAction.java</file>
+            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Actions/DeleteDir.java</file>
+            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/web/Vistas/login/ModifyDirecciones.jsp</file>
+            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Hibernate/Metodopago.hbm.xml</file>
+            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Hibernate/Direccion.java</file>
+            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/web/Vistas/Producto/PublicadosUsuario.jsp</file>
+            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/web/Error.jsp</file>
+            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Hibernate/Usuario.hbm.xml</file>
+            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/web/Vistas/login/login.jsp</file>
+            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/web/Vistas/login/detallesDireccion.jsp</file>
+            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Actions/GetDireccionesUser-validation.xml</file>
             <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Actions/ChatsUsuarioAction.java</file>
             <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/web/Vistas/Compra/Compras.jsp</file>
-            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Actions/ProductosPublicadosAction.java</file>
-            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Actions/CreateChatAction.java</file>
-            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Actions/RegisterUserAction-validation.xml</file>
-            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Actions/RedirectProductAction.java</file>
-            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Actions/loginAction.java</file>
-            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Hibernate/Usuario.hbm.xml</file>
-            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/web/Vistas/Compra/FinalizarCompra.jsp</file>
-            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/web/Error.jsp</file>
-            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/hibernate.cfg.xml</file>
-            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Actions/CreateDireccion.java</file>
-            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Actions/RegisterUserAction.java</file>
-            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Hibernate/Direccion.hbm.xml</file>
-            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/web/Vistas/login/MetodosPagosUsuarios.jsp</file>
-            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Hibernate/Direccion.java</file>
-            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Actions/ProductosVendidosAction.java</file>
-            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/web/index.jsp</file>
-            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/struts.xml</file>
-            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/web/Vistas/login/error.jsp</file>
-            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/DAO/UsuarioDao.java</file>
-            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/web/Vistas/Producto/Publicar.jsp</file>
-            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/web/Vistas/Producto/PublicadosUsuario.jsp</file>
+            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Actions/ProductosAction.java</file>
             <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Actions/MensajeAction.java</file>
+            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/web/Vistas/Producto/UsuarioProductosVendidos.jsp</file>
             <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/web/Vistas/Producto/Productos.jsp</file>
-            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Hibernate/Producto.java</file>
-            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Actions/DetalleProducto.java</file>
-            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Hibernate/Metodopago.java</file>
-            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Actions/LoginCheck-validation.xml</file>
-            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Actions/PublicarAction.java</file>
-            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Hibernate/Usuario.java</file>
-            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/web/Vistas/Producto/DetallesProducto.jsp</file>
+            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Actions/RegisterUserAction-validation.xml</file>
+            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Actions/GetDireccionesUser.java</file>
+            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/web/Vistas/login/DireccionesUsuarios.jsp</file>
+            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Actions/loginAction.java</file>
+            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Actions/EliminarProductoAction.java</file>
+            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Actions/LoginCheck.java</file>
+            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Actions/DeleteMetP.java</file>
+            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/web/Vistas/login/welcome.jsp</file>
+            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Actions/ModifyDir.java</file>
+            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/web/Vistas/Producto/Publicar.jsp</file>
+            <file>file:/C:/Users/agarc/1%20cuatrimestre/2%20cuatrimestre/INTEGRACIÓN%20DE%20TECNOLOGÍAS/Proyecto-CexUpo/Cexupo/Cexupo/src/java/Actions/updateM.java</file>
         </group>
     </open-files>
 </project-private>

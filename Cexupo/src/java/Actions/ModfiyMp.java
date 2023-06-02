@@ -51,6 +51,7 @@ public class ModfiyMp extends ActionSupport {
         if(this.nombre.equals(mp.getNombre())){
             mp.setNombre(nombre);
         }
+        System.out.print(mp.getNombre() + "HOLA");
         if(this.detalles.equals(mp.getDetalles())){
             mp.setDetalles(detalles);
         }
