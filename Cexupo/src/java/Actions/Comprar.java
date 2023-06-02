@@ -61,7 +61,7 @@ public class Comprar extends ActionSupport implements SessionAware {
         for (int i = 0; i < paylist.size(); i++) {
             pay.add(paylist.get(i).getNombre());
         }
-        direcciones = pay;
+        pagos = pay;
         return SUCCESS;
     }
 

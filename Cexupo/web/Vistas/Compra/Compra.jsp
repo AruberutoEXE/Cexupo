@@ -64,11 +64,11 @@
             <div class="container">
                 <div class="card mb-4 box-shadow">
                     <s:form action="fianlizarCompra">
-                        <s:select label="" headerValue="Direccion" list="direcciones" name="direccion"  />
-                        <s:select label="" headerValue="Transporte" list="transportes" name="transporte"  />
-                        <s:select label="" headerValue="Metodo de pago" list="pagos" name="pago"  />
+                        <s:select label="Direción"  list="direcciones" name="direccion"  />
+                        <s:select label="Transporte"list="transportes" name="transporte"  />
+                        <s:select label="Metodo de pago"list="pagos" name="pago"  />
                         <s:hidden  value="%{idProducto}" name="producto" />
-                        <s:submit label="Comprar"/>
+                        <s:submit value ="Comprar" label="Comprar"/>
                     </s:form>	
                 </div>
             </div>

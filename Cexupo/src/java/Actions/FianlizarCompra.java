@@ -15,11 +15,12 @@ import java.util.Map;
 import org.apache.struts2.dispatcher.SessionMap;
 
 import org.apache.struts2.interceptor.SessionAware;
+
 /**
  *
  * @author alber
  */
-public class FianlizarCompra extends ActionSupport implements SessionAware{
+public class FianlizarCompra extends ActionSupport implements SessionAware {
 
     public FianlizarCompra() {
     }
@@ -29,22 +30,26 @@ public class FianlizarCompra extends ActionSupport implements SessionAware{
     private String idProducto;
 
     private SessionMap<String, Object> sessionMap;
-    public String execute() throws Exception {
 
-        VentaDao vdao= new VentaDao();
-        Venta v= new Venta();
-        
-        v.setIdDireccion(Long.parseLong(direccion));
-        v.setIdMetodoPago(Long.parseLong(pago));
-        v.setIdTarifa(Long.parseLong(transporte));
-        UsuarioDao udao = new UsuarioDao();
-        Usuario usu=udao.getUser((String)sessionMap.get("username"));
-        v.setIdUsuario(usu.getUsername());
-        v.setFechaVenta(new Date());
-        v.setIdProducto(Long.parseLong(idProducto));
-        
-        
-        vdao.addVenta(v);
+    public String execute() throws Exception {
+        try {
+            VentaDao vdao = new VentaDao();
+            Venta v = new Venta();
+
+            v.setIdDireccion(Long.parseLong(direccion));
+            v.setIdMetodoPago(Long.parseLong(pago));
+            v.setIdTarifa(Long.parseLong(transporte));
+            UsuarioDao udao = new UsuarioDao();
+            Usuario usu = udao.getUser((String) sessionMap.get("username"));
+            v.setIdUsuario(usu.getUsername());
+            v.setFechaVenta(new Date());
+            v.setIdProducto(Long.parseLong(idProducto));
+
+            vdao.addVenta(v);
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+            return ERROR;
+        }
         return SUCCESS;
 
     }
