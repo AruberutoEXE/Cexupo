@@ -7,12 +7,8 @@
         <action name="" class="Actions.ProductosAction">
             <result>/index.jsp</result>
         </action>
-        
-
     </package>
-
     <package extends="struts-default"  name="login">
-
         <!-- accion por defecto. al no tener asociado ninguna class, no necesita que se le cree una clasenos la ahorramos -->
         <action name="login" >
             <result>/Vistas/login/login.jsp</result>
@@ -31,17 +27,14 @@
         <action name="DireccionesUser" class="Actions.GetDireccionesUser">
             <result name="success">/Vistas/login/DireccionesUsuarios.jsp</result>
             <result name="error">/Error.jsp</result>
-            
         </action>
         <action name="MetodoPagosUser" class="Actions.GetPaymentMethods">
             <result name="success">/Vistas/login/MetodosPagosUsuarios.jsp</result>
             <result name="error">/Error.jsp</result>
-            
         </action>
         <action name="createDir" class="Actions.CreateDireccion">
             <result name="success">/Vistas/login/cuenta.jsp</result>
             <result name="error">/Error.jsp</result>
-            
         </action>
         <action name="Deletedir" class="Actions.DeleteDir">
             <result name="success">/Vistas/login/cuenta.jsp</result>
@@ -62,14 +55,25 @@
             <result name="success">/Vistas/login/detallesDireccion.jsp</result>
             <result name="error">/Error.jsp</result>
         </action>
+        <action name="actualizarM" class="Actions.updateM" method="goToUpdate">
+            <result name="success">/Vistas/login/detallesMetodoPago.jsp</result>
+            <result name="error">/Error.jsp</result>
+        </action>
         <action name="direccion" class="Actions.DetalleDireccion">
             <result name="success">/Vistas/login/ModifyDirecciones.jsp</result>
+            <result name="error">/Error.jsp</result>
+        </action>
+        <action name="metodopago" class="Actions.DetalleMp">
+            <result name="success">/Vistas/login/ModifyMp.jsp</result>
             <result name="error">/Error.jsp</result>
         </action>
         <action name="updateD" class="Actions.ModifyDir">
             <result name="success">/Vistas/login/cuenta.jsp</result>
             <result name="error">/Error.jsp</result>
-            
+        </action>
+        <action name="updateM" class="Actions.ModifyMp">
+            <result name="success">/Vistas/login/cuenta.jsp</result>
+            <result name="error">/Error.jsp</result>
         </action>
     </package>
     <package extends="struts-default"  name="producto">

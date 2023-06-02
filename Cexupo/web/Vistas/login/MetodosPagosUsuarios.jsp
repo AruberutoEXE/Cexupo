@@ -29,7 +29,7 @@
                                 <p class="card-text">Details: <s:property value = "detalles"/></p>
                                 
                             </div>
-                            <s:form method="POST" action="modificarMet">
+                            <s:form method="POST" action="metodopago">
                                 <s:hidden name="id" value="%{id}" />
                                 <s:submit cssClass="btn btn-sm btn-outline-secondary" value="Modify"/>
                             </s:form>
