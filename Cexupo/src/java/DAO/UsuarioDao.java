@@ -106,6 +106,15 @@ public class UsuarioDao {
         sesion.close();
         return d;
     }
+    public Metodopago getMetPago(int id){
+        Session sesion = HibernateUtil.getSessionFactory().openSession();
+        org.hibernate.Transaction tx = sesion.beginTransaction();
+        Query q = sesion.createQuery("from Metodopago where id='" + id + "'");
+         Metodopago mp =  (Metodopago) q.uniqueResult();
+        tx.commit();
+        sesion.close();
+        return mp;
+    }
     public boolean createDireccion(Direccion dir) {
         Session sesion = HibernateUtil.getSessionFactory().openSession();
         boolean salida = true;

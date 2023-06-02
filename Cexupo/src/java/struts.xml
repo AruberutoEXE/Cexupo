@@ -53,6 +53,18 @@
             <result name="error">/Error.jsp</result>
             
         </action>
+        <action name="Deletemp" class="Actions.DeleteMetP">
+            <result name="success">/Vistas/login/cuenta.jsp</result>
+            <result name="error">/Error.jsp</result>
+        </action>
+        <action name="modificarDir" class="Actions.ModifyDir">
+            <result name="success">/Vistas/login/ModifyDirecciones.jsp</result>
+            <result name="error">/Error.jsp</result>
+        </action>
+        <action name="updateDir" class="Actions.updateDir">
+            <result name="success">/Vistas/login/cuenta.jsp</result>
+            <result name="error">/Error.jsp</result>
+        </action>
     </package>
     <package extends="struts-default"  name="producto">
         <action name="productos" class="Actions.ProductosAction">

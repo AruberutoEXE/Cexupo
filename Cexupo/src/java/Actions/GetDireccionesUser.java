@@ -49,9 +49,9 @@ public class GetDireccionesUser extends ActionSupport implements SessionAware{
        UsuarioDao udao = new UsuarioDao();
         
         Usuario usu=udao.getUser((String)sessionMap.get("username"));
-         direcciones = udao.getAllUserDirections(usu);
         
-      
+           direcciones = udao.getAllUserDirections(usu); 
+        
        return SUCCESS;
     
     }

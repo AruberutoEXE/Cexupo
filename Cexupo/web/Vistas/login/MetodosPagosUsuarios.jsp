@@ -33,7 +33,7 @@
                                 <s:hidden name="id" value="%{id}" />
                                 <s:submit cssClass="btn btn-sm btn-outline-secondary" value="Modify"/>
                             </s:form>
-                            <s:form method="POST" action="eliminarMet">
+                            <s:form method="POST" action="Deletemp">
                                 <s:hidden name="id" value="%{id}" />
                                 <s:submit cssClass="btn btn-sm btn-outline-secondary" value="Delete"/>
                             </s:form>
