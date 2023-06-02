@@ -29,7 +29,7 @@ public class CreateChatAction extends ActionSupport implements SessionAware {
     }
 
     public String execute() throws Exception {
-        try {
+        //try {
             String username = (String) sessionMap.get("username");
             UsuarioDao uDao = new UsuarioDao();
             ChatDao cdao = new ChatDao();
@@ -38,9 +38,11 @@ public class CreateChatAction extends ActionSupport implements SessionAware {
                 chat = cdao.createChat(Long.parseLong(producto), username);
             }
             mensajes = cdao.getMensajesChat(chat.getId());
-        } catch (Exception e) {
+        /*} catch (Exception e) {
+            System.err.println(e.getMessage());
             return ERROR;
-        }
+        }*/
+        System.out.println("Abrir chat");
         return SUCCESS;
 
     }

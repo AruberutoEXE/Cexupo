@@ -108,7 +108,7 @@
                 <div class="container">
                     <div class="card mb-4 box-shadow">
                         <s:form action="abrirChat">
-                            <s:hidden  value="%{idProducto}" name="producto" />
+                            <s:hidden  value="%{id}" name="producto" />
                             <s:submit value="Contact the seller"/>
                         </s:form>	
                     </div>

@@ -99,23 +99,23 @@
     <package extends="struts-default"  name="chat">
         <action name="abrirChat" class="Actions.CreateChatAction">
             <result name="success">/Vistas/Chat/Chat.jsp</result>
-            <result name="error">/Vistas/login/Error.jsp</result>
+            <result name="error">/Error.jsp</result>
         </action>
         <action name="listarChatsUser" class="Actions.ChatsUsuarioAction">
             <result name="success">/Vistas/Chat/ChatsUsuario.jsp</result>
-            <result name="error">/Vistas/login/Error.jsp</result>
+            <result name="error">/Error.jsp</result>
         </action>
         <action name="irAChat" class="Actions.ChatAction">
             <result name="success">/Vistas/Chat/Chat.jsp</result>
-            <result name="error">/Vistas/login/Error.jsp</result>
+            <result name="error">/Error.jsp</result>
         </action>
         <action name="cargarChat" class="Actions.ChatAction" method="cargar">
             <result name="success">/Vistas/Chat/Chat.jsp</result>
-            <result name="error">/Vistas/login/Error.jsp</result>
+            <result name="error">/Error.jsp</result>
         </action>
         <action name="eliminarChat" class="Actions.ChatAction" method="eliminar">
             <result name="success">/Vistas/Chat/ChatsUsuario.jsp</result>
-            <result name="error">/Vistas/login/Error.jsp</result>
+            <result name="error">/Error.jsp</result>
         </action>
         <action name="enviarM" class="Actions.MensajeAction" method="enviarM">
             <result name="success">/Vistas/Chat/Chat.jsp</result>
@@ -124,11 +124,11 @@
         </action>
         <action name="eliminarM" class="Actions.MensajeAction" method="borrarM">
             <result name="success">/Vistas/Chat/Chat.jsp</result>
-            <result name="error">/Vistas/login/Error.jsp</result>
+            <result name="error">/Error.jsp</result>
         </action>
         <action name="editarM" class="Actions.MensajeAction" method="editarM">
             <result name="success">/Vistas/Chat/Chat.jsp</result>
-            <result name="error">/Vistas/login/Error.jsp</result>
+            <result name="error">/Error.jsp</result>
             <result name="input">/Vistas/Chat/Chat.jsp</result>
         </action>
     </package>
@@ -136,12 +136,12 @@
     <package extends="struts-default"  name="compra">
         <action name="comprar" class="Actions.Comprar">
             <result name="success" >/Vistas/Compra/Compra.jsp</result>
-            <result name="error">/Vistas/Error.jsp</result>
+            <result name="error">/Error.jsp</result>
         </action>
         <action name="finalizarCompra" class="Actions.FianlizarCompra">
             <!--<result name="success" type="redirect">producto.productos</result>-->
              <result name="success">/Vistas/Compra/FinalizarCompra.jsp</result>
-            <result name="error">/Vistas/Error.jsp</result>
+            <result name="error">/Error.jsp</result>
         </action>
     </package>
 </struts>
