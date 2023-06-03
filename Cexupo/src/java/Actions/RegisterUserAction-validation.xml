@@ -6,33 +6,33 @@
     <field name="username">
         <field-validator type="requiredstring">
             <param name="trim">true</param>
-            <message>El nombre del usuario es un campo obligatorio</message>
+            <message>The user name is a required field</message>
         </field-validator>
         <field-validator type="stringlength">
             <param name="minLength">4</param>
             <param name="maxLength">20</param>
             <param name="trim">true</param>
-            <message>El nombre de usuario debe contener entre 4 y 20 caracteres</message>
+            <message>The username must contain between 4 and 20 characters</message>
         </field-validator>
     </field>
     <field name="password">
         <field-validator type="requiredstring">
             <param name="trim">true</param>
-            <message>La contraseña es un campo obligatorio</message>
+            <message>The password is a mandatory field</message>
         </field-validator>
         <field-validator type="stringlength">
             <param name="minLength">4</param>
             <param name="maxLength">8</param>
             <param name="trim">true</param>
-            <message>La contraseña debe contener entre 4 y 8 caracteres</message>
+            <message>The password must contain between 4 and 8 characters</message>
         </field-validator>
     </field>
     <field name="email">
         <field-validator type="requiredstring">
-            <message>El email no puede quedar vacío</message>
+            <message>The email can't be left empty</message>
         </field-validator>
         <field-validator type="email">
-            <message>Introduzca un email correcto</message>
+            <message>Enter a correct e-mail address</message>
         </field-validator>
     </field>
 </validators>
