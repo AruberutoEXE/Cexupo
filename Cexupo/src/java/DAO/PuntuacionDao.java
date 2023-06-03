@@ -6,8 +6,7 @@
 package DAO;
 
 import Hibernate.HibernateUtil;
-import Hibernate.Producto;
-import Hibernate.Venta;
+import Hibernate.Puntuacion;
 import org.hibernate.Query;
 import org.hibernate.Session;
 
@@ -15,40 +14,32 @@ import org.hibernate.Session;
  *
  * @author alber
  */
-public class VentaDao {
-     public void addVenta(Venta v) {
+public class PuntuacionDao {
+    public void addPuntuacion(Puntuacion v) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         org.hibernate.Transaction tx = session.beginTransaction();
         session.save(v);
         tx.commit();
         session.close();
     }
-     public Venta getVenta(String idUsuario,String idProducto) {
+     public Puntuacion getPuntuacion(String id) {
         Session sesion = HibernateUtil.getSessionFactory().openSession();
         org.hibernate.Transaction tx = sesion.beginTransaction();
-        Query q = sesion.createQuery("from Venta where idUsuario='" + idUsuario + "' AND idProducto='"+idProducto+"'");
-        Venta u = (Venta) q.uniqueResult();
+        Query q = sesion.createQuery("from Puntuacion where id='" + id+"'");
+        Puntuacion u = (Puntuacion) q.uniqueResult();
         tx.commit();
         sesion.close();
         return u;
     }
-     public Venta getVenta(String idProducto) {
-        Session sesion = HibernateUtil.getSessionFactory().openSession();
-        org.hibernate.Transaction tx = sesion.beginTransaction();
-        Query q = sesion.createQuery("from Venta where idProducto='"+idProducto+"'");
-        Venta u = (Venta) q.uniqueResult();
-        tx.commit();
-        sesion.close();
-        return u;
-    }
-     public void updateVenta(Venta v) {
+    
+     public void updatePuntuacion(Puntuacion v) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         org.hibernate.Transaction tx = session.beginTransaction();
         session.update(v);
         tx.commit();
         session.close();
     }
-     public void removeVenta(Venta v) {
+     public void removePuntuacion(Puntuacion v) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         org.hibernate.Transaction tx = session.beginTransaction();
         session.delete(v);

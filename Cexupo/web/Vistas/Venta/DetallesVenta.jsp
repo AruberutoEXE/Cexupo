@@ -42,14 +42,14 @@
                 <nav class="nav d-flex justify-content-between">
                     <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="/Cexupo/index.jsp">Search</a>
                     <s:if test="%{#session.username!=null}">
-                    <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="/Cexupo/Vistas/Producto/PublicadosUsuario.jsp">Your Products</a>
-                    <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="#">Shipments</a>
-                    <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="/Cexupo/Vistas/login/cuenta.jsp">Account</a>
+                        <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="/Cexupo/Vistas/Producto/PublicadosUsuario.jsp">Your Products</a>
+                        <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="#">Shipments</a>
+                        <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="/Cexupo/Vistas/login/cuenta.jsp">Account</a>
                     </s:if>
                     <s:else>
-                    <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="/Cexupo/Vistas/login/login.jsp">Your Products</a>
-                    <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="/Cexupo/Vistas/login/login.jsp">Shipments</a>
-                    <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="/Cexupo/Vistas/login/login.jsp">Account</a>
+                        <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="/Cexupo/Vistas/login/login.jsp">Your Products</a>
+                        <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="/Cexupo/Vistas/login/login.jsp">Shipments</a>
+                        <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="/Cexupo/Vistas/login/login.jsp">Account</a>
                     </s:else>
                 </nav>
             </div>
@@ -70,49 +70,50 @@
                         <p class="card-text"><s:property value = "estado"/></p>
                         <p class="card-text"><s:property value = "hastag"/></p>
                         <p class="card-text"><s:property value = "id_usuario"/></p>
+                        <p class="card-text"><s:property value = "direccion"  />
+                        <p class="card-text"><s:property value = "transporte" />
+                        <p class="card-text"><s:property value = "pago" />
                     </div>
                 </div>
             </div>
-            <s:if test="%{id_usuario==#session.username}">
+            <s:if test="%{editable}">
                 <div class="container">
                     <div class="card mb-4 box-shadow">
-                        <s:form action="eliminarP">
+                        <s:form action="eliminarVenta">
                             <s:hidden  value="%{id}" name="id" />
-                            <s:submit value="Delete"/>
+                            <s:submit value="Cancelar compra"/>
                         </s:form>	
                     </div>
                 </div>
                 <div class="container">
                     <div class="card mb-4 box-shadow">
-                        <s:form action="actualizarP">
-                            <s:hidden  value="%{id}" name="id" />
-                            <s:hidden  value="%{nombre}" name="nombre" />
-                            <s:hidden  value="%{descripcion}" name="descripcion" />
-                            <s:hidden  value="%{estado}" name="estado" />
-                            <s:hidden  value="%{hastag}" name="hastag" />
-                            <s:hidden  value="%{precio}" name="precio" />
-                            <s:submit value="Update"/>
+                        <s:form action="modificarVenta">
+                            <s:select label="Direción"  list="direcciones" name="direccion"  listKey="dirid"/>
+                            <s:select label="Transporte"list="transportes" name="transporte" listKey ="tranid"/>
+                            <s:select label="Metodo de pago"list="pagos"   name="pago"  listKey="pagosid"/>
+                            <s:hidden  value="%{idProducto}"               name="id" />
+                            <s:submit value ="Actualizar" label="Actualizar"/>
                         </s:form>	
                     </div>
                 </div>
             </s:if>    
             <s:else>        
-                <div class="container">
-                    <div class="card mb-4 box-shadow">
-                        <s:form action="comprar">
-                            <s:hidden  value="%{id}" name="idProducto" />
-                            <s:submit value="Buy"/>
-                        </s:form>	
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="card mb-4 box-shadow">
-                        <s:form action="abrirChat">
-                            <s:hidden  value="%{id}" name="producto" />
-                            <s:submit value="Contact the seller"/>
-                        </s:form>	
-                    </div>
-                </div>
+                <p class="card-text">Tu pedido ya está en camino</p>
+                <s:if test="%{hayReview}">
+                    <p class="card-text"><s:property value = "estrellas"/></p>
+                    <p class="card-text"><s:property value = "comentario"/></p>
+                    <s:form action="eliminarReview">
+                    <s:hidden  value="%{idVenta}" name="id" />
+                    <s:submit value ="eliminar" label="eliminar"/>
+                </s:form>
+                </s:if> 
+                <s:form action="dejarReview">
+                    <s:textfield label="Puntuación" type="number" name="puntuacion" min="1" max="5" step="1"/>
+                    <s:textfield name="comentario" label="Comentario"/>
+                    <s:hidden  value="%{idVenta}" name="id" />
+                    <s:submit value ="Actualizar" label="Actualizar"/>
+                </s:form>
+
             </s:else>
 
         </main>

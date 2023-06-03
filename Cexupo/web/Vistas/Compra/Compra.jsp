@@ -62,7 +62,7 @@
 
             
             <div class="container">
-                <s:property  value="%{idProducto}"/>
+                
                 <div class="card mb-4 box-shadow">
                     <s:form action="finalizarCompra">
                         <s:select label="Direción"  list="direcciones" name="direccion"  listKey="dirid"/>
