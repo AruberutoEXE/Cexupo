@@ -11,6 +11,9 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
         <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
         <%@ taglib prefix="s" uri="/struts-tags" %>
+          <%@page contentType="text/html"%>
+    <%@page pageEncoding="UTF-8"%>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <!-- Optional Bootstrap Theme -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">

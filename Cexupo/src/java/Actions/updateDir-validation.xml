@@ -1,0 +1,43 @@
+<!DOCTYPE validators PUBLIC "-//Apache Struts//XWork Validator 1.0.3//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+
+<validators>
+<field name="nombreD">
+        <field-validator type="requiredstring">
+            <param name="trim">true</param>
+            <message>The name is a required field</message>
+        </field-validator>
+        <field-validator type="stringlength">
+            <param name="minLength">4</param>
+            <param name="maxLength">20</param>
+            <param name="trim">true</param>
+            <message>The name must contain between 4 and 20 characters</message>
+        </field-validator>
+        
+    </field>
+    <field name="cp">
+        <field-validator type="requiredstring">
+            <param name="trim">true</param>
+            <message>The cp is a required field</message>
+        </field-validator>
+        <field-validator type="stringlength">
+            <param name="minLength">5</param>
+            <param name="maxLength">5</param>
+            <param name="trim">true</param>
+            <message>The name must contain 5 characters</message>
+        </field-validator>
+        
+    </field>
+<field name="direccion">
+        <field-validator type="requiredstring">
+            <param name="trim">true</param>
+            <message>The address is a required field</message>
+        </field-validator>
+        <field-validator type="stringlength">
+            <param name="minLength">4</param>
+            <param name="maxLength">20</param>
+            <param name="trim">true</param>
+            <message>The address must contain between 4 and 20 characters</message>
+        </field-validator>
+    </field>
+</validators>
