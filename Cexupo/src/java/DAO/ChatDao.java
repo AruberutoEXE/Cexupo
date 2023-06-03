@@ -10,7 +10,6 @@ import Hibernate.ChatId;
 import Hibernate.HibernateUtil;
 import Hibernate.Mensaje;
 import Hibernate.Producto;
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import org.hibernate.Query;
@@ -28,7 +27,7 @@ public class ChatDao {
         ChatId chatid = new ChatId();
         chatid.setIdProducto(idProducto);
         chatid.setIdUsuario(idUsuario);
-        Chat chat =new Chat(chatid);
+        Chat chat = new Chat(chatid);
         try {
             tx = sesion.beginTransaction();
             sesion.save(chat);
@@ -37,7 +36,7 @@ public class ChatDao {
             if (tx != null) {
                 tx.rollback();
             }
-            chat=null;
+            chat = null;
         }
         sesion.close();
         return chat;
@@ -46,7 +45,7 @@ public class ChatDao {
     public Chat getChat(Long idProducto, String idUsuario) {
         Session sesion = HibernateUtil.getSessionFactory().openSession();
         org.hibernate.Transaction tx = sesion.beginTransaction();
-        Query q = sesion.createQuery("from Chat where idUsuario='" + idUsuario + "' AND idProducto='"+idProducto+"'");
+        Query q = sesion.createQuery("from Chat where idUsuario='" + idUsuario + "' AND idProducto='" + idProducto + "'");
         Chat chat = (Chat) q.uniqueResult();
         tx.commit();
         sesion.close();
@@ -56,23 +55,33 @@ public class ChatDao {
     public List<Chat> getAllChatsUsuario(String username) {
         ProductoDao pDao = new ProductoDao();
         String str = "(";
+        List<Chat> chats;
         List<Producto> productos = pDao.getAllProductosPublicados(username);
-        Iterator it = productos.iterator();
-        Producto p;
-        while (it.hasNext()) {
-            p = (Producto) it.next();
-            if(it.hasNext()){
-                str += "" + p.getId()+ ",";
-            } else{
-                str += "" + p.getId()+ ")";
+        if (productos.size() != 0) {
+            Iterator it = productos.iterator();
+            Producto p;
+            while (it.hasNext()) {
+                p = (Producto) it.next();
+                if (it.hasNext()) {
+                    str += "" + p.getId() + ",";
+                } else {
+                    str += "" + p.getId() + ")";
+                }
             }
+            Session sesion = HibernateUtil.getSessionFactory().openSession();
+            org.hibernate.Transaction tx = sesion.beginTransaction();
+            Query q = sesion.createQuery("from Chat where idUsuario='" + username + "' OR idProducto IN " + str);
+            chats = (List<Chat>) q.list();
+            tx.commit();
+            sesion.close();
+        }else{
+            Session sesion = HibernateUtil.getSessionFactory().openSession();
+            org.hibernate.Transaction tx = sesion.beginTransaction();
+            Query q = sesion.createQuery("from Chat where idUsuario='" + username + "'");
+            chats = (List<Chat>) q.list();
+            tx.commit();
+            sesion.close();
         }
-        Session sesion = HibernateUtil.getSessionFactory().openSession();
-        org.hibernate.Transaction tx = sesion.beginTransaction();
-        Query q = sesion.createQuery("from Chat where idUsuario='" + username + "' OR idProducto IN "+str);
-        List<Chat> chats = (List<Chat>) q.list();
-        tx.commit();
-        sesion.close();
         return chats;
     }
 
