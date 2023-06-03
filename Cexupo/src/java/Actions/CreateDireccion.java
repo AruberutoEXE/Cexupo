@@ -57,7 +57,7 @@ public class CreateDireccion extends ActionSupport implements SessionAware{
     }
     
     public String execute() throws Exception {
-           String idUsuario = (String)sessionMap.get("username");
+        String idUsuario = (String)sessionMap.get("username");
         Direccion newDir = new Direccion();
         newDir.setCp(cp);
         newDir.setDireccion(direccion);

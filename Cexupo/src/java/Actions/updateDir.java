@@ -7,15 +7,11 @@ package Actions;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-/**
- *
- * @author agarc
- */
 public class updateDir extends ActionSupport {
     private String nombreD;
     private int cp;
     private String direccion;
-    private String id;
+    private int id;
 
     public String getNombreD() {
         return nombreD;
@@ -41,14 +37,14 @@ public class updateDir extends ActionSupport {
         this.direccion = direccion;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
-    
+
     public updateDir() {
     }
     

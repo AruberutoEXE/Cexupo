@@ -67,7 +67,7 @@ public class UsuarioDao {
         boolean salida;
         Transaction tx = null;
         Usuario u = null;
-        Session sesion = HibernateUtil.getSessionFactory().getCurrentSession();
+        Session sesion = HibernateUtil.getSessionFactory().openSession();
         try {
             tx = sesion.beginTransaction();
             Query sql = sesion.createQuery("FROM Usuario WHERE email=:email").setParameter("email", email);

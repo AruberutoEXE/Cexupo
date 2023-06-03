@@ -47,11 +47,19 @@ public class RegisterUserAction extends ActionSupport {
     }
     
     public String execute() throws Exception {
+       String salida;
         Usuario newUser = new Usuario(this.getUsername(), this.getPassword(),this.getEmail());
+        if(UsuarioDao.userExiste(this.getEmail())){
+            addFieldError("email", "There is already a user associated with the Email");
+            salida = ERROR;
+        }else{
         UsuarioDao.createUser(newUser);
         Map session = (Map) ActionContext.getContext().get("session");
-        session.put("username", newUser);
-        return SUCCESS;
+        session.put("username", newUser); 
+        
+        salida= SUCCESS;
+        }
+        return salida;
     }
     
 }

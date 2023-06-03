@@ -21,7 +21,7 @@
         </action>
         <action name="signUp" class="Actions.RegisterUserAction">
             <result name="success">/Vistas/Producto/Productos.jsp</result>
-            <result name="error">/Vistas/login/error.jsp</result>
+            <result name="error">/Vistas/login/registro.jsp</result>
             <result name="input">/Vistas/login/registro.jsp</result>
         </action>
         <action name="DireccionesUser" class="Actions.GetDireccionesUser">

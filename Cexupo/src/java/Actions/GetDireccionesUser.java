@@ -50,9 +50,6 @@ public class GetDireccionesUser extends ActionSupport implements SessionAware{
         this.direcciones = direcciones;
     }
 
-   
-   
-    
     public String execute() throws Exception {
       
        UsuarioDao udao = new UsuarioDao();
@@ -62,7 +59,7 @@ public class GetDireccionesUser extends ActionSupport implements SessionAware{
            direcciones = udao.getAllUserDirections(usu); 
         
        return SUCCESS;
-    
+       
     }
     public String detallesDir(){
         UsuarioDao uDao = new UsuarioDao();
