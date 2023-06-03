@@ -29,18 +29,18 @@ public class AddUpdateReview extends ActionSupport {
         PuntuacionDao pdao=new PuntuacionDao();
         VentaDao vdao=new VentaDao();
         Venta v=vdao.getVenta(id);
-        Long puntid=v.getIdPuntuacion();
+        long puntid=v.getIdPuntuacion();
         Puntuacion p;
-        if(puntid==null){
+        if(puntid==0){
             p=new Puntuacion();
             
         }else{
-            p=pdao.getPuntuacion(puntid.toString());
+            p=pdao.getPuntuacion(puntid+"");
         }
         p.setNumero(Integer.parseInt(puntuacion));
         p.setResenya(comentario);
         
-        if(puntid==null){
+        if(puntid==0){
             pdao.addPuntuacion(p);
             
         }else{

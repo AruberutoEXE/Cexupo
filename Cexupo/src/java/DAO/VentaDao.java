@@ -7,7 +7,9 @@ package DAO;
 
 import Hibernate.HibernateUtil;
 import Hibernate.Producto;
+import Hibernate.Usuario;
 import Hibernate.Venta;
+import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
 
@@ -37,6 +39,15 @@ public class VentaDao {
         org.hibernate.Transaction tx = sesion.beginTransaction();
         Query q = sesion.createQuery("from Venta where idProducto='"+idProducto+"'");
         Venta u = (Venta) q.uniqueResult();
+        tx.commit();
+        sesion.close();
+        return u;
+    }
+      public List<Venta> getVentasByUsu(String usu) {
+        Session sesion = HibernateUtil.getSessionFactory().openSession();
+        org.hibernate.Transaction tx = sesion.beginTransaction();
+        Query q = sesion.createQuery("from Venta where idUsuario='"+usu+"'");
+        List<Venta> u = (List<Venta>)q.list();
         tx.commit();
         sesion.close();
         return u;

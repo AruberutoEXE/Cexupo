@@ -43,7 +43,7 @@
                     <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="/Cexupo/index.jsp">Busqueda</a>
                     <s:if test="%{#session.username!=null}">
                         <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="/Cexupo/Vistas/Producto/PublicadosUsuario.jsp">Tus productos</a>
-                        <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="#">Pedidos</a>
+                        <div class="p-2 link-secondary text-white bg-dark rounded-pill" ><s:a action="ventas">Shipments</s:a></div>
                         <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="/Cexupo/Vistas/login/cuenta.jsp">Cuenta</a>
                     </s:if>
                     <s:else>

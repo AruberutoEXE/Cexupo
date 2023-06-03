@@ -46,7 +46,7 @@
                     </s:if>
                     <s:else>
                     <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="/Cexupo/Vistas/login/login.jsp">Your Products</a>
-                    <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="/Cexupo/Vistas/login/login.jsp">Shipments</a>
+                    <div class="p-2 link-secondary text-white bg-dark rounded-pill" ><s:a action="ventas">Shipments</s:a></div>
                     <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="/Cexupo/Vistas/login/login.jsp">Account</a>
                     </s:else>
                 </nav>      
@@ -91,8 +91,10 @@
 
         <footer class="blog-footer jumbotron text-center bg-dark">
             <p>
-            <h2><a class=" bg-sand" href="#">Back to top</a></h2>
+            <h2><a class="" href="#">Back to top</a></h2>
+            <s:a action="logOut">LogOut</s:a>
         </p>
+        
     </footer>
 
     <!-- Bootstrap core JavaScript

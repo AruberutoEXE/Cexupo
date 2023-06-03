@@ -166,5 +166,29 @@
             <result name="success">/Vistas/Compra/FinalizarCompra.jsp</result>
             <result name="error">/Error.jsp</result>
         </action>
+        <action name="ventas" class="Actions.Ventas">
+            <!--<result name="success" type="redirect">producto.productos</result>-->
+            <result name="success">/Vistas/Venta/Ventas.jsp</result>
+            <result name="error">/Error.jsp</result>
+        </action>
+        <action name="detallesVenta" class="Actions.DetallesVenta">
+            <!--<result name="success" type="redirect">producto.productos</result>-->
+            <result name="success">/Vistas/Venta/DetallesVenta.jsp</result>
+            <result name="error">/Error.jsp</result>
+        </action>
+        <action name="cancelarVenta" class="Actions.CancelarVenta">
+            <result name="success" type="redirect">compra.Ventas</result>
+            <result name="error">/Error.jsp</result>
+        </action>
+    </package>
+    <package extends="struts-default"  name="review">
+        <action name="addUpdateReview" class="Actions.AddUpdateReview">
+            <result name="success" type="redirect">compra.detallesVenta</result>
+            <result name="error">/Error.jsp</result>
+        </action>
+        <action name="addUpdateReview" class="Actions.EliminarReview">
+            <result name="success" type="redirect">compra.detallesVenta</result>
+            <result name="error">/Error.jsp</result>
+        </action>
     </package>
 </struts>
