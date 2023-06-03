@@ -40,16 +40,16 @@
 
             <div class="nav-scroller py-1 mb-2 bg-secondary  rounded-pill p-3">
                 <nav class="nav d-flex justify-content-between">
-                    <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="index.jsp">Busqueda</a>
+                    <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="/Cexupo/index.jsp">Search</a>
                     <s:if test="%{#session.username!=null}">
-                        <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="/Cexupo/Vistas/Producto/PublicadosUsuario.jsp">Tus productos</a>
-                        <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="#">Pedidos</a>
-                        <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="/Cexupo/Vistas/login/cuenta.jsp">Cuenta</a>
+                    <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="/Cexupo/Vistas/Producto/PublicadosUsuario.jsp">Your Products</a>
+                    <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="#">Shipments</a>
+                    <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="/Cexupo/Vistas/login/cuenta.jsp">Account</a>
                     </s:if>
                     <s:else>
-                        <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="/Cexupo/Vistas/login/login.jsp">Tus productos</a>
-                        <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="/Cexupo/Vistas/login/login.jsp">Pedidos</a>
-                        <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="/Cexupo/Vistas/login/login.jsp">Cuenta</a>
+                    <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="/Cexupo/Vistas/login/login.jsp">Your Products</a>
+                    <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="/Cexupo/Vistas/login/login.jsp">Shipments</a>
+                    <a class="p-2 link-secondary text-white bg-dark rounded-pill" href="/Cexupo/Vistas/login/login.jsp">Account</a>
                     </s:else>
                 </nav>
             </div>
@@ -62,12 +62,13 @@
 
             
             <div class="container">
+                <s:property  value="%{idProducto}"/>
                 <div class="card mb-4 box-shadow">
-                    <s:form action="fianlizarCompra">
-                        <s:select label="Direción"  list="direcciones" name="direccion"  />
-                        <s:select label="Transporte"list="transportes" name="transporte"  />
-                        <s:select label="Metodo de pago"list="pagos" name="pago"  />
-                        <s:hidden  value="%{idProducto}" name="producto" />
+                    <s:form action="finalizarCompra">
+                        <s:select label="Direción"  list="direcciones" name="direccion"  listKey="dirid"/>
+                        <s:select label="Transporte"list="transportes" name="transporte" listKey ="tranid"/>
+                        <s:select label="Metodo de pago"list="pagos"   name="pago"  listKey="pagosid"/>
+                        <s:hidden  value="%{idProducto}"               name="id" />
                         <s:submit value ="Comprar" label="Comprar"/>
                     </s:form>	
                 </div>

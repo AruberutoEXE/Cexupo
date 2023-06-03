@@ -8,6 +8,7 @@ package DAO;
 import Hibernate.HibernateUtil;
 import Hibernate.Producto;
 import Hibernate.Venta;
+import org.hibernate.Query;
 import org.hibernate.Session;
 
 /**
@@ -21,5 +22,23 @@ public class VentaDao {
         session.save(v);
         tx.commit();
         session.close();
+    }
+     public Venta getVenta(String idUsuario,String idProducto) {
+        Session sesion = HibernateUtil.getSessionFactory().openSession();
+        org.hibernate.Transaction tx = sesion.beginTransaction();
+        Query q = sesion.createQuery("from Venta where idUsuario='" + idUsuario + "' AND idProducto='"+idProducto+"'");
+        Venta u = (Venta) q.uniqueResult();
+        tx.commit();
+        sesion.close();
+        return u;
+    }
+     public Venta getVenta(String idProducto) {
+        Session sesion = HibernateUtil.getSessionFactory().openSession();
+        org.hibernate.Transaction tx = sesion.beginTransaction();
+        Query q = sesion.createQuery("from Venta where idProducto='"+idProducto+"'");
+        Venta u = (Venta) q.uniqueResult();
+        tx.commit();
+        sesion.close();
+        return u;
     }
 }

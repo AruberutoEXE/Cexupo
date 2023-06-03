@@ -6,8 +6,11 @@
 package Actions;
 
 import DAO.ProductoDao;
+import DAO.VentaDao;
 import Hibernate.Producto;
 import com.opensymphony.xwork2.ActionSupport;
+import java.util.AbstractList;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -25,7 +28,14 @@ public class ProductosAction extends ActionSupport {
     public String execute() throws Exception {
         
         ProductoDao pdao=new ProductoDao();
-        productos=pdao.getAllProductos();
+        List<Producto> pro=pdao.getAllProductos();
+        VentaDao vdao=new VentaDao();
+        productos=new LinkedList<Producto>();
+        for(int i=0;i<pro.size();i++){
+            if(vdao.getVenta(pro.get(i).getId()+"")==null){
+               productos.add(pro.get(i));  
+            }
+        }
         return SUCCESS;
     }
 

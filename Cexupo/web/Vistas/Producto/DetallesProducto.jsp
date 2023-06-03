@@ -100,7 +100,7 @@
                 <div class="container">
                     <div class="card mb-4 box-shadow">
                         <s:form action="comprar">
-                            <s:hidden  value="%{idProducto}" name="producto" />
+                            <s:hidden  value="%{id}" name="idProducto" />
                             <s:submit value="Buy"/>
                         </s:form>	
                     </div>

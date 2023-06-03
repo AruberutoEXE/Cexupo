@@ -5,8 +5,12 @@
  */
 package Actions;
 
+import DAO.ProductoDao;
+import DAO.TarifaDao;
 import DAO.UsuarioDao;
 import DAO.VentaDao;
+import Hibernate.Producto;
+import Hibernate.Tarifaenvio;
 import Hibernate.Usuario;
 import Hibernate.Venta;
 import com.opensymphony.xwork2.ActionSupport;
@@ -27,31 +31,53 @@ public class FianlizarCompra extends ActionSupport implements SessionAware {
     private String direccion;
     private String transporte;
     private String pago;
-    private String idProducto;
+    private String id;
 
     private SessionMap<String, Object> sessionMap;
 
     public String execute() throws Exception {
-        try {
-            VentaDao vdao = new VentaDao();
+        System.out.println("Detalles: ");
+        System.out.println(direccion);
+        System.out.println(transporte);
+        System.out.println(pago);
+        System.out.println(id);
+        //try {
+        VentaDao vdao = new VentaDao();
+        UsuarioDao udao = new UsuarioDao();
+            Usuario usu = udao.getUser((String) sessionMap.get("username"));
+        if (vdao.getVenta(usu.getUsername(),id )==null) {
             Venta v = new Venta();
-
+            direccion = direccion.replaceAll("[^\\w+]", "");
+            pago = pago.replaceAll("[^\\w+]", "");
+            transporte = transporte.replaceAll("[^\\w+]", "");
             v.setIdDireccion(Long.parseLong(direccion));
             v.setIdMetodoPago(Long.parseLong(pago));
             v.setIdTarifa(Long.parseLong(transporte));
-            UsuarioDao udao = new UsuarioDao();
-            Usuario usu = udao.getUser((String) sessionMap.get("username"));
+            
             v.setIdUsuario(usu.getUsername());
             v.setFechaVenta(new Date());
-            v.setIdProducto(Long.parseLong(idProducto));
-
+            v.setIdProducto(Long.parseLong(id));
+            TarifaDao tdao=new TarifaDao();
+            ProductoDao pdao=new ProductoDao();
+            Producto p=pdao.getProducto(Integer.parseInt(id));
+            Tarifaenvio t=tdao.getTarifa(transporte);
+            float total=p.getPrecio()+t.getPrecioPeso()+t.getPrecioVolumen()+t.getPrecioSeguro();
+            v.setPrecioTotal(total);
+            
+            
             vdao.addVenta(v);
-        } catch (Exception e) {
+        }
+        /*} catch (Exception e) {
             System.err.println(e.getMessage());
             return ERROR;
-        }
+        }*/
         return SUCCESS;
 
+    }
+
+    @Override
+    public void setSession(Map<String, Object> map) {
+        sessionMap = (SessionMap) map;
     }
 
     public String getDireccion() {
@@ -78,17 +104,12 @@ public class FianlizarCompra extends ActionSupport implements SessionAware {
         this.pago = pago;
     }
 
-    public String getIdProducto() {
-        return idProducto;
+    public String getId() {
+        return id;
     }
 
-    public void setIdProducto(String idProducto) {
-        this.idProducto = idProducto;
-    }
-
-    @Override
-    public void setSession(Map<String, Object> map) {
-        sessionMap = (SessionMap) map;
+    public void setId(String id) {
+        this.id = id;
     }
 
 }

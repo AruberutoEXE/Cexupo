@@ -36,34 +36,47 @@ public class Comprar extends ActionSupport implements SessionAware {
     private List<String> direcciones;
     private List<String> transportes;
     private List<String> pagos;
-
+    private List<String> dirid;
+    private List<String> tranid;
+    private List<String> pagosid;
     private String idProducto;
 
     public String execute() throws Exception {
         try {
             ProductoDao pdao = new ProductoDao();
             List<String> tarifas = new LinkedList<String>();
+            List<String> traList = new LinkedList<String>();
             List<Tarifaenvio> t = pdao.getAllTarifas();
             for (int i = 0; i < t.size(); i++) {
                 tarifas.add(t.get(i).getNombreTarifa());
+                traList.add(t.get(i).getId()+"");
+                System.out.println(t.get(i).getId());
             }
             transportes = tarifas;
-
+            tranid=traList;
             UsuarioDao udao = new UsuarioDao();
             List<String> dir = new LinkedList<String>();
+            List<String> dirList = new LinkedList<String>();
             Usuario usu = udao.getUser((String) sessionMap.get("username"));
             List<Direccion> dirlist = udao.getAllUserDirections(usu);
             for (int i = 0; i < dirlist.size(); i++) {
                 dir.add(dirlist.get(i).getNombre());
+                dirList.add(dirlist.get(i).getId()+"");
+                System.out.println(dirlist.get(i).getId());
             }
             direcciones = dir;
+            dirid=dirList;
 
             List<String> pay = new LinkedList<String>();
+            List<String> payList = new LinkedList<String>();
             List<Metodopago> paylist = udao.getAllUserPayMethods(usu);
             for (int i = 0; i < paylist.size(); i++) {
                 pay.add(paylist.get(i).getNombre());
+                payList.add(paylist.get(i).getId()+"");
+                System.out.println(paylist.get(i).getId());
             }
             pagos = pay;
+            pagosid=payList;
         } catch (Exception e) {
             System.err.println(e.getMessage());
             return ERROR;
@@ -114,6 +127,30 @@ public class Comprar extends ActionSupport implements SessionAware {
 
     public void setIdProducto(String idProducto) {
         this.idProducto = idProducto;
+    }
+
+    public List<String> getDirid() {
+        return dirid;
+    }
+
+    public void setDirid(List<String> dirid) {
+        this.dirid = dirid;
+    }
+
+    public List<String> getTranid() {
+        return tranid;
+    }
+
+    public void setTranid(List<String> tranid) {
+        this.tranid = tranid;
+    }
+
+    public List<String> getPagosid() {
+        return pagosid;
+    }
+
+    public void setPagosid(List<String> pagosid) {
+        this.pagosid = pagosid;
     }
 
 }
