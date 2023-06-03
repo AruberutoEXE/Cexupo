@@ -12,19 +12,21 @@ import com.opensymphony.xwork2.ActionSupport;
  * @author agarc
  */
 public class updateM extends ActionSupport {
-     private String nombre;
+     private String nombreM;
     private String detalles;
     private String id;
     public updateM() {
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getNombreM() {
+        return nombreM;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombreM(String nombreM) {
+        this.nombreM = nombreM;
     }
+
+    
 
     public String getDetalles() {
         return detalles;
@@ -46,6 +48,10 @@ public class updateM extends ActionSupport {
         return SUCCESS;
     }
      public String goToUpdate(){
+        return SUCCESS;
+    }
+    
+    public String goToPublicar(){
         return SUCCESS;
     }
 }
