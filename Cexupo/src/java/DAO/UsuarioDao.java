@@ -87,7 +87,14 @@ public class UsuarioDao {
         sesion.close();
         return salida;
     }
-
+    public void updateUser(Usuario u) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        org.hibernate.Transaction tx = session.beginTransaction();
+        session.update(u);
+        tx.commit();
+        session.close();
+    }
+    
     public List<Direccion> getAllUserDirections(Usuario user) {
         Session sesion = HibernateUtil.getSessionFactory().openSession();
         org.hibernate.Transaction tx = sesion.beginTransaction();

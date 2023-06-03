@@ -41,8 +41,8 @@
                            
                         </div>
                     </s:iterator>
-                     <s:form method="POST" action="createDir">
-                                <s:hidden name="id" value="%{id}" />
+                    <s:form method="POST" action="createDir">
+                                <s:hidden name="id" value="%{id}"  />
                                 <s:submit cssClass="btn btn-sm btn-outline-secondary" value="New Address"/>
                             </s:form>
                 </div>

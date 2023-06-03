@@ -84,6 +84,18 @@
             <result name="success">/Vistas/login/cuenta.jsp</result>
             <result name="error">/Error.jsp</result>
         </action>
+        <action name="usuario" class="Actions.DetalleUsuario">
+            <result name="success">/Vistas/login/ModifyUsuario.jsp</result>
+            <result name="error">/Error.jsp</result>
+        </action>
+        <action name="updateU" class="Actions.ModifyUser">
+            <result name="success">/Vistas/login/cuenta.jsp</result>
+            <result name="error">/Error.jsp</result>
+        </action>
+        <action name="actualizarU" class="Actions.updateU" method="goToUpdate">
+            <result name="success">/Vistas/login/cuenta.jsp</result>
+            <result name="error">/Error.jsp</result>
+        </action>
     </package>
     <package extends="struts-default"  name="producto">
         <action name="productos" class="Actions.ProductosAction">

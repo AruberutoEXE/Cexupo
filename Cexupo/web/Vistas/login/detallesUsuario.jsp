@@ -24,20 +24,20 @@
                 <div class="card mb-4 box-shadow">
                    
                     <div class="card-body">
-                        <p class="card-text">Name: <s:property value = "nombre"/></p>
-                         <p class="card-text">Details: <s:property value = "detalles"/></p>
-                        
+                        <p class="card-text">Name: <s:property value = "username"/></p>
+                         <p class="card-text">Email: <s:property value = "email"/></p>
+                        <p class="card-text">Password: <s:property value = "password"/></p>
                     </div>
                 </div>
             </div>
-                    
+                        
                 <div class="container">
                     <div class="card mb-4 box-shadow">
-                        <s:form action="actualizarM">
-                            <s:hidden  value="%{id}" name="id" />
-                            <s:hidden  value="%{nombre}" name="nombre" />
-                            <s:hidden  value="%{detalles}" name="detalles" />
-                            
+                        <s:form action="actualizarU">
+                          
+                            <s:hidden  value="%{username}" name="username" />
+                            <s:hidden  value="%{email}" name="email" />
+                             <s:hidden  value="%{password}" name="password" />
                             <s:submit value="Update"/>
                         </s:form>	
                     </div>

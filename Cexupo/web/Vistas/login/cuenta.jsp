@@ -61,7 +61,28 @@
                     <h1 class="jumbotron-heading text-white">User: <s:property value="%{#session.username}"/></h1>
                 </div>
             </section>
-
+                <div class="album py-5 ">
+                <div class="container">
+                   
+                        <div class="card mb-4 box-shadow">
+                            <div class="card-body">
+                                <p class="card-text">Name:<s:property value="username"/></p>
+                                <p class="card-text">Email: <s:property value = "email"/></p>
+                                <p class="card-text">Password: <s:property value = "password"/></p>
+                            </div>
+                            <s:form method="POST" action="usuario">
+                                <s:hidden name="username" value="%{username}"/>
+                                <s:submit cssClass="btn btn-sm btn-outline-secondary" value="Modify"/>
+                            </s:form>
+                           
+                        </div>
+                   
+                    <s:form method="POST" action="createMet">
+                                <s:hidden name="id" value="%{id}" />
+                                <s:submit cssClass="btn btn-sm btn-outline-secondary" value="New Payment Method"/>
+                            </s:form>
+                </div>
+            </div>
             <div class="album py-5 ">
                 <div class="container">
                     <div class="card mb-4 box-shadow">
