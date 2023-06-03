@@ -176,4 +176,20 @@ public class DetallesVenta extends ActionSupport {
         this.hayReview = hayReview;
     }
 
+    public String getEstrellas() {
+        return estrellas;
+    }
+
+    public void setEstrellas(String estrellas) {
+        this.estrellas = estrellas;
+    }
+
+    public String getComentario() {
+        return comentario;
+    }
+
+    public void setComentario(String comentario) {
+        this.comentario = comentario;
+    }
+
 }
