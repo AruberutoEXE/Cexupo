@@ -39,15 +39,20 @@
         <action name="publicarD" class="Actions.CreateDireccion">
             <result name="success">/Vistas/login/cuenta.jsp</result>
             <result name="error">/Error.jsp</result>
-            <result name="input">/Vistas/login/newDir.jsp</result>
+           
         </action>
         <action name="Deletedir" class="Actions.DeleteDir">
             <result name="success">/Vistas/login/cuenta.jsp</result>
             <result name="error">/Error.jsp</result>
         </action>
-        <action name="createMet" class="Actions.CreateMethodPay">
+        <action name="createMet" class="Actions.updateM" method="goToPublicar">
+            <result name="success">/Vistas/login/newmP.jsp</result>
+            <result name="error">/Error.jsp</result>
+        </action>
+        <action name="publicarM" class="Actions.CreateMethodPay">
             <result name="success">/Vistas/login/cuenta.jsp</result>
             <result name="error">/Error.jsp</result>
+            <result name="input">/Vistas/login/newmP.jsp</result>
         </action>
         <action name="Deletemp" class="Actions.DeleteMetP">
             <result name="success">/Vistas/login/cuenta.jsp</result>
@@ -56,6 +61,7 @@
         <action name="actualizarD" class="Actions.updateDir" method="goToUpdate">
             <result name="success">/Vistas/login/cuenta.jsp</result>
             <result name="error">/Error.jsp</result>
+             <result name="input">/Vistas/login/newDir.jsp</result>
         </action>
         <action name="direccion" class="Actions.DetalleDireccion">
             <result name="success">/Vistas/login/ModifyDirecciones.jsp</result>
