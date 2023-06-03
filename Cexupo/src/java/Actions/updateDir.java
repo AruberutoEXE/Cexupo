@@ -9,7 +9,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class updateDir extends ActionSupport {
     private String nombreD;
-    private int cp;
+    private String cp;
     private String direccion;
     private int id;
 
@@ -21,13 +21,6 @@ public class updateDir extends ActionSupport {
         this.nombreD = nombreD;
     }
 
-    public int getCp() {
-        return cp;
-    }
-
-    public void setCp(int cp) {
-        this.cp = cp;
-    }
 
     public String getDireccion() {
         return direccion;
@@ -57,5 +50,13 @@ public class updateDir extends ActionSupport {
     }
     public String goToPublicar(){
         return SUCCESS;
+    }
+
+    public String getCp() {
+        return cp;
+    }
+
+    public void setCp(String cp) {
+        this.cp = cp;
     }
 }

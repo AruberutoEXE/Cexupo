@@ -64,6 +64,7 @@ public class GetDireccionesUser extends ActionSupport implements SessionAware{
     public String detallesDir(){
         UsuarioDao uDao = new UsuarioDao();
         Direccion d = uDao.getDireccion(Integer.parseInt(id));
+        System.out.println("Valor del id: "+id);
         return SUCCESS;
     }
     @Override

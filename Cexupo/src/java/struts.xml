@@ -35,11 +35,11 @@
         <action name="createDir"  class="Actions.updateDir" method="goToPublicar">
             <result name="success">/Vistas/login/newDir.jsp</result>
             <result name="error">/Error.jsp</result>
+            <result name="input">/Vistas/login/newDir.jsp</result>
         </action>
         <action name="publicarD" class="Actions.CreateDireccion">
             <result name="success">/Vistas/login/cuenta.jsp</result>
             <result name="error">/Error.jsp</result>
-           
         </action>
         <action name="Deletedir" class="Actions.DeleteDir">
             <result name="success">/Vistas/login/cuenta.jsp</result>
