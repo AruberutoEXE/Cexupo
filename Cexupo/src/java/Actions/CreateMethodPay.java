@@ -17,7 +17,7 @@ import org.apache.struts2.interceptor.SessionAware;
  * @author agarc
  */
 public class CreateMethodPay extends ActionSupport implements SessionAware{
-    private String nombre;
+    private String nombreM;
      private String detalles;
 private SessionMap<String, Object> sessionMap;
 
@@ -28,13 +28,15 @@ private SessionMap<String, Object> sessionMap;
     public void setSessionMap(SessionMap<String, Object> sessionMap) {
         this.sessionMap = sessionMap;
     }
-    public String getNombre() {
-        return nombre;
+
+    public String getNombreM() {
+        return nombreM;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombreM(String nombreM) {
+        this.nombreM = nombreM;
     }
+    
 
     public String getDetalles() {
         return detalles;
@@ -51,7 +53,7 @@ private SessionMap<String, Object> sessionMap;
         Metodopago newMet = new Metodopago();
         newMet.setDetalles(detalles);
         newMet.setIdUsuario(idUsuario);
-        newMet.setNombre(nombre);
+        newMet.setNombre(nombreM);
        UsuarioDao udao= new UsuarioDao();
        udao.createMetodoPago(newMet);
         return SUCCESS;

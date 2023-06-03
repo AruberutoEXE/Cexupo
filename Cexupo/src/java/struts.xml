@@ -32,30 +32,31 @@
             <result name="success">/Vistas/login/MetodosPagosUsuarios.jsp</result>
             <result name="error">/Error.jsp</result>
         </action>
-        <action name="createDir" class="Actions.CreateDireccion">
+        <action name="createDir"  class="Actions.updateDir" method="goToPublicar">
+            <result name="success">/Vistas/login/newDir.jsp</result>
+            <result name="error">/Error.jsp</result>
+        </action>
+        <action name="publicarD" class="Actions.CreateDireccion">
             <result name="success">/Vistas/login/cuenta.jsp</result>
             <result name="error">/Error.jsp</result>
+            <result name="input">/Vistas/login/newDir.jsp</result>
         </action>
         <action name="Deletedir" class="Actions.DeleteDir">
             <result name="success">/Vistas/login/cuenta.jsp</result>
             <result name="error">/Error.jsp</result>
         </action>
-        
         <action name="createMet" class="Actions.CreateMethodPay">
             <result name="success">/Vistas/login/cuenta.jsp</result>
             <result name="error">/Error.jsp</result>
-            
         </action>
         <action name="Deletemp" class="Actions.DeleteMetP">
             <result name="success">/Vistas/login/cuenta.jsp</result>
             <result name="error">/Error.jsp</result>
         </action>
-        
         <action name="actualizarD" class="Actions.updateDir" method="goToUpdate">
-            <result name="success">/Vistas/login/detallesDireccion.jsp</result>
+            <result name="success">/Vistas/login/cuenta.jsp</result>
             <result name="error">/Error.jsp</result>
         </action>
-        
         <action name="direccion" class="Actions.DetalleDireccion">
             <result name="success">/Vistas/login/ModifyDirecciones.jsp</result>
             <result name="error">/Error.jsp</result>
@@ -63,6 +64,7 @@
         <action name="updateD" class="Actions.ModifyDir">
             <result name="success">/Vistas/login/cuenta.jsp</result>
             <result name="error">/Error.jsp</result>
+            <result name="input">/Vistas/login/ModifyDirecciones.jsp</result>
         </action>
         <action name="actualizarM" class="Actions.updateM" method="goToUpdate">
             <result name="success">/Vistas/login/detallesMetodoPago.jsp</result>
@@ -118,7 +120,6 @@
             <result name="error">/Error.jsp</result>
         </action>
     </package>
-    
     <package extends="struts-default"  name="chat">
         <action name="abrirChat" class="Actions.CreateChatAction">
             <result name="success">/Vistas/Chat/Chat.jsp</result>
@@ -155,7 +156,6 @@
             <result name="input">/Vistas/Chat/Chat.jsp</result>
         </action>
     </package>
-    
     <package extends="struts-default"  name="compra">
         <action name="comprar" class="Actions.Comprar">
             <result name="success" >/Vistas/Compra/Compra.jsp</result>

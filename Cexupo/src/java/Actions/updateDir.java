@@ -12,17 +12,17 @@ import com.opensymphony.xwork2.ActionSupport;
  * @author agarc
  */
 public class updateDir extends ActionSupport {
-    private String nombre;
+    private String nombreD;
     private int cp;
     private String direccion;
     private String id;
 
-    public String getNombre() {
-        return nombre;
+    public String getNombreD() {
+        return nombreD;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombreD(String nombreD) {
+        this.nombreD = nombreD;
     }
 
     public int getCp() {
@@ -57,6 +57,9 @@ public class updateDir extends ActionSupport {
         
     }
     public String goToUpdate(){
+        return SUCCESS;
+    }
+    public String goToPublicar(){
         return SUCCESS;
     }
 }

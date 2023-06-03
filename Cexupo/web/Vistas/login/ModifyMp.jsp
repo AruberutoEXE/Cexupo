@@ -53,7 +53,7 @@
                         <s:form action="updateM">
                             <s:hidden  value="%{id}" name="id" />
                             <s:textfield  name="detalles" label="Details"/>
-                            <s:textfield  name="nombre" label="name payment method"/>
+                            <s:textfield  name="nombreM" label="name payment method"/>
                             <s:submit name="update" value="Update"></s:submit>
                         </s:form>
                     </div>

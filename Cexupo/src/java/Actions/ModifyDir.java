@@ -14,7 +14,7 @@ import com.opensymphony.xwork2.ActionSupport;
  * @author agarc
  */
 public class ModifyDir extends ActionSupport {
-    private String nombre;
+    private String nombreD;
     private int cp;
     private String direccion;
     private String id;
@@ -27,12 +27,12 @@ public class ModifyDir extends ActionSupport {
         this.id = id;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getNombreD() {
+        return nombreD;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombreD(String nombreD) {
+        this.nombreD = nombreD;
     }
 
     public int getCp() {
@@ -56,10 +56,10 @@ public class ModifyDir extends ActionSupport {
     public String execute() throws Exception {
         UsuarioDao uDao = new UsuarioDao();
         Direccion d = uDao.getDireccion(Integer.parseInt(id));
-        if(this.nombre.equals(d.getNombre())){
-            d.setNombre(nombre);
+        if(!this.nombreD.equals(d.getNombre())){
+            d.setNombre(nombreD);
         }
-        if(this.direccion.equals(d.getDireccion())){
+        if(!this.direccion.equals(d.getDireccion())){
             d.setDireccion(direccion);
         }
         if(this.cp != d.getCp()){

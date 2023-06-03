@@ -30,8 +30,8 @@
                 </s:form>
                 <h2><s:property value="message"/></h2>
             </s:i18n>
-                <p>¿Aún no tienes cuenta?
-                    <s:a href="/Cexupo/Vistas/login/registro.jsp">¡Registrate!</s:a>
+                <p>No account yet?
+                    <s:a href="/Cexupo/Vistas/login/registro.jsp">Register now!</s:a>
                     
                 </p>
          

@@ -14,17 +14,20 @@ import com.opensymphony.xwork2.ActionSupport;
  * @author agarc
  */
 public class ModfiyMp extends ActionSupport {
-     private String nombre;
+
+    private String nombreM;
     private String detalles;
     private String id;
 
-    public String getNombre() {
-        return nombre;
+    public String getNombreM() {
+        return nombreM;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombreM(String nombreM) {
+        this.nombreM = nombreM;
     }
+
+    
 
     public String getDetalles() {
         return detalles;
@@ -41,22 +44,22 @@ public class ModfiyMp extends ActionSupport {
     public void setId(String id) {
         this.id = id;
     }
-    
+
     public ModfiyMp() {
     }
-    
+
     public String execute() throws Exception {
         UsuarioDao uDao = new UsuarioDao();
         Metodopago mp = uDao.getMetPago(Integer.parseInt(id));
-        if(this.nombre.equals(mp.getNombre())){
-            mp.setNombre(nombre);
+        if (!this.nombreM.equals(mp.getNombre())) {
+            mp.setNombre(nombreM);
         }
-        System.out.print(mp.getNombre() + "HOLA");
-        if(this.detalles.equals(mp.getDetalles())){
+
+        if (!this.detalles.equals(mp.getDetalles())) {
             mp.setDetalles(detalles);
         }
         uDao.updateMetodoPago(mp);
         return SUCCESS;
     }
-    
+
 }

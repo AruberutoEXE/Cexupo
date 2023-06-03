@@ -18,24 +18,22 @@
         <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
     </head>
     <body>
-        <h1>PASO 1</h1>
+        
         <main role="main">
             <div class="album py-5 ">
                 <div class="container">
                     <s:iterator value="metodoPago">
                         <div class="card mb-4 box-shadow">
-                           
                             <div class="card-body">
-                                <p class="card-text">Name: <s:property value = "nombre"/></p>
+                                <p class="card-text">Name:<s:property value = "nombre"/></p>
                                 <p class="card-text">Details: <s:property value = "detalles"/></p>
-                                
                             </div>
                             <s:form method="POST" action="metodopago">
-                                <s:hidden name="id" value="%{id}" />
+                                <s:hidden name="id" value="%{id}"/>
                                 <s:submit cssClass="btn btn-sm btn-outline-secondary" value="Modify"/>
                             </s:form>
                             <s:form method="POST" action="Deletemp">
-                                <s:hidden name="id" value="%{id}" />
+                                <s:hidden name="id" value="%{id}"/>
                                 <s:submit cssClass="btn btn-sm btn-outline-secondary" value="Delete"/>
                             </s:form>
                         </div>

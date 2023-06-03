@@ -16,7 +16,7 @@ import com.opensymphony.xwork2.ActionSupport;
 public class DetalleDireccion extends ActionSupport {
    
     private String id;
-    private String nombre;
+    private String nombreD;
     private int cp;
     private String direccion;
 
@@ -29,12 +29,12 @@ public class DetalleDireccion extends ActionSupport {
         this.id = id;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getNombreD() {
+        return nombreD;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombreD(String nombreD) {
+        this.nombreD = nombreD;
     }
 
     public int getCp() {
@@ -58,7 +58,7 @@ public class DetalleDireccion extends ActionSupport {
     public String execute() throws Exception {
          UsuarioDao dao = new UsuarioDao();
          Direccion d = dao.getDireccion(Integer.parseInt(id));
-         nombre = d.getNombre();
+         nombreD = d.getNombre();
          cp = d.getCp();
          direccion = d.getDireccion();
          return SUCCESS;

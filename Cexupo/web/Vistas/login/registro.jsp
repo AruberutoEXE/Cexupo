@@ -31,8 +31,8 @@
                 </s:form>
                 <h2><s:property value="message"/></h2>
             </s:i18n>
-                <p class="text-center">¿Ya tienes una cuenta?
-                            <s:a href="/Cexupo/Vistas/login/login.jsp">¡Inicia Sesión!</s:a>
+                <p class="text-center">Already have an account?
+                            <s:a href="/Cexupo/Vistas/login/login.jsp">Sign In!</s:a>
                         </p>
         </div>
         

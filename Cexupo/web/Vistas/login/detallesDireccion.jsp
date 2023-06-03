@@ -24,7 +24,7 @@
                     <div class="card-body">
                         <p class="card-text">Shipping address: <s:property value = "direccion"/></p>
                         <p class="card-text">Postal code: <s:property value = "cp"/></p>
-                         <p class="card-text">Name: <s:property value = "nombre"/></p>
+                         <p class="card-text">Name: <s:property value = "nombreD"/></p>
                         
                     </div>
                 </div>
@@ -34,7 +34,7 @@
                     <div class="card mb-4 box-shadow">
                         <s:form action="actualizarD">
                             <s:hidden  value="%{id}" name="id" />
-                            <s:hidden  value="%{nombre}" name="nombre" />
+                            <s:hidden  value="%{nombre}" name="nombreD" />
                             <s:hidden  value="%{cp}" name="cp" />
                             <s:hidden  value="%{direccion}" name="direccion" />
                             <s:submit value="Update"/>

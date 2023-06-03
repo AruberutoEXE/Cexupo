@@ -51,13 +51,15 @@
             <div class="album py-5 ">
                 <div class="container">
                     <div class="card mb-4 box-shadow">
+                        
                         <s:form action="updateD">
                             <s:hidden  value="%{id}" name="id" />
                             <s:textfield  name="direccion" label="Address"/>
                             <s:textfield type="number" name="cp" label="Postal code"/>
-                            <s:textfield  name="nombre" label="name address"/>
+                            <s:textfield  name="nombreD" label="name address"/>
                             <s:submit name="update" value="Update"></s:submit>
                         </s:form>
+                      
                     </div>
                 </div>
             </div>

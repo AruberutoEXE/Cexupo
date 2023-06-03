@@ -11,7 +11,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class DetalleMp extends ActionSupport {
       private String id;
-    private String nombre;
+    private String nombreM;
     private String detalles;
     public DetalleMp() {
     }
@@ -24,12 +24,12 @@ public class DetalleMp extends ActionSupport {
         this.id = id;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getNombreM() {
+        return nombreM;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombreM(String nombreM) {
+        this.nombreM = nombreM;
     }
 
     public String getDetalles() {
@@ -43,7 +43,7 @@ public class DetalleMp extends ActionSupport {
     public String execute() throws Exception {
         UsuarioDao dao = new UsuarioDao();
         Metodopago mp = dao.getMetPago(Integer.parseInt(id));
-        nombre = mp.getNombre();
+        nombreM = mp.getNombre();
         detalles = mp.getDetalles();
         return SUCCESS;
     }
