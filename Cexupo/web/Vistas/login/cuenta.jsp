@@ -65,12 +65,13 @@
                 <div class="container">
                    
                         <div class="card mb-4 box-shadow">
-                            <div class="card-body">
+                           
+                                <s:form method="POST" action="usuario">
                                 <p class="card-text">Name:<s:property value="username"/></p>
                                 <p class="card-text">Email: <s:property value = "email"/></p>
                                 <p class="card-text">Password: <s:property value = "password"/></p>
-                            </div>
-                            <s:form method="POST" action="usuario">
+                            
+                            
                                 <s:hidden name="username" value="%{username}"/>
                                 <s:submit cssClass="btn btn-sm btn-outline-secondary" value="Modify"/>
                             </s:form>

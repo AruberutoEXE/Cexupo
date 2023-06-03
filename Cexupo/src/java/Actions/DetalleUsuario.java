@@ -9,17 +9,20 @@ import DAO.UsuarioDao;
 import Hibernate.Usuario;
 import com.opensymphony.xwork2.ActionSupport;
 import java.util.List;
+import java.util.Map;
+import org.apache.struts2.dispatcher.SessionMap;
+import org.apache.struts2.interceptor.SessionAware;
 
 /**
  *
  * @author agarc
  */
-public class DetalleUsuario extends ActionSupport {
+public class DetalleUsuario extends ActionSupport implements SessionAware{
     private String username;
      private String password;
      private String email;
      private String usuario;
-     
+     private SessionMap<String, Object> sessionMap;
 
     public String getUsuario() {
         return usuario;
@@ -27,6 +30,14 @@ public class DetalleUsuario extends ActionSupport {
 
     public void setUsuario(String usuario) {
         this.usuario = usuario;
+    }
+
+    public SessionMap<String, Object> getSessionMap() {
+        return sessionMap;
+    }
+
+    public void setSessionMap(SessionMap<String, Object> sessionMap) {
+        this.sessionMap = sessionMap;
     }
 
     
@@ -55,17 +66,18 @@ public class DetalleUsuario extends ActionSupport {
         this.email = email;
     }
      
-     
     public DetalleUsuario() {
     }
     
     public String execute() throws Exception {
         UsuarioDao udao= new UsuarioDao();
-        Usuario u = udao.getUser(usuario);
+        Usuario u=udao.getUser((String)sessionMap.get("username"));
         username = u.getUsername();
         email = u.getEmail();
         password = u.getPassword();
         return SUCCESS;
     }
-    
+    public void setSession(Map<String, Object> map) {
+        sessionMap = (SessionMap) map;
+    }
 }
