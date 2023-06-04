@@ -5,10 +5,10 @@
  */
 package DAO;
 
-import Hibernate.HibernateUtil;
-import Hibernate.Puntuacion;
+import puntuacionService.Puntuacion;
 import org.hibernate.Query;
 import org.hibernate.Session;
+import puntuacionService.Puntuacion;
 
 /**
  *
@@ -16,34 +16,40 @@ import org.hibernate.Session;
  */
 public class PuntuacionDao {
     public void addPuntuacion(Puntuacion v) {
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        org.hibernate.Transaction tx = session.beginTransaction();
-        session.save(v);
-        tx.commit();
-        session.close();
+        addPuntuacion_1(v);
     }
      public Puntuacion getPuntuacion(String id) {
-        Session sesion = HibernateUtil.getSessionFactory().openSession();
-        org.hibernate.Transaction tx = sesion.beginTransaction();
-        Query q = sesion.createQuery("from Puntuacion where id='" + id+"'");
-        Puntuacion u = (Puntuacion) q.uniqueResult();
-        tx.commit();
-        sesion.close();
-        return u;
+        return getPuntuacion_1(id);
     }
     
      public void updatePuntuacion(Puntuacion v) {
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        org.hibernate.Transaction tx = session.beginTransaction();
-        session.update(v);
-        tx.commit();
-        session.close();
+         updatePuntuacion_1(v);
     }
      public void removePuntuacion(Puntuacion v) {
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        org.hibernate.Transaction tx = session.beginTransaction();
-        session.delete(v);
-        tx.commit();
-        session.close();
+         removePuntuacion_1(v);
+    }
+
+    private static void addPuntuacion_1(puntuacionService.Puntuacion p) {
+        puntuacionService.PuntuacionDaoService_Service service = new puntuacionService.PuntuacionDaoService_Service();
+        puntuacionService.PuntuacionDaoService port = service.getPuntuacionDaoServicePort();
+        port.addPuntuacion(p);
+    }
+
+    private static Puntuacion getPuntuacion_1(java.lang.String id) {
+        puntuacionService.PuntuacionDaoService_Service service = new puntuacionService.PuntuacionDaoService_Service();
+        puntuacionService.PuntuacionDaoService port = service.getPuntuacionDaoServicePort();
+        return port.getPuntuacion(id);
+    }
+
+    private static void removePuntuacion_1(puntuacionService.Puntuacion name) {
+        puntuacionService.PuntuacionDaoService_Service service = new puntuacionService.PuntuacionDaoService_Service();
+        puntuacionService.PuntuacionDaoService port = service.getPuntuacionDaoServicePort();
+        port.removePuntuacion(name);
+    }
+
+    private static void updatePuntuacion_1(puntuacionService.Puntuacion p) {
+        puntuacionService.PuntuacionDaoService_Service service = new puntuacionService.PuntuacionDaoService_Service();
+        puntuacionService.PuntuacionDaoService port = service.getPuntuacionDaoServicePort();
+        port.updatePuntuacion(p);
     }
 }

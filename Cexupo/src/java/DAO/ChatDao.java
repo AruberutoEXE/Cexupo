@@ -5,16 +5,10 @@
  */
 package DAO;
 
-import Hibernate.Chat;
-import Hibernate.ChatId;
-import Hibernate.HibernateUtil;
-import Hibernate.Mensaje;
-import Hibernate.Producto;
-import java.util.Iterator;
-import java.util.LinkedList;
+import chatService.Chat;
+import chatService.ChatId;
+import chatService.Mensaje;
 import java.util.List;
-import org.hibernate.Query;
-import org.hibernate.Session;
 
 /**
  *
@@ -24,33 +18,25 @@ public class ChatDao {
 
     public Chat createChat(Long idProducto, String idUsuario) {
 
-        return chatSoapToHibernate(createChat_1(idProducto, idUsuario));
+        return createChat_1(idProducto, idUsuario);
     }
 
     public Chat getChat(Long idProducto, String idUsuario) {
 
-        return chatSoapToHibernate(getChat_1(idProducto, idUsuario));
+        return getChat_1(idProducto, idUsuario);
     }
 
     public List<Chat> getAllChatsUsuario(String username) {
-        List<chatService.Chat> cs = getAllChatsUsuario_1(username);
-        List<Chat> ch = new LinkedList<Chat>();
-        for (int i = 0; i < cs.size(); i++) {
-            ch.add(chatSoapToHibernate(cs.get(i)));
-        }
-        return ch;
+       
+        return getAllChatsUsuario_1(username);
     }
 
     public void deleteChat(Chat c) {
-        deleteChat_1(chatHibernateToSoap(c));
+        deleteChat_1(c);
     }
 
     public List<Mensaje> getMensajesChat(ChatId id) {
-
-        getMensajesChat_1(chatIdHibernateToSoap(id))
-        
-        
-        return res;
+        return getMensajesChat_1(id);
     }
 
     public Mensaje getMensaje(Long id) {
@@ -72,43 +58,6 @@ public class ChatDao {
 
     private static void addMensaje_1(chatService.Mensaje m) {
         addMensaje_1(m);
-    }
-
-    public chatService.Chat chatHibernateToSoap(Hibernate.Chat c) {
-        chatService.Chat res = new chatService.Chat();
-        res.setId(chatIdHibernateToSoap(c.getId()));
-        return res;
-    }
-
-    public chatService.ChatId chatIdHibernateToSoap(Hibernate.ChatId c) {
-        chatService.ChatId res = new chatService.ChatId();
-        res.setIdProducto(c.getIdProducto());
-        res.setIdUsuario(c.getIdUsuario());
-        return res;
-    }
-
-    public Hibernate.Chat chatSoapToHibernate(chatService.Chat c) {
-        Hibernate.Chat res = new Hibernate.Chat();
-        res.setId(chatIdSoapToHibernate(c.getId()));
-        return res;
-    }
-
-    public Hibernate.ChatId chatIdSoapToHibernate(chatService.ChatId c) {
-        Hibernate.ChatId res = new Hibernate.ChatId();
-        res.setIdProducto(c.getIdProducto());
-        res.setIdUsuario(c.getIdUsuario());
-        return res;
-    }
-
-    public chatService.Mensaje MensajeHibernateToSoap(Hibernate.Mensaje c) {
-        chatService.Mensaje res = new chatService.Mensaje();
-        res.setId(c.getId());
-        return res;
-    }
-    public Hibernate.Mensaje MensajeSoapToHibernate(chatService.Mensaje c) {
-        Hibernate.Mensaje res = new Hibernate.Mensaje();
-        res.setId(c.getId());
-        return res;
     }
 
   

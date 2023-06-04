@@ -5,9 +5,8 @@
  */
 package DAO;
 
-import Hibernate.HibernateUtil;
-import Hibernate.Producto;
-import Hibernate.Tarifaenvio;
+import productoService.Producto;
+import productoService.Tarifaenvio;
 import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -19,81 +18,83 @@ import org.hibernate.Session;
 public class ProductoDao {
 
     public Producto getProducto(int id) {
-        Session sesion = HibernateUtil.getSessionFactory().openSession();
-        org.hibernate.Transaction tx = sesion.beginTransaction();
-        Query q = sesion.createQuery("from Producto where id='" + id + "'");
-        Producto u = (Producto) q.uniqueResult();
-        tx.commit();
-        sesion.close();
-        return u;
+        return getProducto_1(id);
     }
 
     public List<Producto> getAllProductos() {
-        Session sesion = HibernateUtil.getSessionFactory().openSession();
-        org.hibernate.Transaction tx = sesion.beginTransaction();
-        Query q = sesion.createQuery("from Producto where vendido=FALSE");
-        List<Producto> u = (List<Producto>) q.list();
-        tx.commit();
-        sesion.close();
-        System.out.println("nºProductos: " + u.size());
-        return u;
+        return getAllProductos_1();
     }
 
     public List<Producto> getAllProductosPublicados(String idUser) {
-        Session sesion = HibernateUtil.getSessionFactory().openSession();
-        org.hibernate.Transaction tx = sesion.beginTransaction();
-        Query q = sesion.createQuery("from Producto where id_usuario='"+idUser+"' AND vendido=FALSE");
-        System.out.println("[DAO]usuario logueado: " + idUser);
-        List<Producto> u = (List<Producto>) q.list();
-        tx.commit();
-        sesion.close();
-        System.out.println("nºProductos: " + u.size());
-        return u;
+        return getAllProductosPublicados(idUser);
     }
 
     public List<Producto> getAllProductosVendidos(String idUser) {
-        Session sesion = HibernateUtil.getSessionFactory().openSession();
-        org.hibernate.Transaction tx = sesion.beginTransaction();
-        Query q = sesion.createQuery("from Producto where id_usuario='" + idUser + "' AND vendido=TRUE");
-        List<Producto> u = (List<Producto>) q.list();
-        tx.commit();
-        sesion.close();
-        System.out.println("nºProductos: " + u.size());
-        return u;
+        return getAllProductosVendidos_1(idUser);
     }
 
     public List<Tarifaenvio> getAllTarifas() {
-        Session sesion = HibernateUtil.getSessionFactory().openSession();
-        org.hibernate.Transaction tx = sesion.beginTransaction();
-        Query q = sesion.createQuery("from Tarifaenvio");
-        List<Tarifaenvio> u = (List<Tarifaenvio>) q.list();
-        tx.commit();
-        sesion.close();
-        return u;
+        return getAllTarifas_1();
     }
    
 
     public void addProducto(Producto p) {
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        org.hibernate.Transaction tx = session.beginTransaction();
-        session.save(p);
-        tx.commit();
-        session.close();
+        addProducto_1(p);
     }
     
     public void removeProducto(Producto p) {
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        org.hibernate.Transaction tx = session.beginTransaction();
-        session.delete(p);
-        tx.commit();
-        session.close();
+        removeProducto_1(p);
     }
     
     public void updateProducto(Producto p) {
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        org.hibernate.Transaction tx = session.beginTransaction();
-        session.update(p);
-        tx.commit();
-        session.close();
+        updateProducto_1(p);
+    }
+
+    private static void addProducto_1(productoService.Producto p) {
+        productoService.ProductoDaoService_Service service = new productoService.ProductoDaoService_Service();
+        productoService.ProductoDaoService port = service.getProductoDaoServicePort();
+        port.addProducto(p);
+    }
+
+    private static java.util.List<productoService.Producto> getAllProductos_1() {
+        productoService.ProductoDaoService_Service service = new productoService.ProductoDaoService_Service();
+        productoService.ProductoDaoService port = service.getProductoDaoServicePort();
+        return port.getAllProductos();
+    }
+
+    private static java.util.List<productoService.Producto> getAllProductosPublicados_1(java.lang.String idUser) {
+        productoService.ProductoDaoService_Service service = new productoService.ProductoDaoService_Service();
+        productoService.ProductoDaoService port = service.getProductoDaoServicePort();
+        return port.getAllProductosPublicados(idUser);
+    }
+
+    private static java.util.List<productoService.Producto> getAllProductosVendidos_1(java.lang.String name) {
+        productoService.ProductoDaoService_Service service = new productoService.ProductoDaoService_Service();
+        productoService.ProductoDaoService port = service.getProductoDaoServicePort();
+        return port.getAllProductosVendidos(name);
+    }
+
+    private static java.util.List<productoService.Tarifaenvio> getAllTarifas_1() {
+        productoService.ProductoDaoService_Service service = new productoService.ProductoDaoService_Service();
+        productoService.ProductoDaoService port = service.getProductoDaoServicePort();
+        return port.getAllTarifas();
+    }
+
+    private static Producto getProducto_1(int id) {
+        productoService.ProductoDaoService_Service service = new productoService.ProductoDaoService_Service();
+        productoService.ProductoDaoService port = service.getProductoDaoServicePort();
+        return port.getProducto(id);
+    }
+
+    private static void removeProducto_1(productoService.Producto p) {
+        productoService.ProductoDaoService_Service service = new productoService.ProductoDaoService_Service();
+        productoService.ProductoDaoService port = service.getProductoDaoServicePort();
+        port.removeProducto(p);
+    }
+
+    private static void updateProducto_1(productoService.Producto p) {
+        productoService.ProductoDaoService_Service service = new productoService.ProductoDaoService_Service();
+        productoService.ProductoDaoService port = service.getProductoDaoServicePort();
+        port.updateProducto(p);
     }
 }

@@ -5,8 +5,7 @@
  */
 package DAO;
 
-import Hibernate.HibernateUtil;
-import Hibernate.Tarifaenvio;
+import tarifaService.Tarifaenvio;
 import org.hibernate.Query;
 import org.hibernate.Session;
 
