@@ -45,7 +45,7 @@ public class UsuarioDao {
         return u;
     }
 
-    public static boolean createUser(Usuario user) {
+    public boolean createUser(Usuario user) {
         Session sesion = HibernateUtil.getSessionFactory().openSession();
         boolean salida = true;
         org.hibernate.Transaction tx = null;
@@ -63,7 +63,7 @@ public class UsuarioDao {
         return salida;
     }
 
-    public static boolean userExiste(String email) {
+    public boolean userExiste(String email) {
         boolean salida;
         Transaction tx = null;
         Usuario u = null;

@@ -6,13 +6,10 @@
 package servicios;
 
 import DAO.PuntuacionDao;
-import Hibernate.HibernateUtil;
 import Hibernate.Puntuacion;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
-import org.hibernate.Query;
-import org.hibernate.Session;
 
 /**
  *
