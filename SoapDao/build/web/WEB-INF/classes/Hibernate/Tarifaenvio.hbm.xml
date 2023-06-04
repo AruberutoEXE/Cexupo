@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 30-may-2023 15:55:57 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Hibernate.Tarifaenvio" table="tarifaenvio" catalog="cexupo" optimistic-lock="version">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="precioPeso" type="float">
+            <column name="precioPeso" precision="12" scale="0" not-null="true" />
+        </property>
+        <property name="precioVolumen" type="float">
+            <column name="precioVolumen" precision="12" scale="0" not-null="true" />
+        </property>
+        <property name="precioSeguro" type="float">
+            <column name="precioSeguro" precision="12" scale="0" not-null="true" />
+        </property>
+        <property name="nombreTarifa" type="string">
+            <column name="nombreTarifa" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

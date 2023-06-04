@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 30-may-2023 15:55:57 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Hibernate.Chat" table="chat" catalog="cexupo" optimistic-lock="version">
+        <composite-id name="id" class="Hibernate.ChatId">
+            <key-property name="idProducto" type="long">
+                <column name="idProducto" />
+            </key-property>
+            <key-property name="idUsuario" type="string">
+                <column name="idUsuario" />
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>
