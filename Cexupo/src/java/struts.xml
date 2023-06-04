@@ -151,24 +151,20 @@
             <result name="success">/Vistas/Chat/Chat.jsp</result>
             <result name="error">/Error.jsp</result>
         </action>
-        <action name="cargarChat" class="Actions.ChatAction" method="cargar">
-            <result name="success">/Vistas/Chat/Chat.jsp</result>
-            <result name="error">/Error.jsp</result>
-        </action>
         <action name="eliminarChat" class="Actions.ChatAction" method="eliminar">
             <result name="success">/Vistas/Chat/ChatsUsuario.jsp</result>
             <result name="error">/Error.jsp</result>
         </action>
-        <action name="enviarM" class="Actions.MensajeAction" method="enviarM">
+        <action name="enviarM" class="Actions.ChatAction" method="enviarM">
             <result name="success">/Vistas/Chat/Chat.jsp</result>
-            <result name="error">/Vistas/login/Error.jsp</result>
+            <result name="error">/Error.jsp</result>
             <result name="input">/Vistas/Chat/Chat.jsp</result>
         </action>
-        <action name="eliminarM" class="Actions.MensajeAction" method="borrarM">
+        <action name="eliminarM" class="Actions.ChatAction" method="borrarM">
             <result name="success">/Vistas/Chat/Chat.jsp</result>
             <result name="error">/Error.jsp</result>
         </action>
-        <action name="editarM" class="Actions.MensajeAction" method="editarM">
+        <action name="editarM" class="Actions.ChatAction" method="editarM">
             <result name="success">/Vistas/Chat/Chat.jsp</result>
             <result name="error">/Error.jsp</result>
             <result name="input">/Vistas/Chat/Chat.jsp</result>

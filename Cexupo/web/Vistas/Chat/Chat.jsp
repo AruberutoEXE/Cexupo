@@ -33,8 +33,48 @@
                     </div>                
                 </div>
             </header>
+            <main role="main">
+            <section class="jumbotron text-center">
+                <div class="container bg-dark p-3">
+                    <h1 class="jumbotron-heading text-white"><s:property value="product.nombre"/></h1>
+                </div>
+            </section>
+
+            <div class="album py-5 ">
+                <div class="container">
+                    <s:iterator value="mensajes">
+                        <div class="card mb-4 box-shadow">
+                            <div class="card-body">
+                                <p class="card-text"><s:property value = "idUsuario"/></p>
+                                <p class="card-text"><s:property value = "contenido"/></p>
+                            </div>
+                            <s:if test="%{#session.username==idUsuario}">
+                            <s:form method="POST" action="editarM">
+                                <s:hidden name="idMensaje" value="%{id}" />
+                                <s:submit cssClass="btn btn-sm btn-outline-secondary" value="Edit"/>
+                            </s:form>
+                            <s:form method="POST" action="eliminarM">
+                                <s:hidden name="idMensaje" value="%{id}" />
+                                <s:submit cssClass="btn btn-sm btn-outline-secondary" value="Delete"/>
+                            </s:form>
+                            </s:if>
+                        </div>
+                    </s:iterator>
+                </div>
+            </div>
+        </main>
+
+
+        <footer class="blog-footer jumbotron text-center bg-dark">
+            <br>
+            <s:form method="POST" action="enviarM">
+                <s:hidden name="producto" value="%{producto}" />
+                <s:textfield size="145" name="contenidoMensaje"/>
+                <s:submit cssClass="btn btn-sm btn-outline-secondary" value="Send"/>
+            </s:form>
+                <br>
+    </footer>
         </div>          
-                            <s:action name="cargarChat" namespace="/chat" executeResult="true"/>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

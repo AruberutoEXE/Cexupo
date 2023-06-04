@@ -99,6 +99,9 @@ public class ChatDao {
         int idChat = id.hashCode();
         Query q = sesion.createQuery("from Mensaje where idChat='" + idChat + "' ORDER BY fecha ASC");
         List<Mensaje> mensajes = (List<Mensaje>) q.list();
+        if(mensajes == null){
+            System.out.println("La lista de mensajes esta vacia");
+        }
         tx.commit();
         sesion.close();
         return mensajes;

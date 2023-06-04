@@ -8,7 +8,7 @@ and open the template in the editor.
         "http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
 
 <validators>
-    <field name="contenido">
+    <field name="contenidoMensaje">
         <field-validator type="requiredstring">
             <param name="trim">true</param>
             <message>No empty messages.</message>

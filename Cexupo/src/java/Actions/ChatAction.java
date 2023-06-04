@@ -27,17 +27,15 @@ public class ChatAction extends ActionSupport implements SessionAware{
     private List<Mensaje> mensajes;
     private Producto product;
     private String producto;
-    private SessionMap<String, Object> sessionMap; 
+    private SessionMap<String, Object> sessionMap;
+    private Long idMensaje;
+    private String contenidoMensaje;
     
     
     public ChatAction() {
     }
     
-    public String execute() throws Exception { 
-        return SUCCESS;
-    }
-    
-    public String cargar() throws Exception {
+    public String execute() throws Exception {
         ChatDao cDao = new ChatDao();
         ProductoDao pDao = new ProductoDao();
         if(chatId == null){
@@ -54,6 +52,34 @@ public class ChatAction extends ActionSupport implements SessionAware{
         ChatDao cDao = new ChatDao();
         Chat c = new Chat(chatId);
         cDao.deleteChat(c);
+        return SUCCESS;
+    }
+    
+    public String editarM() throws Exception {
+        execute();
+        ChatDao cDao = new ChatDao();
+        Mensaje m = cDao.getMensaje(idMensaje);
+        m.setContenido(contenidoMensaje);
+        cDao.updateMensaje(m);
+        return SUCCESS;
+    }
+    
+    public String enviarM() throws Exception {
+        ChatDao cDao = new ChatDao();
+        Mensaje m = new Mensaje();
+        m.setContenido(contenidoMensaje);
+        m.setIdUsuario((String)sessionMap.get("username"));
+        execute();
+        m.setIdChat(chatId.hashCode());
+        cDao.addMensaje(m);
+        return SUCCESS;
+    }
+    
+    public String borrarM() throws Exception {
+        execute();
+        ChatDao cDao = new ChatDao();
+        Mensaje m = cDao.getMensaje(idMensaje);
+        cDao.removeMensaje(m);
         return SUCCESS;
     }
 
@@ -87,6 +113,22 @@ public class ChatAction extends ActionSupport implements SessionAware{
 
     public void setProducto(String producto) {
         this.producto = producto;
+    }
+
+    public Long getIdMensaje() {
+        return idMensaje;
+    }
+
+    public void setIdMensaje(Long id) {
+        this.idMensaje = id;
+    }
+
+    public String getContenidoMensaje() {
+        return contenidoMensaje;
+    }
+
+    public void setContenidoMensaje(String contenido) {
+        this.contenidoMensaje = contenido;
     }
     
     @Override
