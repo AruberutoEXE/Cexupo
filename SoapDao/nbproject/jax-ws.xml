@@ -13,6 +13,9 @@
     <service name="ProductoDaoService">
       <implementation-class>servicios.ProductoDaoService</implementation-class>
     </service>
+    <service name="PuntuacionDaoService">
+      <implementation-class>servicios.PuntuacionDaoService</implementation-class>
+    </service>
   </services>
   <clients/>
 </jax-ws>
