@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:8080/SoapDao/VentasDaoServices?wsdl" uri="src/conf/xml-resources/web-service-references/VentasDaoServices/wsdl/localhost_8080/SoapDao/VentasDaoServices.wsdl"/>
+    <system systemId="http://localhost:8080/SoapDao/VentasDaoServices?xsd=1" uri="src/conf/xml-resources/web-service-references/VentasDaoServices/wsdl/localhost_8080/SoapDao/VentasDaoServices.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/SoapDao/ProductoDaoService?wsdl" uri="src/conf/xml-resources/web-service-references/ProductoDaoService/wsdl/localhost_8080/SoapDao/ProductoDaoService.wsdl"/>
+    <system systemId="http://localhost:8080/SoapDao/ProductoDaoService?xsd=1" uri="src/conf/xml-resources/web-service-references/ProductoDaoService/wsdl/localhost_8080/SoapDao/ProductoDaoService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/SoapDao/PuntuacionDaoService?wsdl" uri="src/conf/xml-resources/web-service-references/PuntuacionDaoService/wsdl/localhost_8080/SoapDao/PuntuacionDaoService.wsdl"/>
+    <system systemId="http://localhost:8080/SoapDao/PuntuacionDaoService?xsd=1" uri="src/conf/xml-resources/web-service-references/PuntuacionDaoService/wsdl/localhost_8080/SoapDao/PuntuacionDaoService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/SoapDao/UsuarioDaoService?wsdl" uri="src/conf/xml-resources/web-service-references/UsuarioDaoService/wsdl/localhost_8080/SoapDao/UsuarioDaoService.wsdl"/>
+    <system systemId="http://localhost:8080/SoapDao/UsuarioDaoService?xsd=1" uri="src/conf/xml-resources/web-service-references/UsuarioDaoService/wsdl/localhost_8080/SoapDao/UsuarioDaoService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/SoapDao/TarifaDaoService?wsdl" uri="src/conf/xml-resources/web-service-references/TarifaDaoService/wsdl/localhost_8080/SoapDao/TarifaDaoService.wsdl"/>
+    <system systemId="http://localhost:8080/SoapDao/TarifaDaoService?xsd=1" uri="src/conf/xml-resources/web-service-references/TarifaDaoService/wsdl/localhost_8080/SoapDao/TarifaDaoService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/SoapDao/ChatDaoService?wsdl" uri="src/conf/xml-resources/web-service-references/ChatDaoService/wsdl/localhost_8080/SoapDao/ChatDaoService.wsdl"/>
+    <system systemId="http://localhost:8080/SoapDao/ChatDaoService?xsd=1" uri="src/conf/xml-resources/web-service-references/ChatDaoService/wsdl/localhost_8080/SoapDao/ChatDaoService.xsd_1.xsd"/>
+</catalog>

@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://servicios/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://servicios/">
+
+<xs:element name="addPuntuacion" type="tns:addPuntuacion"/>
+
+<xs:element name="addPuntuacionResponse" type="tns:addPuntuacionResponse"/>
+
+<xs:element name="getPuntuacion" type="tns:getPuntuacion"/>
+
+<xs:element name="getPuntuacionResponse" type="tns:getPuntuacionResponse"/>
+
+<xs:element name="removePuntuacion" type="tns:removePuntuacion"/>
+
+<xs:element name="removePuntuacionResponse" type="tns:removePuntuacionResponse"/>
+
+<xs:element name="updatePuntuacion" type="tns:updatePuntuacion"/>
+
+<xs:element name="updatePuntuacionResponse" type="tns:updatePuntuacionResponse"/>
+
+<xs:complexType name="updatePuntuacion">
+<xs:sequence>
+<xs:element name="p" type="tns:puntuacion" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="puntuacion">
+<xs:sequence>
+<xs:element name="id" type="xs:int" minOccurs="0"/>
+<xs:element name="numero" type="xs:int"/>
+<xs:element name="resenya" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updatePuntuacionResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="addPuntuacion">
+<xs:sequence>
+<xs:element name="p" type="tns:puntuacion" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addPuntuacionResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="removePuntuacion">
+<xs:sequence>
+<xs:element name="name" type="tns:puntuacion" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="removePuntuacionResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getPuntuacion">
+<xs:sequence>
+<xs:element name="id" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getPuntuacionResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:puntuacion" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

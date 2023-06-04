@@ -1,0 +1,261 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://servicios/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://servicios/">
+
+<xs:element name="createDireccion" type="tns:createDireccion"/>
+
+<xs:element name="createDireccionResponse" type="tns:createDireccionResponse"/>
+
+<xs:element name="createMetodoPago" type="tns:createMetodoPago"/>
+
+<xs:element name="createMetodoPagoResponse" type="tns:createMetodoPagoResponse"/>
+
+<xs:element name="createUser" type="tns:createUser"/>
+
+<xs:element name="createUserResponse" type="tns:createUserResponse"/>
+
+<xs:element name="getAllUserDirections" type="tns:getAllUserDirections"/>
+
+<xs:element name="getAllUserDirectionsResponse" type="tns:getAllUserDirectionsResponse"/>
+
+<xs:element name="getAllUserPayMethods" type="tns:getAllUserPayMethods"/>
+
+<xs:element name="getAllUserPayMethodsResponse" type="tns:getAllUserPayMethodsResponse"/>
+
+<xs:element name="getDireccion" type="tns:getDireccion"/>
+
+<xs:element name="getDireccionResponse" type="tns:getDireccionResponse"/>
+
+<xs:element name="getMetPago" type="tns:getMetPago"/>
+
+<xs:element name="getMetPagoResponse" type="tns:getMetPagoResponse"/>
+
+<xs:element name="getUser" type="tns:getUser"/>
+
+<xs:element name="getUserResponse" type="tns:getUserResponse"/>
+
+<xs:element name="isRegistered" type="tns:isRegistered"/>
+
+<xs:element name="isRegisteredResponse" type="tns:isRegisteredResponse"/>
+
+<xs:element name="removeDireccion" type="tns:removeDireccion"/>
+
+<xs:element name="removeDireccionResponse" type="tns:removeDireccionResponse"/>
+
+<xs:element name="removeMetodoPago" type="tns:removeMetodoPago"/>
+
+<xs:element name="removeMetodoPagoResponse" type="tns:removeMetodoPagoResponse"/>
+
+<xs:element name="updateDireccion" type="tns:updateDireccion"/>
+
+<xs:element name="updateDireccionResponse" type="tns:updateDireccionResponse"/>
+
+<xs:element name="updateMetodoPago" type="tns:updateMetodoPago"/>
+
+<xs:element name="updateMetodoPagoResponse" type="tns:updateMetodoPagoResponse"/>
+
+<xs:element name="updateUser" type="tns:updateUser"/>
+
+<xs:element name="updateUserResponse" type="tns:updateUserResponse"/>
+
+<xs:element name="userExiste" type="tns:userExiste"/>
+
+<xs:element name="userExisteResponse" type="tns:userExisteResponse"/>
+
+<xs:complexType name="getUser">
+<xs:sequence>
+<xs:element name="user" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getUserResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:usuario" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="usuario">
+<xs:sequence>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+<xs:element name="productos" type="xs:anyType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="username" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getAllUserDirections">
+<xs:sequence>
+<xs:element name="user" type="tns:usuario" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getAllUserDirectionsResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:direccion" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="direccion">
+<xs:sequence>
+<xs:element name="cp" type="xs:int"/>
+<xs:element name="direccion" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="idUsuario" type="xs:string" minOccurs="0"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createMetodoPago">
+<xs:sequence>
+<xs:element name="mp" type="tns:metodopago" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="metodopago">
+<xs:sequence>
+<xs:element name="detalles" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="idUsuario" type="xs:string" minOccurs="0"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createMetodoPagoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateMetodoPago">
+<xs:sequence>
+<xs:element name="name" type="tns:metodopago" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateMetodoPagoResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="removeMetodoPago">
+<xs:sequence>
+<xs:element name="name" type="tns:metodopago" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="removeMetodoPagoResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="userExiste">
+<xs:sequence>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="userExisteResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateUser">
+<xs:sequence>
+<xs:element name="u" type="tns:usuario" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateUserResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getMetPago">
+<xs:sequence>
+<xs:element name="id" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getMetPagoResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:metodopago" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getAllUserPayMethods">
+<xs:sequence>
+<xs:element name="user" type="tns:usuario" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getAllUserPayMethodsResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:metodopago" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateDireccion">
+<xs:sequence>
+<xs:element name="d" type="tns:direccion" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateDireccionResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="createDireccion">
+<xs:sequence>
+<xs:element name="dir" type="tns:direccion" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createDireccionResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getDireccion">
+<xs:sequence>
+<xs:element name="id" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getDireccionResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:direccion" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="isRegistered">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="pass" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="isRegisteredResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createUser">
+<xs:sequence>
+<xs:element name="name" type="tns:usuario" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createUserResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="removeDireccion">
+<xs:sequence>
+<xs:element name="name" type="tns:direccion" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="removeDireccionResponse">
+<xs:sequence/>
+</xs:complexType>
+</xs:schema>

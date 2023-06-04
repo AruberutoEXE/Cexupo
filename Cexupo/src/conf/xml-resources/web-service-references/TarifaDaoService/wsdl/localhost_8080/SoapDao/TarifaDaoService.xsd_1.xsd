@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://servicios/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://servicios/">
+
+<xs:element name="getTarifa" type="tns:getTarifa"/>
+
+<xs:element name="getTarifaResponse" type="tns:getTarifaResponse"/>
+
+<xs:complexType name="getTarifa">
+<xs:sequence>
+<xs:element name="idTarifa" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getTarifaResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:tarifaenvio" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tarifaenvio">
+<xs:sequence>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="nombreTarifa" type="xs:string" minOccurs="0"/>
+<xs:element name="precioPeso" type="xs:float"/>
+<xs:element name="precioSeguro" type="xs:float"/>
+<xs:element name="precioVolumen" type="xs:float"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

@@ -11,6 +11,7 @@ import Hibernate.HibernateUtil;
 import Hibernate.Mensaje;
 import Hibernate.Producto;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -22,122 +23,141 @@ import org.hibernate.Session;
 public class ChatDao {
 
     public Chat createChat(Long idProducto, String idUsuario) {
-        Session sesion = HibernateUtil.getSessionFactory().openSession();
-        org.hibernate.Transaction tx = null;
-        ChatId chatid = new ChatId();
-        chatid.setIdProducto(idProducto);
-        chatid.setIdUsuario(idUsuario);
-        Chat chat = new Chat(chatid);
-        try {
-            tx = sesion.beginTransaction();
-            sesion.save(chat);
-            tx.commit();
-        } catch (Exception ex) {
-            if (tx != null) {
-                tx.rollback();
-            }
-            chat = null;
-        }
-        sesion.close();
-        return chat;
+
+        return chatSoapToHibernate(createChat_1(idProducto, idUsuario));
     }
 
     public Chat getChat(Long idProducto, String idUsuario) {
-        Session sesion = HibernateUtil.getSessionFactory().openSession();
-        org.hibernate.Transaction tx = sesion.beginTransaction();
-        Query q = sesion.createQuery("from Chat where idUsuario='" + idUsuario + "' AND idProducto='" + idProducto + "'");
-        Chat chat = (Chat) q.uniqueResult();
-        tx.commit();
-        sesion.close();
-        return chat;
+
+        return chatSoapToHibernate(getChat_1(idProducto, idUsuario));
     }
 
     public List<Chat> getAllChatsUsuario(String username) {
-        ProductoDao pDao = new ProductoDao();
-        String str = "(";
-        List<Chat> chats;
-        List<Producto> productos = pDao.getAllProductosPublicados(username);
-        if (productos.size() != 0) {
-            Iterator it = productos.iterator();
-            Producto p;
-            while (it.hasNext()) {
-                p = (Producto) it.next();
-                if (it.hasNext()) {
-                    str += "" + p.getId() + ",";
-                } else {
-                    str += "" + p.getId() + ")";
-                }
-            }
-            Session sesion = HibernateUtil.getSessionFactory().openSession();
-            org.hibernate.Transaction tx = sesion.beginTransaction();
-            Query q = sesion.createQuery("from Chat where idUsuario='" + username + "' OR idProducto IN " + str);
-            chats = (List<Chat>) q.list();
-            tx.commit();
-            sesion.close();
-        }else{
-            Session sesion = HibernateUtil.getSessionFactory().openSession();
-            org.hibernate.Transaction tx = sesion.beginTransaction();
-            Query q = sesion.createQuery("from Chat where idUsuario='" + username + "'");
-            chats = (List<Chat>) q.list();
-            tx.commit();
-            sesion.close();
+        List<chatService.Chat> cs = getAllChatsUsuario_1(username);
+        List<Chat> ch = new LinkedList<Chat>();
+        for (int i = 0; i < cs.size(); i++) {
+            ch.add(chatSoapToHibernate(cs.get(i)));
         }
-        return chats;
+        return ch;
     }
 
     public void deleteChat(Chat c) {
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        org.hibernate.Transaction tx = session.beginTransaction();
-        session.delete(c);
-        tx.commit();
-        session.close();
+        deleteChat_1(chatHibernateToSoap(c));
     }
 
     public List<Mensaje> getMensajesChat(ChatId id) {
-        Session sesion = HibernateUtil.getSessionFactory().openSession();
-        org.hibernate.Transaction tx = sesion.beginTransaction();
-        int idChat = id.hashCode();
-        Query q = sesion.createQuery("from Mensaje where idChat='" + idChat + "' ORDER BY fecha ASC");
-        List<Mensaje> mensajes = (List<Mensaje>) q.list();
-        if(mensajes == null){
-            System.out.println("La lista de mensajes esta vacia");
-        }
-        tx.commit();
-        sesion.close();
-        return mensajes;
+
+        getMensajesChat_1(chatIdHibernateToSoap(id))
+        
+        
+        return res;
     }
 
     public Mensaje getMensaje(Long id) {
-        Session sesion = HibernateUtil.getSessionFactory().openSession();
-        org.hibernate.Transaction tx = sesion.beginTransaction();
-        Query q = sesion.createQuery("from Mensaje where id=:id").setParameter("id", id);
-        Mensaje mensaje = (Mensaje) q.uniqueResult();
-        tx.commit();
-        sesion.close();
-        return mensaje;
+
+        return getMensaje_1(id);
     }
 
     public void addMensaje(Mensaje m) {
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        org.hibernate.Transaction tx = session.beginTransaction();
-        session.save(m);
-        tx.commit();
-        session.close();
+        addMensaje_1(m);
     }
 
     public void removeMensaje(Mensaje m) {
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        org.hibernate.Transaction tx = session.beginTransaction();
-        session.delete(m);
-        tx.commit();
-        session.close();
+        removeMensaje_1(m);
     }
 
     public void updateMensaje(Mensaje m) {
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        org.hibernate.Transaction tx = session.beginTransaction();
-        session.update(m);
-        tx.commit();
-        session.close();
+        updateMensaje_1(m);
     }
+
+    private static void addMensaje_1(chatService.Mensaje m) {
+        addMensaje_1(m);
+    }
+
+    public chatService.Chat chatHibernateToSoap(Hibernate.Chat c) {
+        chatService.Chat res = new chatService.Chat();
+        res.setId(chatIdHibernateToSoap(c.getId()));
+        return res;
+    }
+
+    public chatService.ChatId chatIdHibernateToSoap(Hibernate.ChatId c) {
+        chatService.ChatId res = new chatService.ChatId();
+        res.setIdProducto(c.getIdProducto());
+        res.setIdUsuario(c.getIdUsuario());
+        return res;
+    }
+
+    public Hibernate.Chat chatSoapToHibernate(chatService.Chat c) {
+        Hibernate.Chat res = new Hibernate.Chat();
+        res.setId(chatIdSoapToHibernate(c.getId()));
+        return res;
+    }
+
+    public Hibernate.ChatId chatIdSoapToHibernate(chatService.ChatId c) {
+        Hibernate.ChatId res = new Hibernate.ChatId();
+        res.setIdProducto(c.getIdProducto());
+        res.setIdUsuario(c.getIdUsuario());
+        return res;
+    }
+
+    public chatService.Mensaje MensajeHibernateToSoap(Hibernate.Mensaje c) {
+        chatService.Mensaje res = new chatService.Mensaje();
+        res.setId(c.getId());
+        return res;
+    }
+    public Hibernate.Mensaje MensajeSoapToHibernate(chatService.Mensaje c) {
+        Hibernate.Mensaje res = new Hibernate.Mensaje();
+        res.setId(c.getId());
+        return res;
+    }
+
+  
+    private static chatService.Chat createChat_1(java.lang.Long idProducto, java.lang.String idUsuario) {
+        chatService.ChatDaoService_Service service = new chatService.ChatDaoService_Service();
+        chatService.ChatDaoService port = service.getChatDaoServicePort();
+        return port.createChat(idProducto, idUsuario);
+    }
+
+    private static void deleteChat_1(chatService.Chat c) {
+        chatService.ChatDaoService_Service service = new chatService.ChatDaoService_Service();
+        chatService.ChatDaoService port = service.getChatDaoServicePort();
+        port.deleteChat(c);
+    }
+
+    private static java.util.List<chatService.Chat> getAllChatsUsuario_1(java.lang.String username) {
+        chatService.ChatDaoService_Service service = new chatService.ChatDaoService_Service();
+        chatService.ChatDaoService port = service.getChatDaoServicePort();
+        return port.getAllChatsUsuario(username);
+    }
+
+    private static chatService.Chat getChat_1(java.lang.Long idProducto, java.lang.String idUsuario) {
+        chatService.ChatDaoService_Service service = new chatService.ChatDaoService_Service();
+        chatService.ChatDaoService port = service.getChatDaoServicePort();
+        return port.getChat(idProducto, idUsuario);
+    }
+
+    private static chatService.Mensaje getMensaje_1(java.lang.Long id) {
+        chatService.ChatDaoService_Service service = new chatService.ChatDaoService_Service();
+        chatService.ChatDaoService port = service.getChatDaoServicePort();
+        return port.getMensaje(id);
+    }
+
+    private static java.util.List<chatService.Mensaje> getMensajesChat_1(chatService.ChatId id) {
+        chatService.ChatDaoService_Service service = new chatService.ChatDaoService_Service();
+        chatService.ChatDaoService port = service.getChatDaoServicePort();
+        return port.getMensajesChat(id);
+    }
+
+    private static void removeMensaje_1(chatService.Mensaje txt) {
+        chatService.ChatDaoService_Service service = new chatService.ChatDaoService_Service();
+        chatService.ChatDaoService port = service.getChatDaoServicePort();
+        port.removeMensaje(txt);
+    }
+
+    private static void updateMensaje_1(chatService.Mensaje m) {
+        chatService.ChatDaoService_Service service = new chatService.ChatDaoService_Service();
+        chatService.ChatDaoService port = service.getChatDaoServicePort();
+        port.updateMensaje(m);
+    }
+
 }

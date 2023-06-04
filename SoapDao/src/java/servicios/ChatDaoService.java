@@ -54,7 +54,7 @@ public class ChatDaoService {
     public void removeMensaje(@WebParam(name = "txt") Mensaje m) {
         cdao.removeMensaje(m);
     } 
-    @WebMethod(operationName = "hello")
+    @WebMethod(operationName = "updateMensaje")
     public void updateMensaje(@WebParam(name = "m") Mensaje m) {
         cdao.updateMensaje(m);
     }

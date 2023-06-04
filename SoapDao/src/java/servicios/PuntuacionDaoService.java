@@ -18,10 +18,7 @@ import javax.jws.WebParam;
 @WebService(serviceName = "PuntuacionDaoService")
 public class PuntuacionDaoService {
 PuntuacionDao pdao=new PuntuacionDao();
-    @WebMethod(operationName = "hello")
-    public String hello(@WebParam(name = "name") String txt) {
-        return "Hello " + txt + " !";
-    }
+   
     @WebMethod(operationName = "addPuntuacion")
     public void addPuntuacion(@WebParam(name = "p")Puntuacion p) {
         pdao.addPuntuacion(p);
@@ -34,7 +31,7 @@ PuntuacionDao pdao=new PuntuacionDao();
     public void updatePuntuacion(@WebParam(name = "p")Puntuacion p) {
         pdao.updatePuntuacion(p);
     }
-    @WebMethod(operationName = "hello")
+    @WebMethod(operationName = "removePuntuacion")
     public void removePuntuacion(@WebParam(name = "name")Puntuacion v) {
         pdao.removePuntuacion(v);
     }

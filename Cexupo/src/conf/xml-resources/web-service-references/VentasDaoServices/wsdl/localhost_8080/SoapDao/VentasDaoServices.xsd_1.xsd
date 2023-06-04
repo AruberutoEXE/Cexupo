@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://servicios/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://servicios/">
+
+<xs:element name="addVenta" type="tns:addVenta"/>
+
+<xs:element name="addVentaResponse" type="tns:addVentaResponse"/>
+
+<xs:element name="getVenta" type="tns:getVenta"/>
+
+<xs:element name="getVenta2" type="tns:getVenta2"/>
+
+<xs:element name="getVenta2Response" type="tns:getVenta2Response"/>
+
+<xs:element name="getVentaResponse" type="tns:getVentaResponse"/>
+
+<xs:element name="getVentasByUsu" type="tns:getVentasByUsu"/>
+
+<xs:element name="getVentasByUsuResponse" type="tns:getVentasByUsuResponse"/>
+
+<xs:element name="removeVenta" type="tns:removeVenta"/>
+
+<xs:element name="removeVentaResponse" type="tns:removeVentaResponse"/>
+
+<xs:element name="updateVenta" type="tns:updateVenta"/>
+
+<xs:element name="updateVentaResponse" type="tns:updateVentaResponse"/>
+
+<xs:complexType name="addVenta">
+<xs:sequence>
+<xs:element name="v" type="tns:venta" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="venta">
+<xs:sequence>
+<xs:element name="fechaVenta" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="idDireccion" type="xs:long"/>
+<xs:element name="idMetodoPago" type="xs:long"/>
+<xs:element name="idProducto" type="xs:long"/>
+<xs:element name="idPuntuacion" type="xs:long"/>
+<xs:element name="idTarifa" type="xs:long"/>
+<xs:element name="idUsuario" type="xs:string" minOccurs="0"/>
+<xs:element name="precioTotal" type="xs:float"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addVentaResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getVenta2">
+<xs:sequence>
+<xs:element name="idusuario" type="xs:string" minOccurs="0"/>
+<xs:element name="idProducto" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getVenta2Response">
+<xs:sequence>
+<xs:element name="return" type="tns:venta" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getVenta">
+<xs:sequence>
+<xs:element name="idProducto" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getVentaResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:venta" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getVentasByUsu">
+<xs:sequence>
+<xs:element name="usu" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getVentasByUsuResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:venta" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateVenta">
+<xs:sequence>
+<xs:element name="v" type="tns:venta" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateVentaResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="removeVenta">
+<xs:sequence>
+<xs:element name="v" type="tns:venta" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="removeVentaResponse">
+<xs:sequence/>
+</xs:complexType>
+</xs:schema>

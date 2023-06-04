@@ -1,0 +1,163 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://servicios/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://servicios/">
+
+<xs:element name="addMensaje" type="tns:addMensaje"/>
+
+<xs:element name="addMensajeResponse" type="tns:addMensajeResponse"/>
+
+<xs:element name="createChat" type="tns:createChat"/>
+
+<xs:element name="createChatResponse" type="tns:createChatResponse"/>
+
+<xs:element name="deleteChat" type="tns:deleteChat"/>
+
+<xs:element name="deleteChatResponse" type="tns:deleteChatResponse"/>
+
+<xs:element name="getAllChatsUsuario" type="tns:getAllChatsUsuario"/>
+
+<xs:element name="getAllChatsUsuarioResponse" type="tns:getAllChatsUsuarioResponse"/>
+
+<xs:element name="getChat" type="tns:getChat"/>
+
+<xs:element name="getChatResponse" type="tns:getChatResponse"/>
+
+<xs:element name="getMensaje" type="tns:getMensaje"/>
+
+<xs:element name="getMensajeResponse" type="tns:getMensajeResponse"/>
+
+<xs:element name="getMensajesChat" type="tns:getMensajesChat"/>
+
+<xs:element name="getMensajesChatResponse" type="tns:getMensajesChatResponse"/>
+
+<xs:element name="removeMensaje" type="tns:removeMensaje"/>
+
+<xs:element name="removeMensajeResponse" type="tns:removeMensajeResponse"/>
+
+<xs:element name="updateMensaje" type="tns:updateMensaje"/>
+
+<xs:element name="updateMensajeResponse" type="tns:updateMensajeResponse"/>
+
+<xs:complexType name="getMensajesChat">
+<xs:sequence>
+<xs:element name="id" type="tns:chatId" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="chatId">
+<xs:sequence>
+<xs:element name="idProducto" type="xs:long"/>
+<xs:element name="idUsuario" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getMensajesChatResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:mensaje" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="mensaje">
+<xs:sequence>
+<xs:element name="contenido" type="xs:string" minOccurs="0"/>
+<xs:element name="fecha" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="idChat" type="xs:long"/>
+<xs:element name="idUsuario" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getChat">
+<xs:sequence>
+<xs:element name="idProducto" type="xs:long" minOccurs="0"/>
+<xs:element name="idUsuario" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getChatResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:chat" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="chat">
+<xs:sequence>
+<xs:element name="id" type="tns:chatId" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createChat">
+<xs:sequence>
+<xs:element name="idProducto" type="xs:long" minOccurs="0"/>
+<xs:element name="idUsuario" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createChatResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:chat" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getAllChatsUsuario">
+<xs:sequence>
+<xs:element name="username" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getAllChatsUsuarioResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:chat" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteChat">
+<xs:sequence>
+<xs:element name="c" type="tns:chat" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteChatResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getMensaje">
+<xs:sequence>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getMensajeResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:mensaje" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addMensaje">
+<xs:sequence>
+<xs:element name="m" type="tns:mensaje" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addMensajeResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="updateMensaje">
+<xs:sequence>
+<xs:element name="m" type="tns:mensaje" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateMensajeResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="removeMensaje">
+<xs:sequence>
+<xs:element name="txt" type="tns:mensaje" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="removeMensajeResponse">
+<xs:sequence/>
+</xs:complexType>
+</xs:schema>

@@ -16,13 +16,13 @@ import org.hibernate.Session;
  */
 public class TarifaDao {
      public Tarifaenvio getTarifa(String idTarifa) {
-
-        Session sesion = HibernateUtil.getSessionFactory().openSession();
-        org.hibernate.Transaction tx = sesion.beginTransaction();
-        Query q = sesion.createQuery("from Tarifaenvio WHERE id='" + idTarifa + "'");
-        Tarifaenvio u = (Tarifaenvio) q.uniqueResult();
-        tx.commit();
-        sesion.close();
-        return u;
+        return getTarifa(idTarifa);
     }
+
+    private static tarifaService.Tarifaenvio getTarifa_1(java.lang.String idTarifa) {
+        tarifaService.TarifaDaoService_Service service = new tarifaService.TarifaDaoService_Service();
+        tarifaService.TarifaDaoService port = service.getTarifaDaoServicePort();
+        return port.getTarifa(idTarifa);
+    }
+     
 }
