@@ -28,9 +28,6 @@
 
                     </div>
                     <div class="col-4 d-flex justify-content-end align-items-right">
-                        <a class="link-secondary col-2" href="#" aria-label="Search">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20"fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" role="img" viewBox="0 0 24 24"><title>Search</title><circle cx="10.5" cy="10.5" r="7.5"/><path d="M21 21l-5.2-5.2"/></svg>
-                        </a>
                         <s:form action="listarChatsUser">
                             <s:submit cssClass="btn btn-sm btn-outline-secondary" value="Chats"></s:submit>
                         </s:form>
@@ -63,10 +60,10 @@
                     <h1 class="jumbotron-heading text-white">User: <s:property value="%{#session.username}"/></h1>
                 </div>
             </section>
-                <div class="album py-5 ">
+
+            <div class="album py-5 ">
                 <div class="container">
-                   
-                        <div class="card mb-4 box-shadow">
+                    <div class="card mb-4 box-shadow">
                            
                                 <s:form method="POST" action="usuario">
                                 <p class="card-text">Name:<s:property value="username"/></p>
@@ -79,15 +76,6 @@
                             </s:form>
                            
                         </div>
-                   
-                    <s:form method="POST" action="createMet">
-                                <s:hidden name="id" value="%{id}" />
-                                <s:submit cssClass="btn btn-sm btn-outline-secondary" value="New Payment Method"/>
-                            </s:form>
-                </div>
-            </div>
-            <div class="album py-5 ">
-                <div class="container">
                     <div class="card mb-4 box-shadow">
                         
                         

@@ -26,13 +26,12 @@
 
                     </div>
                     <div class="col-4 d-flex justify-content-end align-items-right">
-                        <a class="link-secondary col-2" href="#" aria-label="Search">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20"fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" role="img" viewBox="0 0 24 24"><title>Search</title><circle cx="10.5" cy="10.5" r="7.5"/><path d="M21 21l-5.2-5.2"/></svg>
-                        </a>
+                        <s:if test="%{#session.username == null}">
                         <s:form method="POST" action="login">
                             <s:submit cssClass="btn btn-sm btn-outline-secondary" value="Sign up">Sign up</s:submit>
                         </s:form>
-
+                        </s:if>
+                        <s:else></s:else>
                     </div>
 
                 </div>
@@ -99,10 +98,17 @@
             <s:else>        
                 <div class="container">
                     <div class="card mb-4 box-shadow">
+                        <s:if test="%{#session.username!=null}">
                         <s:form action="comprar">
                             <s:hidden  value="%{id}" name="idProducto" />
                             <s:submit value="Buy"/>
-                        </s:form>	
+                        </s:form>
+                        </s:if>
+                        <s:else>
+                        <s:form action="login">
+                            <s:submit value="Buy"/>
+                        </s:form>
+                        </s:else>
                     </div>
                 </div>
                 <div class="container">
@@ -121,6 +127,10 @@
         <footer class="blog-footer jumbotron text-center bg-dark">
             <p>
             <h2><a class=" bg-sand" href="#">Back to top</a></h2>
+            <s:if test="%{#session.username!=null}">
+            <s:a action="logOut">LogOut</s:a>
+            </s:if>
+            <s:else></s:else>
         </p>
     </footer>
 

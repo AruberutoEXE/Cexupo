@@ -32,14 +32,7 @@
                         <h1 class="text-white">Cexupo</h1>
 
                     </div>
-                    <div class="col-4 d-flex justify-content-end align-items-right">
-                        <a class="link-secondary col-2" href="#" aria-label="Search">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20"fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" role="img" viewBox="0 0 24 24"><title>Search</title><circle cx="10.5" cy="10.5" r="7.5"/><path d="M21 21l-5.2-5.2"/></svg>
-                        </a>
-                        <s:form method="POST" action="signUp">
-                            <s:submit cssClass="btn btn-sm btn-outline-secondary" value="signUp">Sign up</s:submit>
-                        </s:form>
-                    </div>
+                   
                 </div>
             </header>
             <div class="nav-scroller py-1 mb-2 bg-secondary  rounded-pill p-3">
@@ -92,6 +85,7 @@
         <footer class="blog-footer jumbotron text-center bg-dark">
             <p>
             <h2><a class=" bg-sand" href="#">Back to top</a></h2>
+            <s:a action="logOut">LogOut</s:a>
         </p>
     </footer>
 
