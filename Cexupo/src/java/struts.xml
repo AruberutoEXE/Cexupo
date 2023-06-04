@@ -19,6 +19,11 @@
             <result name="error">/Vistas/login/error.jsp</result>
             <result name="input">/Vistas/login/login.jsp</result>
         </action>
+        <action name="logOut" class="Actions.LogOut">
+            <result>/Vistas/login/login.jsp</result> 
+            <result name="success">/Vistas/login/login.jsp</result>
+            <result name="error">/Error.jsp</result>
+        </action>
         <action name="signUp" class="Actions.RegisterUserAction">
             <result name="success">/Vistas/Producto/Productos.jsp</result>
             <result name="error">/Vistas/login/registro.jsp</result>

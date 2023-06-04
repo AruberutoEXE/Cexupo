@@ -30,6 +30,7 @@ public class ProductoDao {
 
     public List<Producto> getAllProductos() {
         Session sesion = HibernateUtil.getSessionFactory().openSession();
+        System.out.println("getAllProductos");
         org.hibernate.Transaction tx = sesion.beginTransaction();
         Query q = sesion.createQuery("from Producto where vendido=FALSE");
         List<Producto> u = (List<Producto>) q.list();
