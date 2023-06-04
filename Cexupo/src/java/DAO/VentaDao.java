@@ -5,13 +5,11 @@
  */
 package DAO;
 
-import Hibernate.HibernateUtil;
-import Hibernate.Producto;
-import Hibernate.Usuario;
-import Hibernate.Venta;
+import ventaService.*;
 import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
+import ventaService.Venta;
 
 /**
  *
@@ -19,51 +17,57 @@ import org.hibernate.Session;
  */
 public class VentaDao {
      public void addVenta(Venta v) {
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        org.hibernate.Transaction tx = session.beginTransaction();
-        session.save(v);
-        tx.commit();
-        session.close();
+         addVenta_1(v);
     }
      public Venta getVenta(String idUsuario,String idProducto) {
-        Session sesion = HibernateUtil.getSessionFactory().openSession();
-        org.hibernate.Transaction tx = sesion.beginTransaction();
-        Query q = sesion.createQuery("from Venta where idUsuario='" + idUsuario + "' AND idProducto='"+idProducto+"'");
-        Venta u = (Venta) q.uniqueResult();
-        tx.commit();
-        sesion.close();
-        return u;
+        return getVenta2(idUsuario, idProducto);
     }
      public Venta getVenta(String idProducto) {
-        Session sesion = HibernateUtil.getSessionFactory().openSession();
-        org.hibernate.Transaction tx = sesion.beginTransaction();
-        Query q = sesion.createQuery("from Venta where idProducto='"+idProducto+"'");
-        Venta u = (Venta) q.uniqueResult();
-        tx.commit();
-        sesion.close();
-        return u;
+        return getVenta_1(idProducto);
     }
       public List<Venta> getVentasByUsu(String usu) {
-        Session sesion = HibernateUtil.getSessionFactory().openSession();
-        org.hibernate.Transaction tx = sesion.beginTransaction();
-        Query q = sesion.createQuery("from Venta where idUsuario='"+usu+"'");
-        List<Venta> u = (List<Venta>)q.list();
-        tx.commit();
-        sesion.close();
-        return u;
+        return getVentasByUsu_1(usu);
     }
      public void updateVenta(Venta v) {
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        org.hibernate.Transaction tx = session.beginTransaction();
-        session.update(v);
-        tx.commit();
-        session.close();
+         updateVenta_1(v);
     }
      public void removeVenta(Venta v) {
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        org.hibernate.Transaction tx = session.beginTransaction();
-        session.delete(v);
-        tx.commit();
-        session.close();
+         removeVenta_1(v);
+    }
+
+    private static void addVenta_1(ventaService.Venta v) {
+        ventaService.VentasDaoServices_Service service = new ventaService.VentasDaoServices_Service();
+        ventaService.VentasDaoServices port = service.getVentasDaoServicesPort();
+        port.addVenta(v);
+    }
+
+    private static Venta getVenta_1(java.lang.String idProducto) {
+        ventaService.VentasDaoServices_Service service = new ventaService.VentasDaoServices_Service();
+        ventaService.VentasDaoServices port = service.getVentasDaoServicesPort();
+        return port.getVenta(idProducto);
+    }
+
+    private static Venta getVenta2(java.lang.String idusuario, java.lang.String idProducto) {
+        ventaService.VentasDaoServices_Service service = new ventaService.VentasDaoServices_Service();
+        ventaService.VentasDaoServices port = service.getVentasDaoServicesPort();
+        return port.getVenta2(idusuario, idProducto);
+    }
+
+    private static java.util.List<ventaService.Venta> getVentasByUsu_1(java.lang.String usu) {
+        ventaService.VentasDaoServices_Service service = new ventaService.VentasDaoServices_Service();
+        ventaService.VentasDaoServices port = service.getVentasDaoServicesPort();
+        return port.getVentasByUsu(usu);
+    }
+
+    private static void removeVenta_1(ventaService.Venta v) {
+        ventaService.VentasDaoServices_Service service = new ventaService.VentasDaoServices_Service();
+        ventaService.VentasDaoServices port = service.getVentasDaoServicesPort();
+        port.removeVenta(v);
+    }
+
+    private static void updateVenta_1(ventaService.Venta v) {
+        ventaService.VentasDaoServices_Service service = new ventaService.VentasDaoServices_Service();
+        ventaService.VentasDaoServices port = service.getVentasDaoServicesPort();
+        port.updateVenta(v);
     }
 }

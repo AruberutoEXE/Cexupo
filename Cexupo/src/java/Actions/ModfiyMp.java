@@ -6,7 +6,7 @@
 package Actions;
 
 import DAO.UsuarioDao;
-import Hibernate.Metodopago;
+import usuarioService.Metodopago;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**

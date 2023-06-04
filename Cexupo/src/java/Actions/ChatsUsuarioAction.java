@@ -6,7 +6,7 @@
 package Actions;
 
 import DAO.ChatDao;
-import Hibernate.Chat;
+import chatService.Chat;
 import com.opensymphony.xwork2.ActionSupport;
 import java.util.List;
 import java.util.Map;

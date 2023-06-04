@@ -7,8 +7,8 @@ package Actions;
 
 import DAO.UsuarioDao;
 import DAO.VentaDao;
-import Hibernate.Usuario;
-import Hibernate.Venta;
+import usuarioService.Usuario;
+import ventaService.Venta;
 import com.opensymphony.xwork2.ActionSupport;
 import java.util.Map;
 import org.apache.struts2.dispatcher.SessionMap;

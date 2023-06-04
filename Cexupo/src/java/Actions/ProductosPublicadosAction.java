@@ -7,7 +7,7 @@ package Actions;
 
 import com.opensymphony.xwork2.ActionSupport;
 import DAO.ProductoDao;
-import Hibernate.Producto;
+import productoService.Producto;
 import java.util.List;
 import java.util.Map;
 import org.apache.struts2.dispatcher.SessionMap;

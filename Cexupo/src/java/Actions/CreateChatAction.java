@@ -7,8 +7,8 @@ package Actions;
 
 import DAO.ChatDao;
 import DAO.UsuarioDao;
-import Hibernate.Chat;
-import Hibernate.Mensaje;
+import chatService.Chat;
+import chatService.Mensaje;
 import com.opensymphony.xwork2.ActionSupport;
 import java.util.List;
 import java.util.Map;

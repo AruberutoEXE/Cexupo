@@ -9,13 +9,17 @@ import DAO.ProductoDao;
 import DAO.TarifaDao;
 import DAO.UsuarioDao;
 import DAO.VentaDao;
-import Hibernate.Producto;
-import Hibernate.Tarifaenvio;
-import Hibernate.Usuario;
-import Hibernate.Venta;
+import productoService.Producto;
+import tarifaService.Tarifaenvio;
+import usuarioService.Usuario;
+import ventaService.Venta;
 import com.opensymphony.xwork2.ActionSupport;
 import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.Locale;
 import java.util.Map;
+import javax.xml.datatype.DatatypeFactory;
+import javax.xml.datatype.XMLGregorianCalendar;
 import org.apache.struts2.dispatcher.SessionMap;
 
 import org.apache.struts2.interceptor.SessionAware;
@@ -44,8 +48,8 @@ public class FianlizarCompra extends ActionSupport implements SessionAware {
         //try {
         VentaDao vdao = new VentaDao();
         UsuarioDao udao = new UsuarioDao();
-            Usuario usu = udao.getUser((String) sessionMap.get("username"));
-        if (vdao.getVenta(usu.getUsername(),id )==null) {
+        Usuario usu = udao.getUser((String) sessionMap.get("username"));
+        if (vdao.getVenta(usu.getUsername(), id) == null) {
             Venta v = new Venta();
             direccion = direccion.replaceAll("[^\\w+]", "");
             pago = pago.replaceAll("[^\\w+]", "");
@@ -53,18 +57,21 @@ public class FianlizarCompra extends ActionSupport implements SessionAware {
             v.setIdDireccion(Long.parseLong(direccion));
             v.setIdMetodoPago(Long.parseLong(pago));
             v.setIdTarifa(Long.parseLong(transporte));
-            
+
             v.setIdUsuario(usu.getUsername());
-            v.setFechaVenta(new Date());
+            GregorianCalendar gc = new GregorianCalendar();
+            gc.setTime(new Date());
+            XMLGregorianCalendar xmlgc = DatatypeFactory.newInstance().newXMLGregorianCalendar(gc);
+
+            v.setFechaVenta(xmlgc);
             v.setIdProducto(Long.parseLong(id));
-            TarifaDao tdao=new TarifaDao();
-            ProductoDao pdao=new ProductoDao();
-            Producto p=pdao.getProducto(Integer.parseInt(id));
-            Tarifaenvio t=tdao.getTarifa(transporte);
-            float total=p.getPrecio()+t.getPrecioPeso()+t.getPrecioVolumen()+t.getPrecioSeguro();
+            TarifaDao tdao = new TarifaDao();
+            ProductoDao pdao = new ProductoDao();
+            Producto p = pdao.getProducto(Integer.parseInt(id));
+            Tarifaenvio t = tdao.getTarifa(transporte);
+            float total = p.getPrecio() + t.getPrecioPeso() + t.getPrecioVolumen() + t.getPrecioSeguro();
             v.setPrecioTotal(total);
-            
-            
+
             vdao.addVenta(v);
         }
         /*} catch (Exception e) {

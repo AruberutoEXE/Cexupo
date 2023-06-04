@@ -7,8 +7,8 @@ package Actions;
 
 import DAO.UsuarioDao;
 import DAO.VentaDao;
-import Hibernate.Usuario;
-import Hibernate.Venta;
+import usuarioService.Usuario;
+import ventaService.Venta;
 import static com.opensymphony.xwork2.Action.ERROR;
 import static com.opensymphony.xwork2.Action.SUCCESS;
 import com.opensymphony.xwork2.ActionSupport;

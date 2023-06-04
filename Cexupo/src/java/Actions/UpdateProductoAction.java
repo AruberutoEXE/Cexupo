@@ -6,7 +6,7 @@
 package Actions;
 
 import DAO.ProductoDao;
-import Hibernate.Producto;
+import productoService.Producto;
 import static com.opensymphony.xwork2.Action.SUCCESS;
 import com.opensymphony.xwork2.ActionSupport;
 

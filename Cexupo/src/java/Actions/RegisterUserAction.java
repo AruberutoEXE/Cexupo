@@ -6,7 +6,7 @@
 package Actions;
 
 import DAO.UsuarioDao;
-import Hibernate.Usuario;
+import usuarioService.Usuario;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import java.util.Map;
@@ -48,7 +48,10 @@ public class RegisterUserAction extends ActionSupport {
     
     public String execute() throws Exception {
        String salida;
-        Usuario newUser = new Usuario(this.getUsername(), this.getPassword(),this.getEmail());
+        Usuario newUser = new Usuario();
+        newUser.setUsername(this.getUsername());
+        newUser.setPassword(this.getPassword());
+        newUser.setEmail(this.getEmail());
         if(UsuarioDao.userExiste(this.getEmail())){
             addFieldError("email", "There is already a user associated with the Email");
             salida = ERROR;

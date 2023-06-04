@@ -7,10 +7,10 @@ package Actions;
 
 import DAO.ProductoDao;
 import DAO.UsuarioDao;
-import Hibernate.Direccion;
-import Hibernate.Metodopago;
-import Hibernate.Tarifaenvio;
-import Hibernate.Usuario;
+import usuarioService.Direccion;
+import usuarioService.Metodopago;
+import productoService.Tarifaenvio;
+import usuarioService.Usuario;
 import com.opensymphony.xwork2.ActionSupport;
 import java.util.LinkedList;
 import java.util.List;

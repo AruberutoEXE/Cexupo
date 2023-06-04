@@ -6,8 +6,8 @@
 package Actions;
 
 import DAO.UsuarioDao;
-import Hibernate.Direccion;
-import Hibernate.Usuario;
+import usuarioService.Direccion;
+import usuarioService.Usuario;
 import com.opensymphony.xwork2.ActionSupport;
 import java.util.List;
 

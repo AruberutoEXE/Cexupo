@@ -7,8 +7,8 @@ package Actions;
 
 import DAO.ProductoDao;
 import DAO.VentaDao;
-import Hibernate.Producto;
-import Hibernate.Venta;
+import productoService.Producto;
+import ventaService.Venta;
 import static com.opensymphony.xwork2.Action.SUCCESS;
 import com.opensymphony.xwork2.ActionSupport;
 import java.util.LinkedList;

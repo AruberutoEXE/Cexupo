@@ -7,8 +7,8 @@ package Actions;
 
 import DAO.PuntuacionDao;
 import DAO.VentaDao;
-import Hibernate.Puntuacion;
-import Hibernate.Venta;
+import puntuacionService.Puntuacion;
+import ventaService.Venta;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**

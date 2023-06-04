@@ -7,10 +7,10 @@ package Actions;
 
 import DAO.ChatDao;
 import DAO.ProductoDao;
-import Hibernate.Chat;
-import Hibernate.ChatId;
-import Hibernate.Mensaje;
-import Hibernate.Producto;
+import chatService.Chat;
+import chatService.ChatId;
+import chatService.Mensaje;
+import productoService.Producto;
 import com.opensymphony.xwork2.ActionSupport;
 import java.util.List;
 import java.util.Map;
@@ -50,7 +50,8 @@ public class ChatAction extends ActionSupport implements SessionAware{
     
     public String eliminar() throws Exception {
         ChatDao cDao = new ChatDao();
-        Chat c = new Chat(chatId);
+        Chat c = new Chat();
+        c.setId(chatId);
         cDao.deleteChat(c);
         return SUCCESS;
     }

@@ -10,13 +10,13 @@ import DAO.PuntuacionDao;
 import DAO.TarifaDao;
 import DAO.UsuarioDao;
 import DAO.VentaDao;
-import Hibernate.Direccion;
-import Hibernate.Metodopago;
-import Hibernate.Producto;
-import Hibernate.Puntuacion;
-import Hibernate.Tarifaenvio;
-import Hibernate.Usuario;
-import Hibernate.Venta;
+import usuarioService.Direccion;
+import usuarioService.Metodopago;
+import productoService.Producto;
+import puntuacionService.Puntuacion;
+import productoService.Tarifaenvio;
+import usuarioService.Usuario;
+import ventaService.Venta;
 import static com.opensymphony.xwork2.Action.SUCCESS;
 import com.opensymphony.xwork2.ActionSupport;
 import java.util.Date;
@@ -109,7 +109,7 @@ public class DetallesVenta extends ActionSupport implements SessionAware  {
         TarifaDao tdao = new TarifaDao();
         transporte = tdao.getTarifa(v.getIdTarifa() + "").getNombreTarifa();
         pago = udao.getMetPago((int) v.getIdMetodoPago()).getNombre();
-        editable = 1 > getDifferenceDays(v.getFechaVenta(), new Date());
+        editable = 1 > getDifferenceDays(new Date(v.getFechaVenta().getMillisecond()), new Date());
         hayReview = v.getIdPuntuacion() != 0;
 
         if (hayReview) {

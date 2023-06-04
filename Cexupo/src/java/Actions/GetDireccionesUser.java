@@ -6,11 +6,10 @@
 package Actions;
 
 import DAO.UsuarioDao;
-import Hibernate.Direccion;
-import Hibernate.Usuario;
+import usuarioService.Direccion;
+import usuarioService.Usuario;
 import static com.opensymphony.xwork2.Action.SUCCESS;
 import com.opensymphony.xwork2.ActionSupport;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import org.apache.struts2.dispatcher.SessionMap;
